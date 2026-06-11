@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/presentation-app-content-4374ro
   workflow_dispatch:
 
 permissions:
