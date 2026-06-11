@@ -4,11 +4,6 @@ export default function Slide01() {
   return (
     <Slide className="center" >
       <EuStars />
-      <Reveal i={0}>
-        <div className="pill" style={{ marginBottom: 30, color: 'var(--gold)', borderColor: 'rgba(255,204,51,0.4)' }}>
-          een talk over cloud-keuzevrijheid
-        </div>
-      </Reveal>
       <Reveal i={1}>
         <h1 className="display" style={{ fontSize: 92 }}>
           <span className="mono accent" style={{ fontWeight: 600 }}>eu-west-1</span>

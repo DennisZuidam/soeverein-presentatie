@@ -47,8 +47,8 @@ export default function Slide17() {
           </div>
           <p style={{ fontSize: 15.5, color: 'var(--muted)' }}>
             <strong style={{ color: 'var(--text)' }}>EU Data Act (2025)</strong> — cloudproviders zijn wettelijk verplicht
-            overstappen te faciliteren: geen blokkerende egress-kosten, geen data-gijzeling. Keuzevrijheid als Europees
-            recht. <strong style={{ color: 'var(--gold)' }}>Maar bouw alsof de wet niet bestaat.</strong>
+            overstappen te faciliteren: geen blokkerende egress-kosten, geen data-gijzeling.
+            <strong style={{ color: 'var(--gold)' }}> Maar bouw alsof de wet niet bestaat.</strong>
           </p>
         </div>
       </Reveal>

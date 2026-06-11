@@ -39,7 +39,7 @@ export default function Slide05() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={6} sub="En dit is geen AWS-bashing — Azure en Google doen exact hetzelfde.">
+      <Punchline i={6}>
         Lock-in is <span className="gold">het verdienmodel</span>, niet een bijeffect.
       </Punchline>
     </Slide>

@@ -38,7 +38,7 @@ export default function Slide08() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={6} sub="Een leverancier kan van eigenaar wisselen, een jurisdictie kan veranderen. Daarom gaat het niet om Europees kiezen — maar om porteerbaar blijven.">
+      <Punchline i={6}>
         Het enige wat je echt in de hand hebt, is <span className="gold">of je kunt vertrekken</span>.
       </Punchline>
     </Slide>

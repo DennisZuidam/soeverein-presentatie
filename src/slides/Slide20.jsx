@@ -27,7 +27,7 @@ const script = [
   out('Released the deploy lock', 'dim', 400),
   { type: 'gap', delay: 500 },
   out('✔ Deploy completed in 47.3s', 'add', 200),
-  out('  App live op https://demo.xprtz.cloud — nu op Europese grond.', 'hl-line', 300),
+  out('  https://demo.xprtz.cloud — zelfde app, Europese grond.', 'hl-line', 300),
 ]
 
 export default function Slide20() {
@@ -37,7 +37,7 @@ export default function Slide20() {
         <h2 className="title" style={{ marginBottom: 24 }}>
           Dezelfde deploy, andere grond
           <span className="muted" style={{ display: 'block', fontSize: 18, fontWeight: 450, marginTop: 8, letterSpacing: 0 }}>
-            Opgenomen run — exact deze commando's, geen demo-goden nodig.
+            Opgenomen run — exact deze commando's.
           </span>
         </h2>
       </Reveal>

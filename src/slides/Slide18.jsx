@@ -1,4 +1,4 @@
-import { Slide, Reveal, Punchline } from '../components/ui.jsx'
+import { Slide, Reveal } from '../components/ui.jsx'
 
 const cons = [
   'Kleinere community dan AWS of Azure',
@@ -10,7 +10,7 @@ const cons = [
 const pros = [
   'Voor een standaard cloud-native stack — compute, opslag, Kubernetes, database — is het verschil klein',
   'En het wordt elk jaar kleiner',
-  'Bouw je op open standaarden, dan kost terugkeren ook niets',
+  'Bouw je op open standaarden, dan kun je ook altijd terug',
 ]
 
 export default function Slide18() {
@@ -37,9 +37,6 @@ export default function Slide18() {
           </div>
         </Reveal>
       </div>
-      <Punchline i={5}>
-        Geen religie, maar een afweging — <span className="gold">en de balans verschuift.</span>
-      </Punchline>
     </Slide>
   )
 }

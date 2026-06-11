@@ -8,7 +8,6 @@ const movers = [
   { who: 'Rijksoverheid', what: 'Raamovereenkomst met STACKIT (Schwarz Gruppe), april 2026 — inclusief exitclausule bij overname buiten de EER.' },
   { who: 'De Nederlandsche Bank', what: 'Contract met STACKIT om afhankelijkheid van Amerikaanse cloud te verminderen.' },
   { who: 'DNS4EU', what: 'Europese DNS-resolver van de EU. Draait op Europese infra (Scaleway, Hetzner).' },
-  { who: 'Jij, morgen?', what: 'De drempel is lager dan je denkt — daarover zo meer.', ghost: true },
 ]
 
 export default function Slide14() {
@@ -19,8 +18,8 @@ export default function Slide14() {
       </Reveal>
       <div className="cards four" style={{ gap: 16 }}>
         {movers.map((m, k) => (
-          <Reveal key={m.who} i={2 + k * 0.5} className="card" style={{ padding: '20px 20px 18px', opacity: m.ghost ? 0.75 : undefined, borderStyle: m.ghost ? 'dashed' : undefined }}>
-            <h3 style={{ fontSize: 17 }} className={m.ghost ? 'gold' : undefined}>{m.who}</h3>
+          <Reveal key={m.who} i={2 + k * 0.5} className="card" style={{ padding: '20px 20px 18px' }}>
+            <h3 style={{ fontSize: 17 }}>{m.who}</h3>
             <p style={{ fontSize: 13.5, lineHeight: 1.5 }}>{m.what}</p>
           </Reveal>
         ))}

@@ -1,4 +1,4 @@
-import { Slide, Reveal, Punchline } from '../components/ui.jsx'
+import { Slide, Reveal } from '../components/ui.jsx'
 
 const cases = [
   {
@@ -33,9 +33,6 @@ export default function Slide06() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={6}>
-        Niet hypothetisch. Niet ver weg. <span className="gold">Dit jaar.</span>
-      </Punchline>
     </Slide>
   )
 }

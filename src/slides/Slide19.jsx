@@ -10,7 +10,7 @@ export default function Slide19() {
         <Reveal i={2} className="demo-box from">
           <div className="head">Azure</div>
           <div className="sub red">westeurope · VS-jurisdictie</div>
-          <p className="meta">Waar de app vandaag draait. Niet fout — maar ook nooit een keuze geweest.</p>
+          <p className="meta">Waar de app vandaag draait.</p>
         </Reveal>
         <Reveal i={3} className="demo-arrow">
           <div style={{ textAlign: 'center' }}>
