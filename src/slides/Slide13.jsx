@@ -1,33 +1,46 @@
-import { Slide, Reveal } from '../components/ui.jsx'
+import { Slide, Reveal, Punchline, Terminal } from '../components/ui.jsx'
 
-export default function Slide13() {
+const runsOn = [
+  { where: 'je laptop', how: 'docker run' },
+  { where: 'Azure', how: 'vandaag' },
+  { where: 'Scaleway · Hetzner · STACKIT', how: 'morgen, als jij dat wil' },
+  { where: 'de server in de meterkast', how: 'als het moet' },
+]
+
+export default function SlideContainer() {
   return (
-    <Slide kicker="Deel 2 — Wie zichzelf al de vrijheid gaf">
-      <Reveal i={1} className="quote-mark">“</Reveal>
+    <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
       <Reveal i={1}>
-        <p className="quote" style={{ fontSize: 36 }}>
-          Onze infrastructuur draait in eigen beheer of op platformen met Europese
-          eigenaren. Dat is soms duurder, onhandig of minder efficiënt. Maar het geeft
-          ons de vrijheid om Big Tech aan te pakken <span className="gold">zonder bang te zijn dat onze
-          systemen offline worden gehaald</span>.
-        </p>
+        <h2 className="title">De container is je exitstrategie</h2>
       </Reveal>
-      <Reveal i={3} className="quote-attrib">
-        <span className="who">The Firewall</span>
-        <span className="sep">·</span>
-        <span>journalistieke waakhond, opgericht door Eric Smit (mede-oprichter FTM)</span>
-      </Reveal>
-      <div className="quote-facts">
-        <Reveal i={4} className="fact">
-          <span>Spande een rechtszaak aan om de overname van Solvinity (DigiD) tegen te houden</span>
+      <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 40, alignItems: 'start' }}>
+        <Reveal i={2}>
+          <Terminal title="~/app — bash">
+            <span className="prompt">$</span> docker build -t app .{'\n'}
+            <span className="prompt">$</span> docker run -p 8080:8080 app{'\n'}
+            <span className="dim">Listening on :8080 — waar dan ook.</span>
+          </Terminal>
+          <p className="muted" style={{ fontSize: 16, lineHeight: 1.6, marginTop: 20 }}>
+            OCI is de open standaard: elke runtime, elke registry, elke
+            orchestrator. Je Dockerfile is het contract — <strong style={{ color: 'var(--text)' }}>één
+            artefact, overal hetzelfde gedrag</strong>.
+          </p>
         </Reveal>
-        <Reveal i={5} className="fact">
-          <span>Kiest bewust voor <strong>duurder en onhandiger</strong>, in ruil voor keuzevrijheid</span>
-        </Reveal>
-        <Reveal i={6} className="fact">
-          <span>Eerlijk over de grens: hun banken zijn volledig Big Tech-afhankelijk. <strong>Daar is geen keuze.</strong></span>
-        </Reveal>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 13 }}>
+          {runsOn.map((r, k) => (
+            <Reveal key={r.where} i={3 + k}>
+              <div className="geo-row" style={{ padding: '14px 22px' }}>
+                <span className="green mono" style={{ fontSize: 15 }}>✓</span>
+                <span style={{ fontSize: 18, fontWeight: 600 }}>{r.where}</span>
+                <span className="muted" style={{ marginLeft: 'auto', fontSize: 14.5 }}>{r.how}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
+      <Punchline i={7}>
+        Build once, run anywhere. <span className="gold">Deze keer echt.</span>
+      </Punchline>
     </Slide>
   )
 }

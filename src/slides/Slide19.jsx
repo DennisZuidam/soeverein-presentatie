@@ -2,7 +2,7 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 export default function Slide19() {
   return (
-    <Slide kicker="Deel 3 — Demo">
+    <Slide kicker="Deel 4 — Demo">
       <Reveal i={1}>
         <h2 className="title">Keuzevrijheid in twee regels</h2>
       </Reveal>

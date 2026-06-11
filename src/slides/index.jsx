@@ -10,7 +10,7 @@ import Slide09 from './Slide09.jsx'
 import Slide10 from './Slide10.jsx'
 import Slide11 from './Slide11.jsx'
 import Slide12 from './Slide12.jsx'
-import Slide13 from './Slide13.jsx'
+import SlideContainer from './Slide13.jsx'
 import Slide14 from './Slide14.jsx'
 import Slide15 from './Slide15.jsx'
 import Slide16 from './Slide16.jsx'
@@ -21,12 +21,18 @@ import Slide20 from './Slide20.jsx'
 import Slide21 from './Slide21.jsx'
 import Slide22 from './Slide22.jsx'
 import Slide23 from './Slide23.jsx'
+import SlidePayoff from './Slide24.jsx'
 
+// Verhaallijn in vier delen:
+//   Deel 1 — waarom keuzevrijheid waarde heeft (het probleem)
+//   Deel 2 — wie zichzelf al de vrijheid gaf (de voorbeelden)
+//   Deel 3 — zo bouw je voor keuzevrijheid (het engineering-deel)
+//   Deel 4 — demo + afsluiting
 export const slides = [
   {
     Component: Slide01,
     notes:
-      'Welkom. De titel is letterlijk de stelling van vandaag: een regio die "eu" heet, maakt je cloud nog niet Europees. Drie delen: waarom keuzevrijheid waarde heeft, wie zichzelf die vrijheid al gaf, en een demo.',
+      'Welkom. De titel is letterlijk de stelling van vandaag: een regio die "eu" heet, maakt je cloud nog niet Europees. Vier delen: waarom keuzevrijheid waarde heeft, wie zichzelf die vrijheid al gaf, hoe je ervoor bouwt, en een demo.',
   },
   {
     Component: Slide02,
@@ -84,19 +90,19 @@ export const slides = [
       'Jeff Geerling over zijn vaatwasser die een cloud-account eist. Grappig voorbeeld, serieus principe: geforceerde cloud-afhankelijkheid voor iets dat prima zelfstandig werkt. Lokaal eerst, cloud als keuze — of het nu je vaatwasser is of je productie-database.',
   },
   {
-    Component: Slide13,
-    notes:
-      'The Firewall, opgericht door Eric Smit (FTM), spande een rechtszaak aan om de Solvinity-overname tegen te houden. Ze kiezen bewust voor duurder en onhandiger, in ruil voor onafhankelijkheid. En ze zijn eerlijk over de grens: hun banken zijn volledig Big Tech-afhankelijk — daar is simpelweg geen keuze.',
-  },
-  {
     Component: Slide14,
     notes:
-      'Van een bouwbedrijfje van 80 man (37signals) tot Airbus, DNB en de Rijksoverheid: de beweging is breed. Let op de exitclausule in het STACKIT-contract — porteerbaarheid wordt contractueel vastgelegd. En niemand deed dit omdat het moest: het waren allemaal keuzes.',
+      'Van een softwarebedrijf van 80 man (37signals) tot Airbus, DNB en de Rijksoverheid: de beweging is breed. The Firewall (Eric Smit, FTM) procedeerde zelfs tegen de Solvinity-overname. Let op de exitclausule in het STACKIT-contract — porteerbaarheid wordt contractueel vastgelegd. En niemand deed dit omdat het moest: het waren allemaal keuzes.',
   },
   {
     Component: Slide15,
     notes:
-      'EU Tech Sovereignty Package (3 juni 2026): open source centraal in EU-beleid, voorstel Cloud and AI Development Act, €2 miljard voor open source. De cijfers laten zien waarom: 80% van de digitale technologie geïmporteerd, 70% van de AI-modellen uit de VS. EuroStack raamt €300 miljard voor een eigen Europese stack. Beleid, budget en richting.',
+      'EU Tech Sovereignty Package (3 juni 2026): open source centraal in EU-beleid, voorstel Cloud and AI Development Act, €2 miljard voor open source. De cijfers laten zien waarom: 80% van de digitale technologie geïmporteerd, 70% van de AI-modellen uit de VS. Voor de zaal: porteerbaar kunnen deployen wordt letterlijk een aanbestedingscriterium — dat is jouw skill die ineens geld waard is.',
+  },
+  {
+    Component: SlideContainer,
+    notes:
+      'Nu het engineering-deel. De container is het hele verhaal in één artefact: OCI is een open standaard, dus elke runtime, registry en orchestrator kan ermee overweg. Dezelfde image draait op je laptop, op Azure, op Scaleway, op de server in de meterkast. "Build once, run anywhere" was bij Java een belofte — bij containers is het gewoon waar.',
   },
   {
     Component: Slide16,
@@ -107,6 +113,11 @@ export const slides = [
     Component: Slide17,
     notes:
       'Vier bouwprincipes: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. De EU Data Act verplicht providers om overstappen te faciliteren — maar bouw alsof die wet niet bestaat, dan heb je hem ook niet nodig.',
+  },
+  {
+    Component: SlidePayoff,
+    notes:
+      'Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij — als bijproduct.',
   },
   {
     Component: Slide18,
@@ -126,7 +137,7 @@ export const slides = [
   {
     Component: Slide21,
     notes:
-      'Drie concrete stappen voor morgen: audit je dependencies (waar zit je vast?), containerize het volgende project (niet alles in één keer), en zet je infra in code. Dan is een provider-wissel een pull request, geen migratieproject.',
+      'Vier concrete stappen voor morgen: audit je dependencies (waar zit je vast?), containerize het volgende project (niet alles in één keer), zet je infra in code, en oefen je exit — deploy in CI ook eens naar een tweede provider. Een exit die je nooit geoefend hebt bestaat niet, net als een backup die je nooit hebt teruggezet.',
   },
   {
     Component: Slide22,

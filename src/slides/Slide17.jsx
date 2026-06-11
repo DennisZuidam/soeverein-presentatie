@@ -25,7 +25,7 @@ const principles = [
 
 export default function Slide17() {
   return (
-    <Slide kicker="Deel 2 — Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
       <Reveal i={1}>
         <h2 className="title">Hoe bouw je voor keuzevrijheid</h2>
       </Reveal>

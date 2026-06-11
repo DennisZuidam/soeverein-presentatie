@@ -15,7 +15,7 @@ const pros = [
 
 export default function Slide18() {
   return (
-    <Slide kicker="Deel 2 — Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
       <Reveal i={1}>
         <h2 className="title">Eerlijkheid over de gaps</h2>
       </Reveal>

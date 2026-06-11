@@ -2,7 +2,7 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 const movers = [
   { who: '37signals', what: 'Cloud-exit naar eigen infra. Circa $10M besparing over vijf jaar.' },
-  { who: 'FTM + De Correspondent', what: 'Migratie weg van Amerikaanse tools — transparant, in het openbaar.' },
+  { who: 'FTM · Correspondent · Firewall', what: 'Migratie weg van Amerikaanse tools, transparant en in het openbaar. The Firewall procedeerde zelfs tegen de Solvinity-overname.' },
   { who: 'Airbus', what: 'Aanbesteding (jan 2026, €50M+) voor bedrijfskritische apps. Schat zelf 80% kans op een geschikte EU-provider.' },
   { who: 'Gemeente Amsterdam', what: 'Digitale autonomie als inkoopcriterium (2025). Koos KPN voor soevereine cloud (€74M).' },
   { who: 'Rijksoverheid', what: 'Raamovereenkomst met STACKIT (Schwarz Gruppe), april 2026 — inclusief exitclausule bij overname buiten de EER.' },

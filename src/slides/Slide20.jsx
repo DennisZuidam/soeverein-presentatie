@@ -32,7 +32,7 @@ const script = [
 
 export default function Slide20() {
   return (
-    <Slide kicker="Deel 3 — Demo">
+    <Slide kicker="Deel 4 — Demo">
       <Reveal i={1}>
         <h2 className="title" style={{ marginBottom: 24 }}>
           Dezelfde deploy, andere grond

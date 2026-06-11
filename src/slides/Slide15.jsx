@@ -31,7 +31,7 @@ export default function Slide15() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={6}>
+      <Punchline i={6} sub="En jouw porteerbare architectuur? Die wordt ineens een aanbestedingscriterium.">
         Dit is geen niche meer. Het is <span className="gold">beleid, budget en richting.</span>
       </Punchline>
     </Slide>
