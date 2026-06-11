@@ -1,0 +1,37 @@
+import { Slide, Reveal, EuStars } from '../components/ui.jsx'
+
+export default function Slide01() {
+  return (
+    <Slide className="center" >
+      <EuStars />
+      <Reveal i={0}>
+        <div className="pill" style={{ marginBottom: 30, color: 'var(--gold)', borderColor: 'rgba(255,204,51,0.4)' }}>
+          een talk over cloud-keuzevrijheid
+        </div>
+      </Reveal>
+      <Reveal i={1}>
+        <h1 className="display" style={{ fontSize: 92 }}>
+          <span className="mono accent" style={{ fontWeight: 600 }}>eu-west-1</span>
+          <br />
+          is nog geen Europa
+        </h1>
+      </Reveal>
+      <Reveal i={2}>
+        <p className="lede" style={{ marginTop: 30, maxWidth: 760 }}>
+          Over keuzevrijheid, cloud-agnostisch bouwen
+          <br />
+          en waarom soevereiniteit een bijproduct is
+        </p>
+      </Reveal>
+      <Reveal i={4}>
+        <div style={{ marginTop: 56, display: 'flex', gap: 14, alignItems: 'center', justifyContent: 'center' }}>
+          <span style={{ fontWeight: 600 }}>Dennis Zuidam</span>
+          <span style={{ color: 'var(--faint)' }}>·</span>
+          <span className="muted">XPRTZ</span>
+          <span style={{ color: 'var(--faint)' }}>·</span>
+          <span className="muted">Scaleway Solution Architect</span>
+        </div>
+      </Reveal>
+    </Slide>
+  )
+}
