@@ -23,6 +23,8 @@ import Slide22 from './Slide22.jsx'
 import Slide23 from './Slide23.jsx'
 import SlidePayoff from './Slide24.jsx'
 import SlidePrime from './Slide25.jsx'
+import SlideTwoMoves from './Slide26.jsx'
+import SlideHow from './Slide27.jsx'
 
 // Verhaallijn in vier delen:
 //   Deel 1 — waarom keuzevrijheid waarde heeft (het probleem)
@@ -76,6 +78,11 @@ export const slides = [
       'De kernzin van de talk. Soevereiniteit als doel leidt tot vlaggetjes-denken. Keuzevrijheid als doel leidt tot goede architectuur — en soevereiniteit krijg je er gratis bij.',
   },
   {
+    Component: SlideTwoMoves,
+    notes:
+      'Belangrijk onderscheid voordat de voorbeelden komen, want deze twee worden constant door elkaar gehaald. Europees kiezen is een bestemming: je verhuist je afhankelijkheid naar een andere vlag. Zonder porteerbaarheid sta je daar net zo vast — Solvinity liet zien dat ook een Europese keuze van eigenaar kan wisselen. Keuzevrijheid is een eigenschap van je architectuur: containers, open standaarden, porteerbare data. Die eigenschap werkt voor elke bestemming, ook een Europese — en maakt de Europese keuze pas veilig, want je kunt altijd weer weg. De voorbeelden hierna doen soms het één, soms het ander, soms allebei; de labels op de kaarten laten dat zien.',
+  },
+  {
     Component: Slide10,
     notes:
       'DHH: ruim tien jaar AWS, toen cloud-exit naar eigen hardware. De cijfers: infra-rekening van $3,2M naar minder dan $1M per jaar, ruim $10M besparing over vijf jaar. De S3-exit: 18 petabyte naar een dual-datacenter Pure Storage-setup — $1,5M eenmalig, minder dan $200K per jaar beheer, tegenover ~$1,5M per jaar bij S3. Zomer 2025 ging het complete AWS-account dicht. Let op: niet naar een Europese cloud, naar eigen infra — het was zíjn keuze. En hij bouwde Kamal, het deploy-tool uit de demo straks. — Bronnen: world.hey.com/dhh/our-cloud-exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd · theregister.com/2025/05/09/37signals_cloud_repatriation_storage_savings',
@@ -98,7 +105,12 @@ export const slides = [
   {
     Component: Slide14,
     notes:
-      'Van een softwarebedrijf van 80 man (37signals) tot Airbus, DNB en de Rijksoverheid: de beweging is breed. The Firewall (Eric Smit, FTM) procedeerde zelfs tegen de Solvinity-overname. Let op de exitclausule in het STACKIT-contract — porteerbaarheid wordt contractueel vastgelegd. En niemand deed dit omdat het moest: het waren allemaal keuzes.',
+      'Van een softwarebedrijf van 80 man (37signals) tot Airbus, DNB en de Rijksoverheid: de beweging is breed. De labels laten het onderscheid van de vorige slide zien: de meesten kozen een Europese bestemming; 37signals bouwde keuzevrijheid. De Rijksoverheid deed allebei — Europese bestemming én een contractuele exitclausule bij overname buiten de EER. Dat is porteerbaarheid juridisch vastgelegd. En niemand deed dit omdat het moest: het waren allemaal keuzes.',
+  },
+  {
+    Component: SlideHow,
+    notes:
+      'De concrete techniek, want "ze stapten over" is geen recept. 37signals: apps zaten al in Docker, dus de cloud-exit was vooral orkestratie — ze bouwden Kamal (open source) als vervanger, zetten Percona MySQL 8 op bare metal in plaats van RDS (met cron-based backups), zero-touch provisioning en full-disk encryption op eigen Dell-hardware, en later 18 PB van S3 naar dual-datacenter Pure Storage. ICC: openDesk van ZenDiS (Duitse overheids-organisatie) — Collabora voor documenten in de browser, Nextcloud voor bestanden, Open-Xchange voor mail/groupware, OpenProject voor projecten. FTM + De Correspondent: site en app waren al eigen bouw op Europese servers met Matomo en Metabase; nu vervangen ze stapsgewijs Slack, ActiveCampaign, 1Password, Shopify en Google Workspace — en publiceren elke afweging. — Bronnen: dev.37signals.com/bringing-our-apps-back-home · openproject.org/blog/digital-sovereignty-government-germany-opendesk · ftm.nl/artikelen/follow-the-money-en-de-correspondent-willen-onaf-hankelijker-worden-van-amerikaanse-tech-en-iedereen-mag-meekijken',
   },
   {
     Component: Slide15,
