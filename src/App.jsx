@@ -10,23 +10,47 @@ function fromHash() {
   return Number.isFinite(n) ? clamp(n - 1) : 0
 }
 
-function useFitScale(ref) {
+function useFitScale() {
   const [scale, setScale] = useState(1)
   useEffect(() => {
-    const fit = () =>
-      setScale(Math.min(window.innerWidth / 1280, (window.innerHeight - 50) / 720))
+    const fit = () => {
+      const vw = window.visualViewport?.width ?? window.innerWidth
+      const vh = window.visualViewport?.height ?? window.innerHeight
+      // op kleine schermen overlapt de chrome-balk de stage; reserveer dan niets
+      const reserve = vw < 900 ? 8 : 50
+      setScale(Math.min(vw / 1280, (vh - reserve) / 720))
+    }
     fit()
     window.addEventListener('resize', fit)
-    return () => window.removeEventListener('resize', fit)
-  }, [ref])
+    window.visualViewport?.addEventListener('resize', fit)
+    return () => {
+      window.removeEventListener('resize', fit)
+      window.visualViewport?.removeEventListener('resize', fit)
+    }
+  }, [])
   return scale
+}
+
+function usePortraitPhone() {
+  const [portrait, setPortrait] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(orientation: portrait) and (max-width: 820px)')
+    const update = () => setPortrait(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+  return portrait
 }
 
 export default function App() {
   const [index, setIndex] = useState(fromHash)
   const dir = useRef(1)
   const [showNotes, setShowNotes] = useState(false)
+  const [hintDismissed, setHintDismissed] = useState(false)
   const scale = useFitScale()
+  const portrait = usePortraitPhone()
+  const touch = useRef(null)
 
   const go = useCallback((target) => {
     setIndex((prev) => {
@@ -35,6 +59,24 @@ export default function App() {
       return next
     })
   }, [])
+
+  const onTouchStart = (e) => {
+    const t = e.touches[0]
+    touch.current = { x: t.clientX, y: t.clientY }
+  }
+  const onTouchEnd = (e) => {
+    if (!touch.current) return
+    const t = e.changedTouches[0]
+    const dx = t.clientX - touch.current.x
+    const dy = t.clientY - touch.current.y
+    touch.current = null
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      setIndex((p) => {
+        dir.current = dx < 0 ? 1 : -1
+        return clamp(p + dir.current)
+      })
+    }
+  }
 
   useEffect(() => {
     history.replaceState(null, '', `#${index + 1}`)
@@ -86,13 +128,13 @@ export default function App() {
   const { Component, notes } = slides[index]
 
   return (
-    <div className="app">
+    <div className="app" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <div className="progress">
         <div style={{ width: `${((index + 1) / slides.length) * 100}%` }} />
       </div>
 
       <div className="stage-wrap">
-        <div className="stage" style={{ transform: `scale(${scale})` }}>
+        <div className="stage" style={{ transform: `translate(-50%, -50%) scale(${scale})` }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -114,10 +156,25 @@ export default function App() {
         </div>
       )}
 
+      {portrait && !hintDismissed && (
+        <div className="rotate-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="7" y="3" width="10" height="18" rx="2" />
+            <path d="M20 8a8 8 0 0 0-3-4M4 16a8 8 0 0 0 3 4" />
+          </svg>
+          <p>
+            Draai je telefoon — deze presentatie is gemaakt
+            <br />
+            voor liggend beeld.
+          </p>
+          <button onClick={() => setHintDismissed(true)}>Toch doorgaan →</button>
+        </div>
+      )}
+
       <div className="chrome">
         <span className="deck-title">eu-west-1 is nog geen Europa — Dennis Zuidam · XPRTZ</span>
         <div className="right">
-          <span style={{ opacity: 0.7 }}>←/→ navigeren · N notities · F fullscreen</span>
+          <span className="keys-hint" style={{ opacity: 0.7 }}>←/→ navigeren · N notities · F fullscreen</span>
           <span className="counter">
             {String(index + 1).padStart(2, '0')} / {slides.length}
           </span>
