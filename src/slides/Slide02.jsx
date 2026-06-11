@@ -4,7 +4,7 @@ const facts = [
   { icon: 'briefcase', title: 'Directeur', text: 'bij XPRTZ, IT-dienstverlener uit Utrecht' },
   { icon: 'heart', title: 'Thuis', text: 'getrouwd, twee kinderen' },
   { icon: 'activity', title: 'Sport', text: 'gym en hardlopen' },
-  { icon: 'bread', title: 'Eigen brood', text: 'letterlijk — ik bak het zelf' },
+  { icon: 'bread', title: 'Eigen brood', text: 'ik bak het zelf' },
 ]
 
 export default function Slide02() {
@@ -24,9 +24,8 @@ export default function Slide02() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={7} sub="Waarom dat een architectuurkeuze was — en geen politieke — daar gaat deze talk over.">
-        Ik sta hier niet als verkoper, maar als iemand die zelf software bouwt
-        en draait op een Europese cloud.
+      <Punchline i={7}>
+        Vandaag niet als verkoper — als iemand die zelf bouwt en draait op een Europese cloud.
       </Punchline>
     </Slide>
   )

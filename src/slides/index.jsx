@@ -22,6 +22,7 @@ import Slide21 from './Slide21.jsx'
 import Slide22 from './Slide22.jsx'
 import Slide23 from './Slide23.jsx'
 import SlidePayoff from './Slide24.jsx'
+import SlidePrime from './Slide25.jsx'
 
 // Verhaallijn in vier delen:
 //   Deel 1 — waarom keuzevrijheid waarde heeft (het probleem)
@@ -52,12 +53,12 @@ export const slides = [
   {
     Component: Slide05,
     notes:
-      'Lock-in is geen abstract begrip, het zit in concrete keuzes. DynamoDB: gekozen omdat Postgres "te veel werk" leek; nu kost migratie maanden. IAM: rollen zo diep verweven dat overstappen bijna onmogelijk is. Egress: data eruit halen is zo duur dat weggaan financieel onhaalbaar wordt. Geen toeval — zo werkt het model. En geen AWS-bashing: Azure en Google doen exact hetzelfde.',
+      'Lock-in is geen abstract begrip, het zit in concrete keuzes. DynamoDB: gekozen omdat Postgres "te veel werk" leek; nu kost migratie maanden — single-table design is gemodelleerd rond je query-patronen, veranderen die, dan moet de hele tabel op de schop. IAM: rollen zo diep verweven dat overstappen bijna onmogelijk is. Egress: AWS rekent $0,09/GB na 100 GB gratis; bij Hetzner zit 20 TB per server inbegrepen. 300 TB/maand ≈ $21.000 bij AWS, vrijwel €0 bij Hetzner/Scaleway. Geen toeval — zo werkt het model. En geen AWS-bashing: Azure en Google doen exact hetzelfde. — Bronnen: wz-it.com/en/blog/aws-egress-fees-vs-hetzner-traffic-costs · dev.to/gpuperhour (44 providers vergeleken)',
   },
   {
     Component: Slide06,
     notes:
-      'Drie gevallen uit het afgelopen jaar. ICC-aanklager verloor zijn Microsoft-account na een Trump-sanctie; de ICC stapte daarna over op OpenDesk. FTM nam afscheid van Cloudflare — niet om een dreiging, maar om de leverancier zelf. En Microsoft Frankrijk verklaarde onder ede dat het geen garantie kan geven dat Europese data veilig is voor Amerikaanse autoriteiten.',
+      'Drie gevallen uit één jaar. ICC-aanklager verloor zijn Microsoft-account na een Trump-sanctie; de ICC stapte daarna over op OpenDesk. FTM nam afscheid van Cloudflare — niet om een dreiging, maar om de leverancier zelf. En in de Franse Senaat, 10 juni 2025: senator Simon Uzenat vroeg Anton Carniaux (Microsoft France) of hij kon garanderen dat Franse data nooit zonder Franse toestemming aan de VS wordt overgedragen. Antwoord onder ede: "Non, je ne peux pas le garantir" — en: "Als een Amerikaanse rechterlijke beslissing ons dwingt, moeten we de data overdragen." — Bronnen: senat.fr/compte-rendu-commissions/20250609/ce_commande_publique.html · actuia.com (Engelstalig verslag)',
   },
   {
     Component: Slide07,
@@ -77,7 +78,7 @@ export const slides = [
   {
     Component: Slide10,
     notes:
-      'DHH: ruim tien jaar AWS, toen cloud-exit naar eigen hardware — anderhalf miljoen dollar besparing per jaar. Let op: niet naar een Europese cloud, naar eigen infra. Dat is precies het punt: het was zíjn keuze. En hij bouwde Kamal, het deploy-tool uit de demo straks.',
+      'DHH: ruim tien jaar AWS, toen cloud-exit naar eigen hardware. De cijfers: infra-rekening van $3,2M naar minder dan $1M per jaar, ruim $10M besparing over vijf jaar. De S3-exit: 18 petabyte naar een dual-datacenter Pure Storage-setup — $1,5M eenmalig, minder dan $200K per jaar beheer, tegenover ~$1,5M per jaar bij S3. Zomer 2025 ging het complete AWS-account dicht. Let op: niet naar een Europese cloud, naar eigen infra — het was zíjn keuze. En hij bouwde Kamal, het deploy-tool uit de demo straks. — Bronnen: world.hey.com/dhh/our-cloud-exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd · theregister.com/2025/05/09/37signals_cloud_repatriation_storage_savings',
   },
   {
     Component: Slide11,
@@ -88,6 +89,11 @@ export const slides = [
     Component: Slide12,
     notes:
       'Jeff Geerling over zijn vaatwasser die een cloud-account eist. Grappig voorbeeld, serieus principe: geforceerde cloud-afhankelijkheid voor iets dat prima zelfstandig werkt. Lokaal eerst, cloud als keuze — of het nu je vaatwasser is of je productie-database.',
+  },
+  {
+    Component: SlidePrime,
+    notes:
+      'Het Prime Video VQA-team (audio/video-kwaliteitsmonitoring) bouwde volgens het boekje: Step Functions voor orkestratie, Lambda, S3 als tussenopslag voor videoframes. Het liep vast op 5% van de verwachte load: Step Functions rekent per state-transitie en het systeem deed er meerdere per seconde stream, plus hoge S3-kosten voor de frames. Herbouwd als één proces in één ECS-task, frames in-memory: ruim 90% goedkoper én beter schaalbaar. De les is niet "serverless is slecht" — de les is dat zelfs AWS-teams hun eigen defaults heroverwegen als de architectuur niet past. Kies de architectuur, niet de default. — Bronnen: Prime Video techblog "Scaling up the audio/video monitoring service and reducing costs by 90%" (maart 2023) · thestack.technology/amazon-prime-video-microservices-monolith',
   },
   {
     Component: Slide14,
@@ -102,17 +108,17 @@ export const slides = [
   {
     Component: SlideContainer,
     notes:
-      'Nu het engineering-deel. De container is het hele verhaal in één artefact: OCI is een open standaard, dus elke runtime, registry en orchestrator kan ermee overweg. Dezelfde image draait op je laptop, op Azure, op Scaleway, op de server in de meterkast. "Build once, run anywhere" was bij Java een belofte — bij containers is het gewoon waar.',
+      'Nu het engineering-deel. De container is het hele verhaal in één artefact: OCI is een open standaard, dus elke runtime, registry en orchestrator kan ermee overweg. Dezelfde image draait op je laptop, op Azure, op Scaleway, op de server in de meterkast. En hetzelfde geldt voor data: de S3-API is de standaard, dus de wissel naar Scaleway Object Storage (of MinIO, of Hetzner) is letterlijk één regel — endpoint_url aanpassen. Dezelfde aws-cli en rclone werken ongewijzigd. — Bron: scaleway.com/en/docs/object-storage/api-cli/object-storage-aws-cli',
   },
   {
     Component: Slide16,
     notes:
-      'Loop de lagen langs. De linkerkolom is waar je nu waarschijnlijk zit, de rechterkolom is de open standaard. Groen betekent: de standaard bestaat al, je hoeft alleen de provider te kiezen. Voor bijna elke laag is dat vandaag al realistisch.',
+      'Loop de lagen langs. De linkerkolom is waar je nu waarschijnlijk zit, de rechterkolom is de open standaard. Groen betekent: de standaard bestaat al, je hoeft alleen de provider te kiezen. Observability als illustratie: Coinbase betaalde Datadog $65 miljoen voor één jaar (2021) — ontdekt via een earnings call en teruggerekend door een JPMorgan-analist. Ze wilden in-house gaan voor "full control and ownership", Datadog redde het contract met een deal. DNS-rij: DNS4EU draait op Knot Resolver 6, open source van CZ.NIC — dezelfde software die delen van Cloudflare aandrijft. 100% EU-gehost, anycast dat Europese geo-nabijheid prioriteert. — Bronnen: newsletter.pragmaticengineer.com/p/datadogs-65m-year-customer-mystery · whalebone.io/dns4eu',
   },
   {
     Component: Slide17,
     notes:
-      'Vier bouwprincipes: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. De EU Data Act verplicht providers om overstappen te faciliteren — maar bouw alsof die wet niet bestaat, dan heb je hem ook niet nodig.',
+      'Vier bouwprincipes: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Voor identity: bouw tegen OIDC/OAuth2 in plaats van Cognito/Entra-SDK\'s — dan is de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). De Data Act werkt nu al: alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten (Google januari, AWS maart, Azure maart — al eist Azure dat je je account binnen 60 dagen sluit). Vanaf januari 2027 zijn switching fees volledig verboden. Maar bouw alsof die wet niet bestaat, dan heb je hem ook niet nodig. — Bronnen: aws.amazon.com/blogs/aws/free-data-transfer-out-to-internet-when-moving-out-of-aws · ciodive.com (Azure) · european-alternatives.eu/alternative-to/auth0',
   },
   {
     Component: SlidePayoff,

@@ -1,10 +1,10 @@
 import { Slide, Reveal, Punchline, Terminal } from '../components/ui.jsx'
 
 const runsOn = [
-  { where: 'je laptop', how: 'docker run' },
-  { where: 'Azure', how: 'vandaag' },
-  { where: 'Scaleway · Hetzner · STACKIT', how: 'morgen, als jij dat wil' },
-  { where: 'de server in de meterkast', how: 'als het moet' },
+  { where: 'je laptop' },
+  { where: 'Azure' },
+  { where: 'Scaleway · Hetzner · STACKIT' },
+  { where: 'de server in de meterkast' },
 ]
 
 export default function SlideContainer() {
@@ -18,12 +18,12 @@ export default function SlideContainer() {
           <Terminal title="~/app — bash">
             <span className="prompt">$</span> docker build -t app .{'\n'}
             <span className="prompt">$</span> docker run -p 8080:8080 app{'\n'}
-            <span className="dim">Listening on :8080 — waar dan ook.</span>
+            <span className="dim">Listening on :8080</span>
           </Terminal>
           <p className="muted" style={{ fontSize: 16, lineHeight: 1.6, marginTop: 20 }}>
-            OCI is de open standaard: elke runtime, elke registry, elke
-            orchestrator. Je Dockerfile is het contract — <strong style={{ color: 'var(--text)' }}>één
-            artefact, overal hetzelfde gedrag</strong>.
+            OCI is een open standaard: elke runtime, elke registry, elke
+            orchestrator. <strong style={{ color: 'var(--text)' }}>Eén artefact,
+            overal hetzelfde gedrag.</strong>
           </p>
         </Reveal>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 13 }}>
@@ -32,13 +32,19 @@ export default function SlideContainer() {
               <div className="geo-row" style={{ padding: '14px 22px' }}>
                 <span className="green mono" style={{ fontSize: 15 }}>✓</span>
                 <span style={{ fontSize: 18, fontWeight: 600 }}>{r.where}</span>
-                <span className="muted" style={{ marginLeft: 'auto', fontSize: 14.5 }}>{r.how}</span>
               </div>
             </Reveal>
           ))}
+          <Reveal i={7}>
+            <p className="muted" style={{ fontSize: 15, margin: '10px 0 8px' }}>Zelfde principe voor je data:</p>
+            <Terminal title="storage.py">
+              s3 = boto3.client(<span className="hl">"s3"</span>,{'\n'}
+              {'  '}endpoint_url=<span className="hl">"https://s3.nl-ams.scw.cloud"</span>)
+            </Terminal>
+          </Reveal>
         </div>
       </div>
-      <Punchline i={7}>
+      <Punchline i={8}>
         Build once, run anywhere. <span className="gold">Deze keer echt.</span>
       </Punchline>
     </Slide>

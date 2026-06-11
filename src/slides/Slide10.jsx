@@ -20,13 +20,13 @@ export default function Slide10() {
       </Reveal>
       <div className="quote-facts">
         <Reveal i={3} className="fact">
-          <span>Draaide <strong>meer dan tien jaar</strong> op AWS</span>
+          <span>Infra-rekening: van <strong>$3,2M naar minder dan $1M per jaar</strong> — ruim $10M besparing in vijf jaar</span>
         </Reveal>
         <Reveal i={4} className="fact">
-          <span>Stapte over naar eigen hardware — besparing: <strong>$1,5 miljoen per jaar</strong></span>
+          <span>S3-exit: <strong>18 petabyte</strong> naar eigen Pure Storage — $1,5M eenmalig, &lt;$200K/jaar beheer</span>
         </Reveal>
         <Reveal i={5} className="fact">
-          <span>Niet naar een Europese cloud, maar naar eigen infra. <strong>Zijn keuze.</strong></span>
+          <span>Zomer 2025: het complete AWS-account verwijderd. Niet naar een Europese cloud — eigen infra. <strong>Zijn keuze.</strong></span>
         </Reveal>
       </div>
       <Reveal i={6} style={{ marginTop: 'auto' }}>

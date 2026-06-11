@@ -4,22 +4,22 @@ const wins = [
   {
     icon: 'scale',
     title: 'Onderhandelingspositie',
-    text: 'Wie kan vertrekken, hoeft nooit te smeken. Het prijsgesprek met je provider voelt anders met een werkende exit op zak.',
+    text: 'Wie kan vertrekken, hoeft nooit te smeken. Een werkende exit verandert elk prijsgesprek.',
   },
   {
     icon: 'standard',
     title: 'Betere architectuur',
-    text: 'Stateless, twelve-factor, infra als code: dezelfde keuzes die je porteerbaar maken, maken je systeem testbaar en begrijpelijk.',
+    text: 'De keuzes die je porteerbaar maken — stateless, twelve-factor, infra als code — maken je systeem ook testbaar en begrijpelijk.',
   },
   {
     icon: 'box',
     title: 'Reproduceerbaarheid',
-    text: 'Dev, CI en productie draaien hetzelfde artefact. Onboarding van een nieuwe collega: docker compose up.',
+    text: 'Dev, CI en productie draaien hetzelfde artefact. Onboarding: docker compose up.',
   },
   {
     icon: 'globe',
     title: 'Soevereiniteit',
-    text: 'Als bijproduct. Het vinkje waar anderen een programma voor optuigen, krijg jij gratis bij je architectuur.',
+    text: 'Krijg je er gratis bij als je architectuur goed is.',
   },
 ]
 
@@ -41,7 +41,7 @@ export default function SlidePayoff() {
         ))}
       </div>
       <Punchline i={6}>
-        Keuzevrijheid is geen verzekering die geld kost — <span className="gold">het is architectuur die zich dubbel terugbetaalt.</span>
+        Geen verzekering die geld kost — <span className="gold">architectuur die zich dubbel terugbetaalt.</span>
       </Punchline>
     </Slide>
   )
