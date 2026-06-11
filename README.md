@@ -7,6 +7,10 @@ Gebouwd met Vite + React + Framer Motion: een fullscreen slidedeck (16:9,
 schaalt automatisch mee met het scherm) met vloeiende animaties, donker
 design en EU-blauw/goud accenten.
 
+**Live:** https://denniszuidam.github.io/soeverein-presentatie/ — elke push
+wordt automatisch gebouwd en gedeployed via GitHub Actions
+(`.github/workflows/deploy.yml`).
+
 ## Starten
 
 ```bash
