@@ -13,8 +13,8 @@ const cases = [
   },
   {
     tag: 'Microsoft × Franse Senaat',
-    title: 'Geen garantie. Onder ede.',
-    text: 'Microsoft kan niet garanderen dat Europese data veilig is voor Amerikaanse autoriteiten. Anton Carniaux, Microsoft France, 10 juni 2025. Geen mening — een verklaring.',
+    title: '"Non, je ne peux pas le garantir."',
+    text: 'Senator Uzenat vroeg of Franse data nooit zonder Franse toestemming naar de VS gaat. Anton Carniaux (Microsoft France), onder ede, 10 juni 2025: "Als een Amerikaanse rechter ons dwingt, moeten we de data overdragen."',
   },
 ]
 

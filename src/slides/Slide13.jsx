@@ -35,9 +35,16 @@ export default function SlideContainer() {
               </div>
             </Reveal>
           ))}
+          <Reveal i={7}>
+            <p className="muted" style={{ fontSize: 15, margin: '10px 0 8px' }}>Zelfde principe voor je data:</p>
+            <Terminal title="storage.py">
+              s3 = boto3.client(<span className="hl">"s3"</span>,{'\n'}
+              {'  '}endpoint_url=<span className="hl">"https://s3.nl-ams.scw.cloud"</span>)
+            </Terminal>
+          </Reveal>
         </div>
       </div>
-      <Punchline i={7}>
+      <Punchline i={8}>
         Build once, run anywhere. <span className="gold">Deze keer echt.</span>
       </Punchline>
     </Slide>

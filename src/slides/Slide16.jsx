@@ -39,7 +39,7 @@ export default function Slide16() {
           </tbody>
         </table>
       </Reveal>
-      <Punchline i={4}>
+      <Punchline i={4} sub="Observability ter illustratie: Coinbase betaalde Datadog $65 miljoen — voor één jaar.">
         <span className="green">Groen</span> = de standaard bestaat. De provider is jouw keuze.
       </Punchline>
     </Slide>
