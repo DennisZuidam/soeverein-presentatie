@@ -145,12 +145,12 @@ export const slides = [
   {
     Component: Slide19,
     notes:
-      'De opzet van de demo: dezelfde Dockerfile, dezelfde app, hetzelfde deploy-tool (Kamal). Het enige verschil tussen Azure en Scaleway: twee regels config. Scaleway is het voorbeeld — het punt is dat het elke provider had kunnen zijn.',
+      'De demo is deze presentatie zelf: de slides waar de zaal al een half uur naar kijkt, draaien op GitHub Pages — Microsoft dus. De migratie naar Scaleway is een Dockerfile van twee regels en een Kamal-config; het bewijs kijkt het publiek letterlijk aan. Scaleway is het voorbeeld — het punt is dat het elke provider had kunnen zijn. De Dockerfile en config/deploy.yml staan echt in de repo.',
   },
   {
     Component: Slide20,
     notes:
-      'Dit is een opgenomen, gescripte run van exact deze commando\'s — bewust geen live demo, dus hier kan niets misgaan. git diff toont de twee regels (server + registry), daarna doet "kamal deploy" de rest: image bouwen, pushen naar de Scaleway-registry, health checks, traffic switchen. Klaar in minder dan een minuut.',
+      'Opgenomen run — bewust geen live demo, dus hier kan niets misgaan. Het script: cat Dockerfile (twee regels: nginx + dist), cat config/deploy.yml (wijs de twee regels aan die de bestemming bepalen: server-IP en registry), dan kamal deploy met de stopwatch in beeld — 47,3 seconden is het getal dat de zaal onthoudt — en als bewijs een dig naar het domein. Afsluiter: "deze presentatie draait nu op Europese grond." Zie DEMO.md in de repo voor het opname-draaiboek; zodra public/demo.webm bestaat speelt de slide de echte opname af.',
   },
   {
     Component: Slide21,

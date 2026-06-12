@@ -293,6 +293,14 @@ body {
 }
 @keyframes blink { 50% { opacity: 0; } }
 .terminal-body .hl-line { color: var(--gold); font-weight: 500; }
+.terminal-bar .timer {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.terminal-bar .timer + .replay { margin-left: 14px; }
 .terminal-bar .replay {
   margin-left: auto;
   background: none;

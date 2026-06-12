@@ -1,0 +1,22 @@
+# Kamal-config voor de demo: deze presentatie migreren naar Scaleway.
+# Vervang het server-IP en de hostnaam door je eigen waarden.
+service: euwest1-presentatie
+
+image: xprtz/euwest1-presentatie
+
+servers:
+  web:
+    - 51.158.234.12 # Scaleway DEV1-S · nl-ams — vervang door je eigen instance
+
+proxy:
+  ssl: true
+  host: talk.xprtz.cloud # vervang door je eigen (sub)domein
+
+registry:
+  server: rg.nl-ams.scw.cloud/euwest1-presentatie
+  username: nologin
+  password:
+    - KAMAL_REGISTRY_PASSWORD # Scaleway API secret key, zie .kamal/secrets
+
+builder:
+  arch: amd64

@@ -35,14 +35,15 @@ linken of na een refresh verdergaan waar je was.
 
 ## Demo zonder risico
 
-Slide 20 bevat een **gescripte terminal-replay** van de Azure → Scaleway
-migratie met Kamal: het `git diff` van de twee gewijzigde configregels en
-de volledige `kamal deploy`-output spelen automatisch af als een opname.
-Geen live demo, dus er kan op het podium niets misgaan. Opnieuw afspelen
-kan met de replay-knop in de terminalbalk.
+De demo van de talk is de migratie van **deze presentatie zelf**: van
+GitHub Pages (Microsoft) naar Scaleway, met Kamal. De repo bevat de echte
+migratie-artefacten (`Dockerfile`, `config/deploy.yml`); zie `DEMO.md`
+voor het volledige draaiboek, inclusief opnametips.
 
-Het script staat in `src/slides/Slide20.jsx` en is regel voor regel aan te
-passen aan de echte deploy-output.
+De demo-slide toont een **gescripte terminal-replay** (met meelopende
+stopwatch) als vangnet. Zet de echte opname als `public/demo.webm` of
+`public/demo.mp4` in de repo en de slide speelt automatisch de video af.
+Het replay-script staat in `src/slides/Slide20.jsx`.
 
 ## Structuur
 
