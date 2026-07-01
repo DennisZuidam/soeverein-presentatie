@@ -9,7 +9,7 @@ const principles = [
   {
     icon: 'globe',
     title: 'Config via environment variables',
-    text: 'Geen hardcoded credentials of regio’s in je code. Twelve-factor is geen trend — het is fundament.',
+    text: 'Geen hardcoded credentials of regio’s in je code. Twelve-factor is geen trend, maar de basis.',
   },
   {
     icon: 'filecode',
@@ -47,7 +47,7 @@ export default function Slide17() {
           </div>
           <p style={{ fontSize: 15.5, color: 'var(--muted)' }}>
             <strong style={{ color: 'var(--text)' }}>EU Data Act (2025)</strong> — cloudproviders zijn wettelijk verplicht
-            overstappen te faciliteren: geen blokkerende egress-kosten, geen data-gijzeling.
+            om overstappen mogelijk te maken: geen blokkerende egress-kosten, geen data-gijzeling.
             <strong style={{ color: 'var(--gold)' }}> Maar bouw alsof de wet niet bestaat.</strong>
           </p>
         </div>

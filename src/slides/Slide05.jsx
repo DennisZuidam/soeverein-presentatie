@@ -40,7 +40,7 @@ export default function Slide05() {
         ))}
       </div>
       <Punchline i={6}>
-        Lock-in is <span className="gold">het verdienmodel</span>, niet een bijeffect.
+        Lock-in is <span className="gold">het verdienmodel</span>, geen bijeffect.
       </Punchline>
     </Slide>
   )

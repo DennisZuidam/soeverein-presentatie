@@ -2,7 +2,7 @@ import { Slide, Reveal } from '../components/ui.jsx'
 
 const cons = [
   'Kleinere community dan AWS of Azure',
-  'Minder managed services in het portfolio',
+  'Minder managed services om uit te kiezen',
   'Minder StackOverflow-antwoorden',
   'Diepere Microsoft-integraties werken soms minder soepel',
 ]
@@ -17,7 +17,7 @@ export default function Slide18() {
   return (
     <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
       <Reveal i={1}>
-        <h2 className="title">Eerlijkheid over de gaps</h2>
+        <h2 className="title">Eerlijk over de nadelen</h2>
       </Reveal>
       <div className="cards two" style={{ flex: 1, alignItems: 'start' }}>
         <Reveal i={2} className="card" style={{ height: '100%' }}>

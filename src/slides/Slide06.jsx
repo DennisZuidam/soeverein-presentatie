@@ -9,7 +9,7 @@ const cases = [
   {
     tag: 'Follow the Money',
     title: '"Dit Amerikaanse bedrijf weet te veel over ons."',
-    text: 'FTM nam na anderhalf jaar afscheid van Cloudflare. De reden was niet een concrete dreiging, maar de leverancier zelf.',
+    text: 'FTM nam na anderhalf jaar afscheid van Cloudflare. Niet om een concrete dreiging, maar om de leverancier zelf.',
   },
   {
     tag: 'Microsoft × Franse Senaat',

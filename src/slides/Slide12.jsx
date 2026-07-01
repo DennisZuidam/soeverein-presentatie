@@ -18,7 +18,7 @@ export default function Slide12() {
       </Reveal>
       <Reveal i={4}>
         <p className="lede" style={{ marginTop: 36, fontSize: 20, maxWidth: 860 }}>
-          Geforceerde cloud-afhankelijkheid voor iets dat prima zelfstandig werkt.
+          Gedwongen afhankelijk van de cloud, voor iets dat prima op zichzelf werkt.
         </p>
       </Reveal>
       <Punchline i={5}>
