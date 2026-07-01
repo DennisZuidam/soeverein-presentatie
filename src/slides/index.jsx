@@ -25,6 +25,7 @@ import SlidePayoff from './Slide24.jsx'
 import SlidePrime from './Slide25.jsx'
 import SlideTwoMoves from './Slide26.jsx'
 import SlideHow from './Slide27.jsx'
+import SlideAiGate from './Slide28.jsx'
 
 // Verhaallijn in vier delen:
 //   Deel 1 — waarom keuzevrijheid waarde heeft (het probleem)
@@ -73,6 +74,11 @@ export const slides = [
       'Solvinity is het bedrijf achter DigiD — iedereen in deze zaal gebruikt het. 2025: Amsterdam en J&V kozen er bewust voor, juist om Amerikaanse afhankelijkheid te vermijden. November 2025: Kyndryl (ex-IBM) wil Solvinity overnemen — de soevereine keuze zou opeens Amerikaans worden. EZK blokkeerde de overname. De les: een leverancier kan van eigenaar wisselen. Het enige wat je echt in de hand hebt, is of je kunt vertrekken. Porteerbaar blijven dus.',
   },
   {
+    Component: SlideAiGate,
+    notes:
+      'De nieuwste rung op dezelfde ladder, en de meest actuele. Eerst zagen we dat je data onder de CLOUD Act valt (slide eu-west-1), toen dat een account zomaar dicht kan (ICC). Nu reikt dezelfde jurisdictie tot de AI-modellen zelf. Executive Order 14409, "Promoting Advanced Artificial Intelligence Innovation and Security", 2 juni 2026: de NSA-directeur bepaalt via een geheime benchmark wanneer een model een "covered frontier model" is, en ontwikkelaars mogen de Amerikaanse overheid tot 30 dagen vóór release toegang geven. Belangrijk om eerlijk te blijven: het is nu nog vrijwillig, geen verplichte licensing of preclearance — zeg dus "de VS bouwt een poort", niet "de VS blokkeert AI". De voorganger (de AI Diffusion Rule van jan 2025, met landentiers waarin zelfs EU-landen buiten de top vielen) is in mei 2025 ingetrokken; noem die alleen als richting, niet als geldend recht. De brug naar de rest van de talk: het antwoord is hetzelfde principe als bij de S3-API — open in plaats van closed. Open-weight modellen zoals Mistral (Frans) zijn voor AI wat open standaarden zijn voor infra. Wat open is, kan niemand poorten. Extra haakje voor later: deze EO is van 2 juni, het EU Tech Sovereignty Package van 3 juni — twee grootmachten, één dag ertussen (komt terug op de "wind in de rug"-slide). — Bronnen: whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security · skadden.com/insights/publications/2026/06/new-ai-executive-order · ropesgray.com (voluntary framework, mandatory implications)',
+  },
+  {
     Component: Slide09,
     notes:
       'De kernzin van de talk. Soevereiniteit als doel leidt tot vlaggetjes-denken. Keuzevrijheid als doel leidt tot goede architectuur — en soevereiniteit krijg je er gratis bij.',
@@ -115,7 +121,7 @@ export const slides = [
   {
     Component: Slide15,
     notes:
-      'EU Tech Sovereignty Package (3 juni 2026): open source centraal in EU-beleid, voorstel Cloud and AI Development Act, €2 miljard voor open source. De cijfers laten zien waarom: 80% van de digitale technologie geïmporteerd, 70% van de AI-modellen uit de VS. Voor de zaal: porteerbaar kunnen deployen wordt letterlijk een aanbestedingscriterium — dat is jouw skill die ineens geld waard is.',
+      'EU Tech Sovereignty Package (3 juni 2026): open source centraal in EU-beleid, voorstel Cloud and AI Development Act, €2 miljard voor open source. De cijfers laten zien waarom: 80% van de digitale technologie geïmporteerd, 70% van de AI-modellen uit de VS. Callback naar de NSA-poort-slide: die EO is van 2 juni, dit pakket van 3 juni — twee grootmachten die in dezelfde week hun AI-soevereiniteit afbakenen, de één met een poort, de ander met open source. Voor de zaal: porteerbaar kunnen deployen wordt letterlijk een aanbestedingscriterium — dat is jouw skill die ineens geld waard is.',
   },
   {
     Component: SlideContainer,
