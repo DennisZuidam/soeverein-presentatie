@@ -4,12 +4,12 @@ const cases = [
   {
     tag: 'ICC × Microsoft',
     title: 'De aanklager verloor zijn account',
-    text: 'Na een Trump-sanctie verloor de aanklager van het Internationaal Strafhof de toegang tot zijn Microsoft-account. Microsoft betwist dat het "blokkeerde" — het effect was er. De ICC stapte over op OpenDesk.',
+    text: 'Na een Trump-sanctie verloor de aanklager van het Internationaal Strafhof de toegang tot zijn Microsoft-account. Microsoft betwist dat het "blokkeerde". Het effect was er. De ICC stapte over op OpenDesk.',
   },
   {
     tag: 'Follow the Money',
     title: '"Dit Amerikaanse bedrijf weet te veel over ons."',
-    text: 'FTM nam na anderhalf jaar afscheid van Cloudflare. De reden was niet een concrete dreiging, maar de leverancier zelf.',
+    text: 'FTM nam na anderhalf jaar afscheid van Cloudflare. Niet om een concrete dreiging, maar om de leverancier zelf.',
   },
   {
     tag: 'Microsoft × Franse Senaat',
@@ -20,7 +20,7 @@ const cases = [
 
 export default function Slide06() {
   return (
-    <Slide kicker="Deel 1 — Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
       <Reveal i={1}>
         <h2 className="title">Dan komt de buitenwereld erbij</h2>
       </Reveal>

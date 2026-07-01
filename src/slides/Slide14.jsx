@@ -5,14 +5,14 @@ const movers = [
   { who: 'FTM · Correspondent · Firewall', tag: 'Europees gekozen', what: 'Migratie weg van Amerikaanse tools, transparant en in het openbaar. The Firewall procedeerde zelfs tegen de Solvinity-overname.' },
   { who: 'Airbus', tag: 'Europees gekozen', what: 'Aanbesteding (jan 2026, €50M+) voor bedrijfskritische apps. Schat zelf 80% kans op een geschikte EU-provider.' },
   { who: 'Gemeente Amsterdam', tag: 'Europees gekozen', what: 'Digitale autonomie als inkoopcriterium (2025). Koos KPN voor soevereine cloud (€74M).' },
-  { who: 'Rijksoverheid', tag: 'Europees + exit geregeld', gold: true, what: 'Raamovereenkomst met STACKIT (Schwarz Gruppe), april 2026 — inclusief exitclausule bij overname buiten de EER.' },
+  { who: 'Rijksoverheid', tag: 'Europees + exit geregeld', gold: true, what: 'Raamovereenkomst met STACKIT (Schwarz Gruppe), april 2026, inclusief exitclausule bij overname buiten de EER.' },
   { who: 'De Nederlandsche Bank', tag: 'Europees gekozen', what: 'Contract met STACKIT om afhankelijkheid van Amerikaanse cloud te verminderen.' },
   { who: 'DNS4EU', tag: 'Europees gebouwd', what: 'Europese DNS-resolver van de EU. Draait op Europese infra (Scaleway, Hetzner).' },
 ]
 
 export default function Slide14() {
   return (
-    <Slide kicker="Deel 2 — Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
       <Reveal i={1}>
         <h2 className="title">De beweging is al gaande</h2>
       </Reveal>
@@ -27,7 +27,7 @@ export default function Slide14() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={7} sub="En let op de Rijksoverheid: bestemming én exit contractueel geregeld — dat is allebei.">
+      <Punchline i={7} sub="En let op de Rijksoverheid: bestemming én exit contractueel geregeld. Dat is allebei.">
         De gemeenschappelijke deler: <span className="gold">niemand deed dit omdat het moest.</span>
       </Punchline>
     </Slide>

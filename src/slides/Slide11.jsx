@@ -2,7 +2,7 @@ import { Slide, Reveal } from '../components/ui.jsx'
 
 export default function Slide11() {
   return (
-    <Slide kicker="Deel 2 — Wie zichzelf al de vrijheid gaf" className="center">
+    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf" className="center">
       <Reveal i={1} className="quote-mark" style={{ alignSelf: 'flex-start', marginLeft: 100 }}>“</Reveal>
       <Reveal i={1}>
         <p className="quote large">

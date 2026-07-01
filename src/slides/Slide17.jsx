@@ -9,7 +9,7 @@ const principles = [
   {
     icon: 'globe',
     title: 'Config via environment variables',
-    text: 'Geen hardcoded credentials of regio’s in je code. Twelve-factor is geen trend — het is fundament.',
+    text: 'Geen hardcoded credentials of regio’s in je code. Twelve-factor is geen trend, maar de basis.',
   },
   {
     icon: 'filecode',
@@ -19,13 +19,13 @@ const principles = [
   {
     icon: 'box',
     title: 'Stateless applicaties',
-    text: 'State hoort in een database of object storage — niet in je container.',
+    text: 'State hoort in een database of object storage, niet in je container.',
   },
 ]
 
 export default function Slide17() {
   return (
-    <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
+    <Slide kicker="Deel 3 · Zo bouw je voor keuzevrijheid">
       <Reveal i={1}>
         <h2 className="title">Hoe bouw je voor keuzevrijheid</h2>
       </Reveal>
@@ -46,8 +46,8 @@ export default function Slide17() {
             <Icon name="scale" />
           </div>
           <p style={{ fontSize: 15.5, color: 'var(--muted)' }}>
-            <strong style={{ color: 'var(--text)' }}>EU Data Act (2025)</strong> — cloudproviders zijn wettelijk verplicht
-            overstappen te faciliteren: geen blokkerende egress-kosten, geen data-gijzeling.
+            <strong style={{ color: 'var(--text)' }}>EU Data Act (2025)</strong>: cloudproviders zijn wettelijk verplicht
+            om overstappen mogelijk te maken. Geen blokkerende egress-kosten, geen data-gijzeling.
             <strong style={{ color: 'var(--gold)' }}> Maar bouw alsof de wet niet bestaat.</strong>
           </p>
         </div>

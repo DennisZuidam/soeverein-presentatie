@@ -2,22 +2,22 @@ import { Slide, Reveal } from '../components/ui.jsx'
 
 const cons = [
   'Kleinere community dan AWS of Azure',
-  'Minder managed services in het portfolio',
+  'Minder managed services om uit te kiezen',
   'Minder StackOverflow-antwoorden',
   'Diepere Microsoft-integraties werken soms minder soepel',
 ]
 
 const pros = [
-  'Voor een standaard cloud-native stack — compute, opslag, Kubernetes, database — is het verschil klein',
+  'Voor een standaard cloud-native stack (compute, opslag, Kubernetes, database) is het verschil klein',
   'En het wordt elk jaar kleiner',
   'Bouw je op open standaarden, dan kun je ook altijd terug',
 ]
 
 export default function Slide18() {
   return (
-    <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
+    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
       <Reveal i={1}>
-        <h2 className="title">Eerlijkheid over de gaps</h2>
+        <h2 className="title">Eerlijk: waar alternatieven inleveren</h2>
       </Reveal>
       <div className="cards two" style={{ flex: 1, alignItems: 'start' }}>
         <Reveal i={2} className="card" style={{ height: '100%' }}>

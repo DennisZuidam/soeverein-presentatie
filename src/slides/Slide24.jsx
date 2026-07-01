@@ -9,7 +9,7 @@ const wins = [
   {
     icon: 'standard',
     title: 'Betere architectuur',
-    text: 'De keuzes die je porteerbaar maken — stateless, twelve-factor, infra als code — maken je systeem ook testbaar en begrijpelijk.',
+    text: 'De keuzes die je porteerbaar maken (stateless, twelve-factor, infra als code) maken je systeem ook testbaar en begrijpelijk.',
   },
   {
     icon: 'box',
@@ -25,7 +25,7 @@ const wins = [
 
 export default function SlidePayoff() {
   return (
-    <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
+    <Slide kicker="Deel 3 · Zo bouw je voor keuzevrijheid">
       <Reveal i={1}>
         <h2 className="title">Dit krijg je ervoor terug</h2>
       </Reveal>
@@ -41,7 +41,7 @@ export default function SlidePayoff() {
         ))}
       </div>
       <Punchline i={6}>
-        Geen verzekering die geld kost — <span className="gold">architectuur die zich dubbel terugbetaalt.</span>
+        Geen verzekering die geld kost, maar <span className="gold">architectuur die zich dubbel terugbetaalt.</span>
       </Punchline>
     </Slide>
   )

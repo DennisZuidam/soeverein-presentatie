@@ -7,7 +7,7 @@ const facts = [
   },
   {
     title: 'De realiteit',
-    text: 'Vastgelopen op 5% van de verwachte load. Step Functions rekent per state-transitie — meerdere per seconde stream.',
+    text: 'Vastgelopen op 5% van de verwachte load. Step Functions rekent per state-transitie, meerdere per seconde stream.',
   },
   {
     title: 'De oplossing',
@@ -17,7 +17,7 @@ const facts = [
 
 export default function SlidePrime() {
   return (
-    <Slide kicker="Deel 2 — Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
       <Reveal i={1}>
         <h2 className="title">Zelfs AWS-teams kiezen opnieuw</h2>
       </Reveal>
@@ -42,7 +42,7 @@ export default function SlidePrime() {
         </div>
       </div>
       <Punchline i={6}>
-        Niet de managed service is het doel — <span className="gold">de passende architectuur.</span>
+        Niet de managed service is het doel, maar <span className="gold">de passende architectuur.</span>
       </Punchline>
     </Slide>
   )

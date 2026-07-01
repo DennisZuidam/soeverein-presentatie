@@ -9,13 +9,13 @@ const runsOn = [
 
 export default function SlideContainer() {
   return (
-    <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
+    <Slide kicker="Deel 3 · Zo bouw je voor keuzevrijheid">
       <Reveal i={1}>
         <h2 className="title">De container is je exitstrategie</h2>
       </Reveal>
       <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 40, alignItems: 'start' }}>
         <Reveal i={2}>
-          <Terminal title="~/app — bash">
+          <Terminal title="~/app · bash">
             <span className="prompt">$</span> docker build -t app .{'\n'}
             <span className="prompt">$</span> docker run -p 8080:8080 app{'\n'}
             <span className="dim">Listening on :8080</span>

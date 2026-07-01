@@ -6,7 +6,7 @@ const cases = [
     what: 'cloud-exit naar eigen infra',
     steps: [
       'Apps zaten al in Docker-containers',
-      'Bouwde Kamal als deploy-tool — open source',
+      'Bouwde Kamal als deploy-tool (open source)',
       'RDS → Percona MySQL 8 op bare metal',
       'S3 → 18 PB Pure Storage, dual datacenter',
     ],
@@ -15,7 +15,7 @@ const cases = [
     who: 'ICC',
     what: 'weg van Microsoft 365',
     steps: [
-      'openDesk — open source suite van ZenDiS',
+      'openDesk: open source suite van ZenDiS',
       'Collabora → documenten in de browser',
       'Nextcloud → bestanden · Open-Xchange → mail',
       'OpenProject → projecten',
@@ -35,7 +35,7 @@ const cases = [
 
 export default function SlideHow() {
   return (
-    <Slide kicker="Deel 2 — Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
       <Reveal i={1}>
         <h2 className="title">Hoe dan? De concrete stappen</h2>
       </Reveal>

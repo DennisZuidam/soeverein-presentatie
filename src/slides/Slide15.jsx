@@ -8,13 +8,13 @@ const stats = [
 
 export default function Slide15() {
   return (
-    <Slide kicker="Deel 2 — Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
       <Reveal i={1}>
         <h2 className="title">De wind staat in je rug</h2>
       </Reveal>
       <Reveal i={2}>
         <div className="card" style={{ marginBottom: 22, borderColor: 'rgba(110,160,255,0.35)' }}>
-          <div className="card-tag">EU Tech Sovereignty Package — 3 juni 2026</div>
+          <div className="card-tag">EU Tech Sovereignty Package · 3 juni 2026</div>
           <p style={{ fontSize: 17, lineHeight: 1.6, color: 'var(--text)' }}>
             Voor het eerst staat open source centraal in EU-beleid: een Open Source Strategy,
             een voorstel voor een <strong>Cloud and AI Development Act</strong> en <strong>€2 miljard</strong> voor

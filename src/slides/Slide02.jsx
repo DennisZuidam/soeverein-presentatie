@@ -25,7 +25,7 @@ export default function Slide02() {
         ))}
       </div>
       <Punchline i={7}>
-        Vandaag niet als verkoper — als iemand die zelf bouwt en draait op een Europese cloud.
+        Vandaag niet als verkoper, maar als iemand die zelf bouwt en draait op een Europese cloud.
       </Punchline>
     </Slide>
   )
