@@ -151,7 +151,7 @@ export default function App() {
 
       {showNotes && (
         <div className="notes-panel">
-          <div className="label">Sprekersnotities — slide {index + 1}</div>
+          <div className="label">Sprekersnotities · slide {index + 1}</div>
           <p>{notes || 'Geen notities voor deze slide.'}</p>
         </div>
       )}
@@ -163,7 +163,7 @@ export default function App() {
             <path d="M20 8a8 8 0 0 0-3-4M4 16a8 8 0 0 0 3 4" />
           </svg>
           <p>
-            Draai je telefoon — deze presentatie is gemaakt
+            Draai je telefoon, deze presentatie is gemaakt
             <br />
             voor liggend beeld.
           </p>
@@ -172,7 +172,7 @@ export default function App() {
       )}
 
       <div className="chrome">
-        <span className="deck-title">eu-west-1 is nog geen Europa — Dennis Zuidam · XPRTZ</span>
+        <span className="deck-title">eu-west-1 is nog geen Europa · Dennis Zuidam · XPRTZ</span>
         <div className="right">
           <span className="keys-hint" style={{ opacity: 0.7 }}>←/→ navigeren · N notities · F fullscreen</span>
           <span className="counter">

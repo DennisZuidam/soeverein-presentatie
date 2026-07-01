@@ -14,12 +14,12 @@ const steps = [
   {
     n: '03',
     title: 'Schrijf je infra als code',
-    text: 'Terraform of Pulumi. Staat je infra in code, dan is een provider-wissel een pull request — geen migratie.',
+    text: 'Terraform of Pulumi. Staat je infra in code, dan is een provider-wissel een pull request, geen migratie.',
   },
   {
     n: '04',
     title: 'Oefen je exit',
-    text: 'Deploy in CI óók eens naar een tweede provider. Een exit die je nooit geoefend hebt bestaat niet — net als een backup die je nooit hebt teruggezet.',
+    text: 'Deploy in CI óók eens naar een tweede provider. Een exit die je nooit geoefend hebt bestaat niet, net als een backup die je nooit hebt teruggezet.',
   },
 ]
 

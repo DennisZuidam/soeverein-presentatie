@@ -26,6 +26,7 @@ import SlidePrime from './Slide25.jsx'
 import SlideTwoMoves from './Slide26.jsx'
 import SlideHow from './Slide27.jsx'
 import SlideAiGate from './Slide28.jsx'
+import SlideTransition from './Slide29.jsx'
 
 // Verhaallijn in vier delen:
 //   Deel 1 — waarom keuzevrijheid waarde heeft (het probleem)
@@ -124,29 +125,34 @@ export const slides = [
       'EU Tech Sovereignty Package (3 juni 2026): open source centraal in EU-beleid, voorstel Cloud and AI Development Act, €2 miljard voor open source. De cijfers laten zien waarom: 80% van de digitale technologie geïmporteerd, 70% van de AI-modellen uit de VS. Callback naar de NSA-poort-slide: die EO is van 2 juni, dit pakket van 3 juni — twee grootmachten die in dezelfde week hun AI-soevereiniteit afbakenen, de één met een poort, de ander met open source. Voor de zaal: porteerbaar kunnen deployen wordt letterlijk een aanbestedingscriterium — dat is jouw skill die ineens geld waard is.',
   },
   {
-    Component: SlideContainer,
-    notes:
-      'Nu het engineering-deel. De container is het hele verhaal in één artefact: OCI is een open standaard, dus elke runtime, registry en orchestrator kan ermee overweg. Dezelfde image draait op je laptop, op Azure, op Scaleway, op de server in de meterkast. En hetzelfde geldt voor data: de S3-API is de standaard, dus de wissel naar Scaleway Object Storage (of MinIO, of Hetzner) is letterlijk één regel — endpoint_url aanpassen. Dezelfde aws-cli en rclone werken ongewijzigd. — Bron: scaleway.com/en/docs/object-storage/api-cli/object-storage-aws-cli',
-  },
-  {
     Component: Slide16,
     notes:
-      'Loop de lagen langs. De linkerkolom is waar je nu waarschijnlijk zit, de rechterkolom is de open standaard. Groen betekent: de standaard bestaat al, je hoeft alleen de provider te kiezen. Observability als illustratie: Coinbase betaalde Datadog $65 miljoen voor één jaar (2021) — ontdekt via een earnings call en teruggerekend door een JPMorgan-analist. Ze wilden in-house gaan voor "full control and ownership", Datadog redde het contract met een deal. DNS-rij: DNS4EU draait op Knot Resolver 6, open source van CZ.NIC — dezelfde software die delen van Cloudflare aandrijft. 100% EU-gehost, anycast dat Europese geo-nabijheid prioriteert. — Bronnen: newsletter.pragmaticengineer.com/p/datadogs-65m-year-customer-mystery · whalebone.io/dns4eu',
-  },
-  {
-    Component: Slide17,
-    notes:
-      'Vier bouwprincipes: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Voor identity: bouw tegen OIDC/OAuth2 in plaats van Cognito/Entra-SDK\'s — dan is de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). De Data Act werkt nu al: alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten (Google januari, AWS maart, Azure maart — al eist Azure dat je je account binnen 60 dagen sluit). Vanaf januari 2027 zijn switching fees volledig verboden. Maar bouw alsof die wet niet bestaat, dan heb je hem ook niet nodig. — Bronnen: aws.amazon.com/blogs/aws/free-data-transfer-out-to-internet-when-moving-out-of-aws · ciodive.com (Azure) · european-alternatives.eu/alternative-to/auth0',
-  },
-  {
-    Component: SlidePayoff,
-    notes:
-      'Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij — als bijproduct.',
+      'Loop de lagen langs. De linkerkolom is waar je nu waarschijnlijk zit, de rechterkolom is de open standaard. Groen betekent: de standaard bestaat al, je hoeft alleen de provider te kiezen. Observability als illustratie: Coinbase betaalde Datadog $65 miljoen voor één jaar (2021), ontdekt via een earnings call en teruggerekend door een JPMorgan-analist. Ze wilden in-house gaan voor "full control and ownership", Datadog redde het contract met een deal. DNS-rij: DNS4EU draait op Knot Resolver 6, open source van CZ.NIC, dezelfde software die delen van Cloudflare aandrijft. 100% EU-gehost, anycast dat Europese geo-nabijheid prioriteert. Bronnen: newsletter.pragmaticengineer.com/p/datadogs-65m-year-customer-mystery · whalebone.io/dns4eu',
   },
   {
     Component: Slide18,
     notes:
-      'Eerlijk zijn: kleinere community, minder managed services, minder StackOverflow-antwoorden, Microsoft-integraties soms stroever. Maar voor een standaard cloud-native stack is het verschil klein en het wordt kleiner. En wie op open standaarden bouwt, kan ook altijd terug.',
+      'Eerlijk zijn: kleinere community, minder managed services, minder StackOverflow-antwoorden, Microsoft-integraties soms stroever. Maar voor een standaard cloud-native stack is het verschil klein en het wordt kleiner. En wie op open standaarden bouwt, kan ook altijd terug. Deze slide sluit Deel 2 af: de alternatieven zijn echt, met eerlijke kanttekeningen.',
+  },
+  {
+    Component: SlideTransition,
+    notes:
+      'Korte adempauze en een scherpe knik: klaar met waarom en wie. Deel 3 gaat over jou. Hoe bouw je zo dat van provider wisselen een keuze blijft en geen migratieproject wordt? Drie dingen komen eraan: een container, een paar principes, en de payoff.',
+  },
+  {
+    Component: SlideContainer,
+    notes:
+      'De container is het hele verhaal in één artefact: OCI is een open standaard, dus elke runtime, registry en orchestrator kan ermee overweg. Dezelfde image draait op je laptop, op Azure, op Scaleway, op de server in de meterkast. En hetzelfde geldt voor data: de S3-API is de standaard, dus de wissel naar Scaleway Object Storage (of MinIO, of Hetzner) is letterlijk één regel: endpoint_url aanpassen. Dezelfde aws-cli en rclone werken ongewijzigd. Bron: scaleway.com/en/docs/object-storage/api-cli/object-storage-aws-cli',
+  },
+  {
+    Component: Slide17,
+    notes:
+      'Vier bouwprincipes: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Voor identity: bouw tegen OIDC/OAuth2 in plaats van Cognito/Entra-SDK\'s, dan is de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). De Data Act werkt nu al: alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten (Google januari, AWS maart, Azure maart, al eist Azure dat je je account binnen 60 dagen sluit). Vanaf januari 2027 zijn switching fees volledig verboden. Maar bouw alsof die wet niet bestaat, dan heb je hem ook niet nodig. Bronnen: aws.amazon.com/blogs/aws/free-data-transfer-out-to-internet-when-moving-out-of-aws · ciodive.com (Azure) · european-alternatives.eu/alternative-to/auth0',
+  },
+  {
+    Component: SlidePayoff,
+    notes:
+      'Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij, als bijproduct.',
   },
   {
     Component: Slide19,

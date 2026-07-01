@@ -57,7 +57,7 @@ function useRecordedVideo() {
             return
           }
         } catch {
-          // bestand bestaat niet — scripted replay als vangnet
+          // bestand bestaat niet, scripted replay als vangnet
         }
       }
     })()
@@ -70,12 +70,12 @@ export default function Slide20() {
   const video = useRecordedVideo()
 
   return (
-    <Slide kicker="Deel 4 — Demo">
+    <Slide kicker="Deel 4 · Demo">
       <Reveal i={1}>
         <h2 className="title" style={{ marginBottom: 24 }}>
           Deze presentatie, van Microsoft naar Europese grond
           <span className="muted" style={{ display: 'block', fontSize: 18, fontWeight: 450, marginTop: 8, letterSpacing: 0 }}>
-            Opgenomen run — exact deze commando's.
+            Opgenomen run, exact deze commando's.
           </span>
         </h2>
       </Reveal>
@@ -86,14 +86,14 @@ export default function Slide20() {
               <span className="dot r" />
               <span className="dot y" />
               <span className="dot g" />
-              <span className="terminal-title">migratie — opname</span>
+              <span className="terminal-title">migratie · opname</span>
             </div>
             <video src={video} controls style={{ flex: 1, minHeight: 0, width: '100%', background: '#0d111a' }} />
           </div>
         ) : (
           <TerminalPlayer
             script={script}
-            title="migratie van deze presentatie — opgenomen"
+            title="migratie van deze presentatie · opgenomen"
             timer={{ target: 47.3, playbackMs: 8800 }}
           />
         )}

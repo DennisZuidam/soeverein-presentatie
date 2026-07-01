@@ -2,7 +2,7 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 export default function Slide19() {
   return (
-    <Slide kicker="Deel 4 — Demo">
+    <Slide kicker="Deel 4 · Demo">
       <Reveal i={1}>
         <h2 className="title">De demo: deze presentatie</h2>
       </Reveal>
@@ -32,7 +32,7 @@ export default function Slide19() {
         </p>
       </Reveal>
       <Punchline i={6}>
-        Scaleway is het voorbeeld — het had <span className="gold">elke provider</span> kunnen zijn.
+        Scaleway is het voorbeeld. Het had <span className="gold">elke provider</span> kunnen zijn.
       </Punchline>
     </Slide>
   )

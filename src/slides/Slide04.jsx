@@ -8,13 +8,13 @@ const reasons = [
 
 export default function Slide04() {
   return (
-    <Slide kicker="Deel 1 — Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
       <Reveal i={1}>
         <h2 className="title">Defaults zijn geen keuzes</h2>
       </Reveal>
       <div style={{ display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: 40, alignItems: 'start' }}>
         <Reveal i={2}>
-          <Terminal title="~ — bash">
+          <Terminal title="~ · bash">
             <span className="prompt">$</span> aws configure{'\n'}
             <span className="dim">AWS Access Key ID:</span> ••••••••{'\n'}
             <span className="dim">AWS Secret Access Key:</span> ••••••••{'\n'}
@@ -38,7 +38,7 @@ export default function Slide04() {
         </div>
       </div>
       <Punchline i={7}>
-        Zo begint lock-in. Niet met een handtekening — <span className="gold">met een README.</span>
+        Zo begint lock-in. Niet met een handtekening, maar <span className="gold">met een README.</span>
       </Punchline>
     </Slide>
   )

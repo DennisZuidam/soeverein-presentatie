@@ -3,7 +3,7 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 const rungs = [
   {
     what: 'Je data',
-    role: 'Ligt op EU-servers — valt onder de CLOUD Act',
+    role: 'Ligt op EU-servers, valt onder de CLOUD Act',
     now: false,
   },
   {
@@ -20,7 +20,7 @@ const rungs = [
 
 export default function SlideAiGate() {
   return (
-    <Slide kicker="Deel 1 — Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
       <Reveal i={1}>
         <h2 className="title">
           En nu ook de modellen zelf
@@ -43,7 +43,7 @@ export default function SlideAiGate() {
       </div>
       <Punchline
         i={6}
-        sub="Vrijwillig — voorlopig. Het antwoord blijft hetzelfde als bij opslag: open weights, zoals Mistral. Wat open is, kan niemand voor je afsluiten."
+        sub="Vrijwillig, voorlopig. Het antwoord blijft hetzelfde als bij opslag: open weights, zoals Mistral. Wat open is, kan niemand voor je afsluiten."
       >
         Eerst je data. Toen je toegang. <span className="gold">Nu de modellen.</span>
       </Punchline>

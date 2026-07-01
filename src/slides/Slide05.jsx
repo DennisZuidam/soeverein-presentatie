@@ -5,7 +5,7 @@ const locks = [
     icon: 'database',
     tag: 'je data',
     title: 'DynamoDB',
-    text: 'Gekozen omdat Postgres "te veel werk" leek. Nu is migreren maanden werk — het draait nergens anders.',
+    text: 'Gekozen omdat Postgres "te veel werk" leek. Nu is migreren maanden werk; het draait nergens anders.',
   },
   {
     icon: 'lock',
@@ -23,7 +23,7 @@ const locks = [
 
 export default function Slide05() {
   return (
-    <Slide kicker="Deel 1 — Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
       <Reveal i={1}>
         <h2 className="title">Zo ziet lock-in eruit</h2>
       </Reveal>

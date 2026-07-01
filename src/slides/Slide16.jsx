@@ -2,18 +2,18 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 const rows = [
   ['CDN / DDoS', 'Cloudflare', 'Meerdere Europese CDN-providers beschikbaar'],
-  ['DNS', '1.1.1.1 · 8.8.8.8', 'DNS4EU — Europees, draait op EU-infra'],
-  ['Code hosting', 'GitHub (Microsoft)', 'Git is open — self-host op elke server'],
+  ['DNS', '1.1.1.1 · 8.8.8.8', 'DNS4EU: Europees, draait op EU-infra'],
+  ['Code hosting', 'GitHub (Microsoft)', 'Git is open, self-host op elke server'],
   ['Compute', 'EC2 · Azure VM', 'Elke VPS- of bare-metal-provider'],
-  ['Kubernetes', 'EKS · AKS (vendor-specifiek)', 'K8s is de standaard — draait overal'],
-  ['Object storage', 'S3 · Azure Blob', 'S3 API is open — MinIO, Hetzner, eigen infra'],
-  ['Observability', 'Datadog', 'OpenTelemetry + Prometheus — draait overal'],
+  ['Kubernetes', 'EKS · AKS (vendor-specifiek)', 'K8s is de standaard, draait overal'],
+  ['Object storage', 'S3 · Azure Blob', 'S3 API is open: MinIO, Hetzner, eigen infra'],
+  ['Observability', 'Datadog', 'OpenTelemetry + Prometheus, draait overal'],
   ['Enterprise / overheid', 'Azure Gov · AWS GovCloud', 'Europees eigendom, open contracten'],
 ]
 
 export default function Slide16() {
   return (
-    <Slide kicker="Deel 3 — Zo bouw je voor keuzevrijheid">
+    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
       <Reveal i={1}>
         <h2 className="title" style={{ marginBottom: 26 }}>De kaart van je stack</h2>
       </Reveal>
@@ -39,7 +39,7 @@ export default function Slide16() {
           </tbody>
         </table>
       </Reveal>
-      <Punchline i={4} sub="Observability ter illustratie: Coinbase betaalde Datadog $65 miljoen — voor één jaar.">
+      <Punchline i={4} sub="Observability ter illustratie: Coinbase betaalde Datadog $65 miljoen. Voor één jaar.">
         <span className="green">Groen</span> = de standaard bestaat. De provider is jouw keuze.
       </Punchline>
     </Slide>

@@ -4,7 +4,7 @@ const moments = [
   {
     when: '2025',
     title: 'Solvinity gekozen',
-    text: 'Amsterdam en het ministerie van J&V kiezen bewust voor de Nederlandse provider achter DigiD — juist om Amerikaanse afhankelijkheid te vermijden.',
+    text: 'Amsterdam en het ministerie van J&V kiezen bewust voor de Nederlandse provider achter DigiD, juist om Amerikaanse afhankelijkheid te vermijden.',
   },
   {
     when: "nov '25",
@@ -14,18 +14,18 @@ const moments = [
   {
     when: 'daarna',
     title: 'Overname geblokkeerd',
-    text: 'Het ministerie van EZK blokkeert de overname. Het contract blijft staan — maar de boodschap is duidelijk.',
+    text: 'Het ministerie van EZK blokkeert de overname. Het contract blijft staan, maar de boodschap is duidelijk.',
   },
 ]
 
 export default function Slide08() {
   return (
-    <Slide kicker="Deel 1 — Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
       <Reveal i={1}>
         <h2 className="title">
           En kies je wél Europees?
           <span className="muted" style={{ display: 'block', fontSize: 19, fontWeight: 450, marginTop: 10, letterSpacing: 0 }}>
-            Solvinity — het bedrijf achter DigiD. Iedereen hier gebruikt het.
+            Solvinity: het bedrijf achter DigiD. Iedereen hier gebruikt het.
           </span>
         </h2>
       </Reveal>
