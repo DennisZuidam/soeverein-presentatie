@@ -13,7 +13,7 @@ const rows = [
 
 export default function Slide16() {
   return (
-    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zich al bevrijdde">
       <Reveal i={1}>
         <h2 className="title" style={{ marginBottom: 26 }}>De kaart van je stack</h2>
       </Reveal>

@@ -2,7 +2,7 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 export default function SlideTwoMoves() {
   return (
-    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zich al bevrijdde">
       <Reveal i={1}>
         <h2 className="title">
           Europees kiezen <span className="gold">≠</span> keuzevrijheid

@@ -1,19 +1,20 @@
 import { Slide, Reveal } from '../components/ui.jsx'
 
-export default function SlideTransition() {
+// Divider Deel 3
+export default function SlideDivider3() {
   return (
-    <Slide kicker="Deel 3 · Zo bouw je voor keuzevrijheid" className="center">
+    <Slide kicker="Deel 3 · Hoe je het zelf bouwt" className="center">
       <Reveal i={0}>
-        <h2 className="display" style={{ fontSize: 84 }}>
-          Zij deden het.
+        <h2 className="display" style={{ fontSize: 78 }}>
+          De container is
           <br />
-          <span className="gold">Nu jij.</span>
+          het <span className="gold">makkelijke</span> deel.
         </h2>
       </Reveal>
       <Reveal i={2}>
-        <p className="lede" style={{ marginTop: 40, maxWidth: 820 }}>
-          Hoe bouw je zo dat wisselen van provider een keuze blijft,
-          en geen project wordt?
+        <p className="lede" style={{ marginTop: 38, maxWidth: 900 }}>
+          Nu de rest: je data, je identiteit, en het aantal partijen dat je provider kan dwingen.
+          Daar zit de lock-in, en daar begint jouw werk.
         </p>
       </Reveal>
     </Slide>

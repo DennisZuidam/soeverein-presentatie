@@ -26,14 +26,27 @@ Neem de terminal op met je normale schermrecorder (QuickTime/OBS), of gebruik
 `asciinema rec` als je een tekstopname wilt. Opnametips:
 
 - Terminal fullscreen, donker thema, lettergrootte 18+ (leesbaar achterin de zaal).
+- De demo migreert een **app plus PostgreSQL** van een US-provider naar Scaleway
+  nl-ams. De hele pointe is het contrast: de container is in seconden klaar, de
+  data duurt tientallen minuten. Dat verschil is de boodschap.
 - Script van de opname (exact wat de slide nu ook als replay toont):
-  1. `cat Dockerfile` — laat zien: twee regels.
-  2. `cat config/deploy.yml` — wijs de twee regels aan die de bestemming bepalen.
-  3. `kamal deploy` — laat de hele run lopen; de eindtijd is je nummer.
-  4. `dig +short talk.xprtz.cloud` — het bewijs.
-- Doe eerst een oefenrun (image staat dan gecached en de echte run is snel en strak).
+  1. `kamal deploy` — container healthy in nl-ams, noteer de tijd (bijv. 8,4s).
+  2. `kamal app exec 'rails runner "puts DB.host"'` — bewijs dat de app nog naar
+     `us-east-1` praat. Dáár zit de coercion point, niet in de container.
+  3. `pg_dump` van de bron, dan `pg_restore` naar de Scaleway-database. Laat de
+     omvang (GB) en de tijd (minuten, vooral index-herbouw) zichtbaar staan.
+     Optioneel: benoem logical replication voor near-zero-downtime.
+  4. `kamal env push && kamal app boot` — cutover; `curl /up` toont `db: nl-ams`.
+  5. `git diff config/deploy.yml` — één regel wisselt Scaleway voor Hetzner of
+     STACKIT. Sterkste slotbeeld: keuzevrijheid is een one-liner, de state was
+     het werk.
+- Houd secrets buiten beeld: gebruik `$SOURCE_URL` / `$TARGET_URL` uit de env.
+- Knip het `pg_restore`-wachten strak in, maar laat de timer/omvang staan.
+- Doe eerst een oefenrun (image gecached, en je weet hoe lang de restore duurt).
 - Laat fouten die je tegenkomt in de voorbereiding niet weggooien — dat is
   materiaal voor een "wat er misging"-moment in de talk.
+- Een simpelere variant blijft mogelijk: migreer alleen deze (stateless)
+  presentatie. Dan is er geen datastap, maar ook geen contrast om te laten zien.
 
 ## 3. De opname in de presentatie zetten
 

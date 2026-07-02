@@ -20,7 +20,7 @@ const moments = [
 
 export default function Slide08() {
   return (
-    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom je vastzit">
       <Reveal i={1}>
         <h2 className="title">
           En kies je wél Europees?

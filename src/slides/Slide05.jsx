@@ -23,7 +23,7 @@ const locks = [
 
 export default function Slide05() {
   return (
-    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom je vastzit">
       <Reveal i={1}>
         <h2 className="title">Zo ziet lock-in eruit</h2>
       </Reveal>

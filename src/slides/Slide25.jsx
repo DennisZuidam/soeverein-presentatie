@@ -17,7 +17,7 @@ const facts = [
 
 export default function SlidePrime() {
   return (
-    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zich al bevrijdde">
       <Reveal i={1}>
         <h2 className="title">Zelfs AWS-teams kiezen opnieuw</h2>
       </Reveal>

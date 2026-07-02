@@ -12,7 +12,7 @@ const movers = [
 
 export default function Slide14() {
   return (
-    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zich al bevrijdde">
       <Reveal i={1}>
         <h2 className="title">De beweging is al gaande</h2>
       </Reveal>

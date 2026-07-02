@@ -20,7 +20,7 @@ const cases = [
 
 export default function Slide06() {
   return (
-    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom je vastzit">
       <Reveal i={1}>
         <h2 className="title">Dan komt de buitenwereld erbij</h2>
       </Reveal>
