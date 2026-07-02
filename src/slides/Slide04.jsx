@@ -8,7 +8,7 @@ const reasons = [
 
 export default function Slide04() {
   return (
-    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom je vastzit">
       <Reveal i={1}>
         <h2 className="title">Defaults zijn geen keuzes</h2>
       </Reveal>

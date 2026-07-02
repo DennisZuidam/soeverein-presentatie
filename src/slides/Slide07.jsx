@@ -9,7 +9,7 @@ const rows = [
 
 export default function Slide07() {
   return (
-    <Slide kicker="Deel 1 · Waarom keuzevrijheid waarde heeft">
+    <Slide kicker="Deel 1 · Waarom je vastzit">
       <Reveal i={1}>
         <h2 className="title">
           <span className="mono accent" style={{ fontWeight: 600 }}>eu-west-1</span> klinkt Europees.

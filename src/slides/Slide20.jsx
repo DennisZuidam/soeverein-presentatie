@@ -4,43 +4,43 @@ import TerminalPlayer from '../components/TerminalPlayer.jsx'
 
 const out = (text, cls, delay) => ({ type: 'out', text, cls, delay })
 
-// Gescripte replay van de migratie van deze presentatie zelf.
-// Zodra public/demo.webm of public/demo.mp4 bestaat (de echte opname),
-// speelt de slide die af in plaats van dit script.
+// Gescripte replay van de uitgebreide migratie: app + PostgreSQL van us-east
+// naar Scaleway nl-ams met Kamal. Toont dat de container triviaal is en de
+// data het echte werk. Zodra public/demo.webm bestaat speelt de echte opname.
 const script = [
-  { type: 'cmd', text: 'cat Dockerfile', after: 500 },
-  out('FROM nginx:alpine', 'dim'),
-  out('COPY dist/ /usr/share/nginx/html/', 'dim', 300),
-  { type: 'gap', delay: 900 },
-  { type: 'cmd', text: 'cat config/deploy.yml', after: 500 },
-  out('service: euwest1-presentatie', 'dim'),
-  out('servers:', 'dim'),
-  out('  web:', 'dim'),
-  out('    - 51.158.234.12          # Scaleway DEV1-S · nl-ams', 'add'),
-  out('registry:', 'dim'),
-  out('  server: rg.nl-ams.scw.cloud/presentatie', 'add'),
-  out('proxy:', 'dim'),
-  out('  host: talk.xprtz.cloud', 'dim', 300),
-  { type: 'gap', delay: 1000 },
-  { type: 'cmd', text: 'kamal deploy', after: 400 },
-  { type: 'timer-start' },
-  out('Acquiring the deploy lock...', 'dim', 600),
-  out('Building image presentatie:4f7d2e9...', 'dim', 900),
-  out('  => exporting to image                             1.2s', 'dim', 500),
-  out('Pushing image to rg.nl-ams.scw.cloud...', 'dim', 900),
-  out('Ensuring kamal-proxy is running on 51.158.234.12...', 'dim', 700),
-  out('Starting new container 4f7d2e9...', 'dim', 700),
-  out('Waiting for container to become healthy... (1/3)', 'dim', 800),
+  { type: 'cmd', text: 'kamal deploy', after: 500 },
+  out('Building and pushing image...', 'dim', 700),
+  out('Ensuring kamal-proxy on 51.15.xx.xx (Scaleway nl-ams)...', 'dim', 700),
+  out('Starting new container 8b3c...', 'dim', 600),
+  out('Waiting for the first healthy web container...', 'dim', 700),
   out('Container is healthy!', 'add', 500),
-  out('Routing traffic to new container...', 'dim', 500),
-  out('Released the deploy lock', 'dim', 400),
-  { type: 'gap', delay: 500 },
-  out('✔ Deploy completed in 47.3s', 'add', 200),
-  { type: 'timer-stop' },
+  out('✔ Finished all in 8.4 seconds', 'add', 300),
+  { type: 'gap', delay: 700 },
+  out('# 8 seconden. In nl-ams. Maar de app praat nog naar Virginia:', 'dim', 500),
+  { type: 'cmd', text: 'kamal app exec \'rails runner "puts DB.host"\'', after: 400 },
+  out('us-east-1.rds.example-cloud.com', 'del', 700),
   { type: 'gap', delay: 900 },
-  { type: 'cmd', text: 'dig +short talk.xprtz.cloud', after: 500 },
-  out('51.158.234.12', 'add', 400),
-  out('  Deze presentatie draait nu op Europese grond.', 'hl-line', 300),
+  out('# Het echte werk: 14 GB PostgreSQL verhuizen', 'dim', 500),
+  { type: 'cmd', text: 'pg_dump --format=custom --jobs=4 "$SOURCE_URL" -f db.dump', after: 500 },
+  out('pg_dump: dumping contents of table "public.events"', 'dim', 500),
+  out('pg_dump: dumping contents of table "public.invoices"', 'dim', 600),
+  out('  db.dump  →  4.2 GB', 'dim', 500),
+  { type: 'cmd', text: 'pg_restore --jobs=4 --dbname="$TARGET_URL" db.dump', after: 500 },
+  out('pg_restore: processing data for table "public.users"', 'dim', 600),
+  out('pg_restore: creating INDEX "index_events_on_created_at"', 'dim', 700),
+  out('pg_restore: creating CONSTRAINT "invoices_pkey"', 'dim', 600),
+  out('⏱  restore + indexes: 38m 12s', 'hl-line', 500),
+  { type: 'gap', delay: 700 },
+  out('# Cutover: app naar de nl-ams database', 'dim', 400),
+  { type: 'cmd', text: 'kamal env push && kamal app boot', after: 500 },
+  out('curl https://app.example.eu/up', 'dim', 400),
+  out('{"status":"ok","db":"nl-ams","records":1284993}', 'add', 500),
+  { type: 'gap', delay: 900 },
+  out('# En de andere provider? Eén regel:', 'dim', 400),
+  { type: 'cmd', text: 'git diff config/deploy.yml', after: 400 },
+  out('-    - 51.15.xx.xx    # Scaleway nl-ams', 'del'),
+  out('+    - 5.75.xx.xx     # Hetzner fsn1', 'add', 500),
+  out('  Keuzevrijheid is een one-liner. De state was het werk.', 'hl-line', 300),
 ]
 
 function useRecordedVideo() {
@@ -70,12 +70,12 @@ export default function Slide20() {
   const video = useRecordedVideo()
 
   return (
-    <Slide kicker="Deel 4 · Demo">
+    <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
         <h2 className="title" style={{ marginBottom: 24 }}>
-          Deze presentatie, van Microsoft naar Europese grond
+          App plus database, van Microsoft naar Europese grond
           <span className="muted" style={{ display: 'block', fontSize: 18, fontWeight: 450, marginTop: 8, letterSpacing: 0 }}>
-            Opgenomen run, exact deze commando's.
+            Opgenomen run. Let op het verschil: 8 seconden versus 38 minuten.
           </span>
         </h2>
       </Reveal>
@@ -91,11 +91,7 @@ export default function Slide20() {
             <video src={video} controls style={{ flex: 1, minHeight: 0, width: '100%', background: '#0d111a' }} />
           </div>
         ) : (
-          <TerminalPlayer
-            script={script}
-            title="migratie van deze presentatie · opgenomen"
-            timer={{ target: 47.3, playbackMs: 8800 }}
-          />
+          <TerminalPlayer script={script} title="app + postgres → scaleway nl-ams · opgenomen" />
         )}
       </Reveal>
     </Slide>

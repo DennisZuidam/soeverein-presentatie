@@ -25,7 +25,7 @@ const wins = [
 
 export default function SlidePayoff() {
   return (
-    <Slide kicker="Deel 3 · Zo bouw je voor keuzevrijheid">
+    <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
         <h2 className="title">Dit krijg je ervoor terug</h2>
       </Reveal>

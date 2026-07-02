@@ -25,7 +25,7 @@ const steps = [
 
 export default function Slide21() {
   return (
-    <Slide kicker="Afsluiting">
+    <Slide kicker="Epiloog">
       <Reveal i={1}>
         <h2 className="title">Hoe begin je morgen?</h2>
       </Reveal>

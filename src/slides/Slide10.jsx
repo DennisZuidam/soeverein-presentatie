@@ -2,7 +2,7 @@ import { Slide, Reveal } from '../components/ui.jsx'
 
 export default function Slide10() {
   return (
-    <Slide kicker="Deel 2 · Wie zichzelf al de vrijheid gaf">
+    <Slide kicker="Deel 2 · Wie zich al bevrijdde">
       <Reveal i={1} className="quote-mark">“</Reveal>
       <Reveal i={1}>
         <p className="quote">
@@ -23,7 +23,7 @@ export default function Slide10() {
           <span>Infra-rekening: van <strong>$3,2M naar minder dan $1M per jaar</strong>. Ruim $10M besparing in vijf jaar</span>
         </Reveal>
         <Reveal i={4} className="fact">
-          <span>S3-exit: <strong>18 petabyte</strong> naar eigen Pure Storage. $1,5M eenmalig, &lt;$200K/jaar beheer</span>
+          <span>S3-exit: <strong>~10 PB</strong> uit S3 naar eigen Pure Storage (18 PB capaciteit). $1,5M eenmalig, &lt;$200K/jaar beheer</span>
         </Reveal>
         <Reveal i={5} className="fact">
           <span>Zomer 2025: het complete AWS-account verwijderd. Niet naar een Europese cloud, maar eigen infra. <strong>Zijn keuze.</strong></span>
