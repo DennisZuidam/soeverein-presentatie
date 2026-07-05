@@ -5,12 +5,12 @@ const layers = [
     icon: 'database',
     tag: 'state · je data',
     title: 'Verhuist niet mee',
-    text: 'Een container is met opzet stateless, daarom tilt hij zo over. Je database, object storage, queues en zoekindex blijven staan. Dat is geen docker run, dat is een migratie met downtime en een terugrol-plan.',
+    text: 'Een container is met opzet stateless, daarom til je hem zo over. Je database, object storage, queues en zoekindex blijven staan. Dat is geen docker run, dat is een migratie met downtime en een rollback-plan.',
   },
   {
     icon: 'lock',
     tag: 'identiteit · IAM',
-    title: 'Herschrijf je, niet exporteren',
+    title: 'Herschrijven, niet exporteren',
     text: 'Je hele autorisatiemodel is geschreven in de taal van je provider: rollen, policies, service accounts. Dat exporteer je niet, dat herschrijf je. En zolang dat niet klaar is, ben je er niet weg.',
   },
   {

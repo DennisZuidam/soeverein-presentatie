@@ -7,7 +7,7 @@ export default function Slide19() {
         <h2 className="title">
           De container is klaar in 8 seconden.
           <span className="muted" style={{ display: 'block', fontSize: 21, fontWeight: 450, marginTop: 10, letterSpacing: 0 }}>
-            De data duurt 40 minuten. Dáár zit de migratie.
+            De data kost 38 minuten. Dáár zit de migratie.
           </span>
         </h2>
       </Reveal>
@@ -31,7 +31,7 @@ export default function Slide19() {
           <p className="meta">Container in seconden. Data pas na de restore. Dezelfde deploy.yml wijst ook naar Hetzner of STACKIT.</p>
         </Reveal>
       </div>
-      <Punchline i={6} sub="De coercion point zit niet in je YAML, maar in wie je database vasthoudt.">
+      <Punchline i={6} sub="Het coercion point zit niet in je YAML, maar bij de partij die je database vasthoudt.">
         Verhuizen is een <span className="mono">kamal deploy</span>. De data verhuizen is <span className="gold">je hele weekend.</span>
       </Punchline>
     </Slide>

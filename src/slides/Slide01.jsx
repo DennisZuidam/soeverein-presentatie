@@ -13,7 +13,7 @@ export default function Slide01() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ marginTop: 30, maxWidth: 760 }}>
-          Over keuzevrijheid, cloud-agnostisch bouwen
+          Over keuzevrijheid, porteerbaar bouwen
           <br />
           en waarom soevereiniteit een bijproduct is
         </p>
@@ -23,8 +23,6 @@ export default function Slide01() {
           <span style={{ fontWeight: 600 }}>Dennis Zuidam</span>
           <span style={{ color: 'var(--faint)' }}>·</span>
           <span className="muted">XPRTZ</span>
-          <span style={{ color: 'var(--faint)' }}>·</span>
-          <span className="muted">Scaleway Solution Architect</span>
         </div>
       </Reveal>
     </Slide>

@@ -3,7 +3,8 @@ import { Slide, Reveal } from '../components/ui.jsx'
 const cons = [
   'Kleinere community dan AWS of Azure',
   'Minder managed services om uit te kiezen',
-  'Minder StackOverflow-antwoorden',
+  'Managed services zijn een ops-team dat je huurt. Zonder hen moet je het zelf kunnen',
+  'Minder antwoorden op Stack Overflow',
   'Diepere Microsoft-integraties werken soms minder soepel',
 ]
 

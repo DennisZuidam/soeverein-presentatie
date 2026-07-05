@@ -20,7 +20,7 @@ export default function Slide10() {
       </Reveal>
       <div className="quote-facts">
         <Reveal i={3} className="fact">
-          <span>Infra-rekening: van <strong>$3,2M naar minder dan $1M per jaar</strong>. Ruim $10M besparing in vijf jaar</span>
+          <span>Infra-rekening: van <strong>$3,2M naar minder dan $1M per jaar</strong>. De $10M over vijf jaar is zijn eigen projectie</span>
         </Reveal>
         <Reveal i={4} className="fact">
           <span>S3-exit: <strong>~10 PB</strong> uit S3 naar eigen Pure Storage (18 PB capaciteit). $1,5M eenmalig, &lt;$200K/jaar beheer</span>

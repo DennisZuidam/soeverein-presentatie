@@ -15,9 +15,9 @@ const locks = [
   },
   {
     icon: 'euro',
-    tag: 'je exit',
+    tag: 'je verkeer',
     title: 'Egress',
-    text: 'Data eruit halen is zo duur dat vertrekken financieel onhaalbaar wordt. Dat is geen toeval.',
+    text: 'Alles binnen de muren is gratis, alles naar buiten kost geld. Zo wordt elke dienst ernaast vanzelf te duur. Dat is geen toeval.',
   },
 ]
 

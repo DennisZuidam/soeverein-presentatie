@@ -1,47 +1,49 @@
-import { Slide, Reveal, Punchline, Icon } from '../components/ui.jsx'
+import { Slide, Reveal, Punchline, Terminal } from '../components/ui.jsx'
 
-const cards = [
-  {
-    icon: 'briefcase',
-    title: 'Wat ik doe',
-    text: 'Directeur bij XPRTZ. Ik bouw en draai onze eigen software op een Europese cloud, omdat het beter uitkwam, niet omdat het moest.',
-  },
-  {
-    icon: 'scale',
-    title: 'Waarom ik hier sta',
-    text: 'Niet als activist met een vlag, maar als engineer die de rekening en het afbreukrisico ziet.',
-  },
-  {
-    icon: 'standard',
-    title: 'Wat je meeneemt',
-    text: 'Geen bekeringsverhaal. Aan het eind snap je waar je écht vastzit, en wat het kost om weg te kunnen.',
-  },
-]
-
+// Positie 3 · persoonlijke intro: wie is deze man en waarom vertelt hij dit verhaal.
+// Concept "skin in the game": geen cv, maar het bewijs dat hij zelf allang doet
+// waar de talk over gaat. Het terminaltje stelt de vragen, de punchline geeft antwoord.
 export default function Slide02() {
   return (
     <Slide kicker="Even voorstellen">
-      <Reveal i={1}>
-        <h2 className="title" style={{ maxWidth: 1080 }}>
-          Stel: morgen staat je productie-account op slot.
-          <span className="muted" style={{ display: 'block', fontSize: 22, fontWeight: 450, marginTop: 12, letterSpacing: 0, lineHeight: 1.4 }}>
-            Niet gehackt. Gewoon dichtgezet door iemand die je nooit gesproken hebt.
-            Wat is dan je plan B?
-          </span>
-        </h2>
-      </Reveal>
-      <div className="cards three">
-        {cards.map((c, k) => (
-          <Reveal key={c.title} i={2 + k} className="card">
-            <div className="icon">
-              <Icon name={c.icon} />
-            </div>
-            <h3>{c.title}</h3>
-            <p>{c.text}</p>
+      <div
+        style={{
+          flex: 1,
+          display: 'grid',
+          gridTemplateColumns: '1fr 1.08fr',
+          gap: 56,
+          alignItems: 'center',
+        }}
+      >
+        <div>
+          <Reveal i={1}>
+            <h2 className="title" style={{ marginBottom: 24 }}>
+              Dit verhaal draait bij ons <span className="gold">al in productie.</span>
+            </h2>
           </Reveal>
-        ))}
+          <Reveal i={2}>
+            <p className="lede">
+              Wat je vanavond hoort is geen plan voor anderen. Het is de keuze die wij
+              voor onze eigen software allang gemaakt hebben.
+            </p>
+          </Reveal>
+        </div>
+        <Reveal i={3}>
+          <Terminal title="dennis@xprtz:~">
+            <span className="prompt">$</span> whoami{'\n'}
+            dennis zuidam · directeur bij XPRTZ{'\n'}
+            {'\n'}
+            <span className="prompt">$</span> waar draait jullie eigen software{'\n'}
+            op een <span className="hl">europese cloud</span>{'\n'}
+            {'\n'}
+            <span className="prompt">$</span> waarom{'\n'}
+            omdat het beter uitkwam. niet omdat het moest.{'\n'}
+            {'\n'}
+            <span className="prompt">$</span> en waarom sta je hier dan <span className="cursor">▌</span>
+          </Terminal>
+        </Reveal>
       </div>
-      <Punchline i={6} sub="De vraag van vandaag is niet Amerikaans of Europees. De vraag is: kun je weg als je weg wilt?">
+      <Punchline i={5} sub="Geen activist met een vlag. Wel een engineer die de rekening en het afbreukrisico ziet.">
         Ik kom je niet bekeren. <span className="gold">Dit is een risicoverhaal, geen kruistocht.</span>
       </Punchline>
     </Slide>

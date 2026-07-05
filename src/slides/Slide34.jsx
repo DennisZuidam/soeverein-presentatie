@@ -39,8 +39,8 @@ export default function SlideSovereigntyNumber() {
           </tbody>
         </table>
       </Reveal>
-      <Punchline i={5} sub="Zet het als SLA op papier: binnen 6 weken van onze primaire provider af, voor €40k. Meetbaar, afdwingbaar, één keer per jaar te oefenen.">
-        Niet “zijn we soeverein?”, maar <span className="gold">“in hoeveel weken en voor hoeveel euro zijn we weg?”</span>
+      <Punchline i={5} sub="Getallen als voorbeeld, geijkt op een middelgrote stack. Waar het om gaat: meetbaar, afdwingbaar, en jaarlijks echt geoefend.">
+        Zet het als SLA op papier: <span className="gold">binnen 6 weken weg, voor €40k, elk jaar getest.</span>
       </Punchline>
     </Slide>
   )

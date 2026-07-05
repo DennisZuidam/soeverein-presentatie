@@ -3,13 +3,11 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 const big = [
   { who: 'GEICO', text: '10 jaar public cloud, rekening 2,5× omhoog. Terug naar eigen OpenStack/K8s: 50% goedkoper per core.' },
   { who: 'Dropbox', text: '~500 PB grotendeels van S3 naar eigen Magic Pocket. $74,6M bespaard in twee jaar.' },
-  { who: '37signals', text: 'Apps eruit met Kamal in een weekend. Het werk: ~10 PB uit S3 naar eigen Pure Storage.' },
 ]
 
 const small = [
-  { who: 'OneUptime', text: '$38k/mnd op AWS → eigen bare metal. Na twee jaar $1,2M/jaar eraf, 99,993% uptime.' },
-  { who: 'Datapult', text: 'Weg bij AWS: ~90% lagere kosten, ISO 27001 behouden, eigen Prometheus/Grafana.' },
-  { who: 'hank.parts', text: 'Compute en storage moeiteloos naar EU. Vast bij Apple, Google Play en Ads: de echte coercion points.' },
+  { who: 'OneUptime', text: '$38k per maand op AWS, naar eigen bare metal. Na twee jaar $1,2M bespaard, 99,993% uptime.' },
+  { who: 'hank.parts', text: 'Compute en storage moeiteloos naar de EU. Vast bij Apple, Google Play en Ads: de echte coercion points.' },
 ]
 
 function Column({ tag, items, i }) {
@@ -19,9 +17,9 @@ function Column({ tag, items, i }) {
         <div className="card-tag" style={{ fontSize: 13 }}>{tag}</div>
       </Reveal>
       {items.map((m, k) => (
-        <Reveal key={m.who} i={i + 0.5 + k * 0.5} className="card" style={{ padding: '16px 20px' }}>
-          <h3 style={{ fontSize: 17, marginBottom: 4 }}>{m.who}</h3>
-          <p style={{ fontSize: 14, lineHeight: 1.5 }}>{m.text}</p>
+        <Reveal key={m.who} i={i + 0.5 + k * 0.5} className="card" style={{ padding: '20px 24px' }}>
+          <h3 style={{ fontSize: 19, marginBottom: 6 }}>{m.who}</h3>
+          <p style={{ fontSize: 15.5, lineHeight: 1.55 }}>{m.text}</p>
         </Reveal>
       ))}
     </div>
