@@ -86,7 +86,7 @@ export const slides = [
   {
     Component: Slide06,
     notes:
-      'Twee gevallen uit één jaar. ICC-aanklager Khan verloor de toegang tot zijn Microsoft-account na een Amerikaanse sanctie; let op de formulering: zijn e-mailaccount werd afgesloten, en Microsoft stelt dat het zijn diensten aan het ICC als organisatie nooit heeft opgeschort (de kwestie draaide om de persoonlijk gesanctioneerde aanklager). Houd die nuance paraat voor de Q&A. De ICC stapte daarna over op OpenDesk. FTM nam afscheid van Cloudflare, niet om een dreiging maar om de leverancier zelf. Brug naar de volgende twee slides: en dit soort risico is geen incident, het is jurisdictie.',
+      'Twee gevallen uit één jaar. ICC-aanklager Khan verloor de toegang tot zijn Microsoft-account na een Amerikaanse sanctie; let op de formulering: zijn e-mailaccount werd afgesloten, en Microsoft stelt dat het zijn diensten aan het ICC als organisatie nooit heeft opgeschort (de kwestie draaide om de persoonlijk gesanctioneerde aanklager). Houd die nuance paraat voor de Q&A. De ICC stapte daarna over op openDesk. FTM nam afscheid van Cloudflare, niet om een dreiging maar om de leverancier zelf. Brug naar de volgende twee slides: en dit soort risico is geen incident, het is jurisdictie.',
   },
   {
     Component: Slide07,
@@ -128,7 +128,7 @@ export const slides = [
   {
     Component: SlideExamples,
     notes:
-      'Groot en klein, dezelfde les: de compute verhuist makkelijk, de state is het werk. GEICO: tien jaar public cloud (multi-cloud, Azure de grootste, NIET all-in AWS, dat is fout in veel samenvattingen), rekening 2,5x omhoog, terug naar eigen OpenStack/Kubernetes, 50%+ goedkoper per core (Open Compute Project white paper, 2024). Dropbox: ~500 PB grotendeels (~90%) van S3 naar eigen Magic Pocket, $74,6M bespaard op cost of revenue over 2016-2017 (S-1, 2018). OneUptime: van $38k/mnd AWS naar eigen bare metal (MicroK8s+Ceph), na twee jaar in totaal $1,2M bespaard, 99,993% uptime (eigen blog, goed onderbouwd). hank.parts: compute, storage en auth moeiteloos naar de EU, maar vast bij Apple, Google Play en Google Ads, precies de coercion points buiten de infra-laag (The Register, feb 2026). 37signals bewaar ik even: die case gaat zo de diepte in. Bronnen: thestack.technology (GEICO) · geekwire.com (Dropbox) · oneuptime.com/blog · theregister.com/2026/02/20',
+      'Groot en klein, dezelfde les: de compute verhuist makkelijk, de state is het werk. GEICO: tien jaar public cloud (multi-cloud, Azure de grootste, NIET all-in AWS, dat is fout in veel samenvattingen), rekening 2,5x omhoog, terug naar eigen OpenStack/Kubernetes, 50%+ goedkoper per core (Open Compute Project white paper, 2024). Dropbox: ~500 PB grotendeels (~90%) van S3 naar eigen Magic Pocket, $74,6M bespaard op cost of revenue over 2016-2017 (S-1, 2018). OneUptime: van $38k/mnd AWS naar eigen bare metal (MicroK8s+Ceph); de besparing groeide in twee jaar van $230k naar ruim $1,2M per jaar (76% goedkoper dan AWS), 99,993% uptime over 730+ dagen. LET OP: het is een jaarlijkse run-rate, geen cumulatief totaal (eigen blog, goed onderbouwd). hank.parts: compute, storage en auth moeiteloos naar de EU, maar vast bij Apple, Google Play en Google Ads, precies de coercion points buiten de infra-laag (The Register, feb 2026). 37signals bewaar ik even: die case gaat zo de diepte in. Bronnen: thestack.technology (GEICO) · geekwire.com (Dropbox) · oneuptime.com/blog · theregister.com/2026/02/20',
   },
   {
     Component: Slide14,
@@ -143,7 +143,7 @@ export const slides = [
   {
     Component: Slide10,
     notes:
-      'DHH: ruim tien jaar AWS, toen cloud-exit naar eigen hardware. Cijfers: infra van $3,2M naar minder dan $1M per jaar. De S3-exit: ~10 PB / 5 mld objecten uit S3 naar dual-datacenter Pure Storage (18 PB is de gekochte capaciteit), $1,5M eenmalig, <$200K/jaar beheer. Let op: de "$10M over vijf jaar" is DHH zijn eigen projectie, geen audit; gerealiseerd ~$1-2M/jaar. Zomer 2025 ging het complete AWS-account dicht. Niet naar Europese cloud, naar eigen infra, zijn keuze. En hij bouwde Kamal, het deploy-tool uit de demo. Bronnen: world.hey.com/dhh · theregister.com/2025/05/09',
+      'DHH: ruim tien jaar AWS, toen cloud-exit naar eigen hardware. De quote op de slide komt letterlijk uit "Why we\'re leaving the cloud" (world.hey.com/dhh, okt 2022). Cijfers: infra van $3,2M naar minder dan $1M per jaar. De S3-exit: ~10 PB / 5 mld objecten uit S3 naar dual-datacenter Pure Storage (18 PB is de gekochte capaciteit), $1,5M eenmalig, <$200K/jaar beheer. Let op: de "$10M over vijf jaar" is DHH zijn eigen projectie, geen audit; gerealiseerd ~$1-2M/jaar. Zomer 2025 ging het complete AWS-account dicht. Niet naar Europese cloud, naar eigen infra, zijn keuze. En hij bouwde Kamal, het deploy-tool uit de demo. Bronnen: world.hey.com/dhh · theregister.com/2025/05/09',
   },
   {
     Component: Slide11,
@@ -170,7 +170,7 @@ export const slides = [
   {
     Component: SlideDivider3,
     notes:
-      'Divider Deel 3. Pivot van analyse naar actie, zonder te preken. Plant de kernthese: de container is een avondje werk, de echte lock-in zit in state, identiteit en coercion points. KLOK-CHECKPOINT: ben je hier nog niet op tweederde van je slot, gebruik de noodsnit (Payoff-slide overslaan, quotes in Deel 2 inkorten). Spreektekst: klaar met waarom en wie; de verleiding is nu "containeriseer alles en je bent vrij", maar de container is het makkelijke deel.',
+      'Divider Deel 3. Pivot van analyse naar actie, zonder te preken. Plant de kernthese: de container is een avondje werk, de echte lock-in zit in state, identiteit en coercion points. KLOK-CHECKPOINT: ben je hier nog niet op tweederde van je slot, gebruik de noodsnit die nog vóór je ligt (Payoff-slide overslaan en bij de scorecard alleen de onderste twee rijen uitlichten). Spreektekst: klaar met waarom en wie; de verleiding is nu "containeriseer alles en je bent vrij", maar de container is het makkelijke deel.',
   },
   {
     Component: SlideContainer,
@@ -200,7 +200,7 @@ export const slides = [
   {
     Component: Slide20,
     notes:
-      'Gescripte weergave zolang er geen echte opname is; zeg dat ook hardop ("dit is de gescripte weergave van de run, de code staat in de repo"). Volgorde: kamal deploy (8,4s, container healthy in nl-ams), curl /up bewijst dat de app nog naar us-east-1 praat, dan het echte werk: pg_dump in directory-format met 4 jobs (14 GB) en pg_restore met index-herbouw (38m 12s), cutover door DATABASE_URL in .kamal/secrets om te zetten en kamal app boot, en dezelfde curl /up toont nu nl-ams met dezelfde recordcount. Tot slot de git diff die met één regel naar Hetzner wijst. Zodra public/demo.webm bestaat speelt de slide de echte opname; pas dan ook de subtitel aan naar "Opgenomen run". Zie DEMO.md.',
+      'Gescripte weergave zolang er geen echte opname is; zeg dat ook hardop ("dit is de gescripte weergave van de run, de code staat in de repo"). Volgorde: kamal deploy (8,4s, container healthy in nl-ams), curl /up bewijst dat de app nog met us-east-1 praat, dan het echte werk: pg_dump in directory-format met 4 jobs (14 GB) en pg_restore met index-herbouw (38m 12s), cutover door DATABASE_URL in .kamal/secrets om te zetten en kamal app boot, en dezelfde curl /up toont nu nl-ams met dezelfde recordcount. Tot slot de git diff die met één regel naar Hetzner wijst. Zodra public/demo.webm bestaat speelt de slide de echte opname; pas dan ook de subtitel aan naar "Opgenomen run". Zie DEMO.md.',
   },
   {
     Component: SlideScorecard,

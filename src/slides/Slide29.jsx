@@ -13,8 +13,7 @@ export default function SlideDivider3() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ marginTop: 38, maxWidth: 900 }}>
-          Nu de rest: je data, je identiteit, en het aantal partijen dat je provider kan dwingen.
-          Daar zit de lock-in, en daar begint jouw werk.
+          Nu het deel dat niet vanzelf meeverhuist. Daar zit de lock-in, en daar begint jouw werk.
         </p>
       </Reveal>
       <PartMarker current={2} />

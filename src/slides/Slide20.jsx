@@ -18,16 +18,16 @@ const script = [
   out('Container is healthy!', 'add', 500),
   out('✔ Finished all in 8.4 seconds', 'add', 300),
   { type: 'gap', delay: 700 },
-  out('# 8 seconden. In nl-ams. Maar de app praat nog naar Virginia:', 'dim', 500),
+  out('# 8 seconden. In nl-ams. Maar de app praat nog met Virginia:', 'dim', 500),
   { type: 'cmd', text: 'curl -s https://app.example.eu/up', after: 400 },
   out('{"status":"ok","db":"us-east-1.rds.example-cloud.com","records":1284993}', 'del', 700),
   { type: 'gap', delay: 900 },
   out('# Het echte werk: 14 GB PostgreSQL verhuizen', 'dim', 500),
-  { type: 'cmd', text: 'pg_dump --format=directory --jobs=4 "$SOURCE_URL" -f dump/', after: 500 },
+  { type: 'cmd', text: 'pg_dump --format=directory --jobs=4 --verbose "$SOURCE_URL" -f dump/', after: 500 },
   out('pg_dump: dumping contents of table "public.events"', 'dim', 500),
   out('pg_dump: dumping contents of table "public.invoices"', 'dim', 600),
   out('  dump/  →  4.2 GB', 'dim', 500),
-  { type: 'cmd', text: 'pg_restore --jobs=4 --dbname="$TARGET_URL" dump/', after: 500 },
+  { type: 'cmd', text: 'pg_restore --jobs=4 --verbose --dbname="$TARGET_URL" dump/', after: 500 },
   out('pg_restore: processing data for table "public.users"', 'dim', 600),
   out('pg_restore: creating INDEX "index_events_on_created_at"', 'dim', 700),
   out('pg_restore: creating CONSTRAINT "invoices_pkey"', 'dim', 600),
@@ -36,7 +36,7 @@ const script = [
   out('# Cutover: DATABASE_URL in .kamal/secrets wijst nu naar nl-ams', 'dim', 400),
   { type: 'cmd', text: 'kamal app boot', after: 500 },
   { type: 'cmd', text: 'curl -s https://app.example.eu/up', after: 400 },
-  out('{"status":"ok","db":"nl-ams","records":1284993}', 'add', 500),
+  out('{"status":"ok","db":"pg-8f2a.nl-ams.scw.cloud","records":1284993}', 'add', 500),
   { type: 'gap', delay: 900 },
   out('# En de andere provider? Eén regel:', 'dim', 400),
   { type: 'cmd', text: 'git diff config/deploy.yml', after: 400 },
@@ -77,9 +77,9 @@ export default function Slide20() {
     <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
         <h2 className="title" style={{ marginBottom: 24 }}>
-          App plus database, van een Amerikaanse cloud naar Europese grond
+          App plus database, van een Amerikaanse cloud naar Europese bodem
           <span className="muted" style={{ display: 'block', fontSize: 18, fontWeight: 450, marginTop: 8, letterSpacing: 0 }}>
-            Gescripte weergave van de echte run; de code staat in de repo. Let op het verschil: 8 seconden versus 38 minuten.
+            Gescripte weergave van de echte run; de code staat in de repo.
           </span>
         </h2>
       </Reveal>

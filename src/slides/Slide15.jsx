@@ -1,7 +1,7 @@
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 const stats = [
-  { num: '€300 mld', text: 'geschatte investering in een eigen Europese stack (EuroStack, ~10 jaar)' },
+  { num: '€300 miljard', text: 'geschatte investering in een eigen Europese stack (EuroStack, ~10 jaar)' },
   { num: '80%', text: "van Europa's digitale technologie wordt nu geïmporteerd" },
   { num: '70%', text: 'van de wereldwijd gebruikte AI-modellen komt uit de VS' },
 ]

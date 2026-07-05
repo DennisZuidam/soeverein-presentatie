@@ -4,7 +4,7 @@ const cases = [
   {
     tag: 'ICC × Microsoft',
     title: 'De aanklager verloor zijn account',
-    text: 'Na een Trump-sanctie verloor de aanklager van het Internationaal Strafhof de toegang tot zijn Microsoft-account. Microsoft betwist dat het "blokkeerde". Het effect was er. De ICC stapte over op OpenDesk.',
+    text: 'Na een Trump-sanctie verloor de aanklager van het Internationaal Strafhof de toegang tot zijn Microsoft-account. Microsoft betwist dat het "blokkeerde". Het effect was er. De ICC stapte over op openDesk.',
   },
   {
     tag: 'Follow the Money',

@@ -8,7 +8,7 @@ const rows = [
   ['Kubernetes', 'EKS · AKS (vendor-specifiek)', 'K8s is de standaard, draait overal'],
   ['Object storage', 'S3 · Azure Blob', 'S3 API is open: MinIO, Hetzner, eigen infra'],
   ['Observability', 'Datadog', 'OpenTelemetry + Prometheus, draait overal'],
-  ['Enterprise / overheid', 'Azure Gov · AWS GovCloud', 'Europees eigendom, open contracten'],
+  ['Enterprise / overheid', 'AWS European Sovereign Cloud · MS Cloud for Sovereignty', 'Europees eigendom, open contracten'],
 ]
 
 export default function Slide16() {

@@ -44,9 +44,11 @@ Neem de terminal op met je normale schermrecorder (QuickTime/OBS), of gebruik
   2. `curl -s https://<domein>/up`: bewijs dat de app nog naar de
      Amerikaanse database praat (host plus recordcount in de output). Dit is
      de nulmeting voor de symmetrische controle na de cutover.
-  3. `pg_dump --format=directory --jobs=4 "$SOURCE_URL" -f dump/` en daarna
-     `pg_restore --jobs=4 --dbname="$TARGET_URL" dump/`. Parallelle dump kan
-     alleen met het directory-format. Laat de omvang (GB) en de tijd
+  3. `pg_dump --format=directory --jobs=4 --verbose "$SOURCE_URL" -f dump/`
+     en daarna `pg_restore --jobs=4 --verbose --dbname="$TARGET_URL" dump/`.
+     Parallelle dump kan alleen met het directory-format; `--verbose` zorgt
+     dat je per tabel en index output ziet (zonder die vlag zijn beide tools
+     stil, wat op de opname vreemd oogt). Laat de omvang (GB) en de tijd
      (minuten, vooral index-herbouw) zichtbaar staan. Optioneel: benoem
      logical replication voor near-zero-downtime.
   4. Cutover (Kamal 2): zet `DATABASE_URL` in `.kamal/secrets` om naar de

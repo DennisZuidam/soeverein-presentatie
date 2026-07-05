@@ -23,8 +23,8 @@ export default function Slide02() {
           </Reveal>
           <Reveal i={2}>
             <p className="lede">
-              Wat je vanavond hoort is geen plan voor anderen. Het is de keuze die wij
-              voor onze eigen software allang gemaakt hebben.
+              Geen plan voor anderen, maar de keuze die wij voor onze eigen software
+              allang gemaakt hebben.
             </p>
           </Reveal>
         </div>
@@ -43,7 +43,7 @@ export default function Slide02() {
           </Terminal>
         </Reveal>
       </div>
-      <Punchline i={7} sub="Geen activist met een vlag. Wel een engineer die de rekening en het afbreukrisico ziet.">
+      <Punchline i={7} sub="Wel een engineer die de rekening en het afbreukrisico ziet.">
         Ik kom je niet bekeren. <span className="gold">Dit is een risicoverhaal, geen kruistocht.</span>
       </Punchline>
     </Slide>
