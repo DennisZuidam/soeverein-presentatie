@@ -54,7 +54,7 @@ export const slides = [
   {
     Component: Slide02,
     notes:
-      '[JURY-NOTES VOLGEN]',
+      'Dit is het antwoord op de vraag die na de schrik-opener in de zaal hangt: wie is deze man en waarom vertelt hij dit? Houd het licht, hier mag even lucht in na het slot-scenario.\n\nLoop het terminaltje hardop langs: ik ben Dennis, directeur bij XPRTZ, en onze eigen software draait op een Europese cloud. De belangrijkste regel is de derde: niet omdat het moest, maar omdat het beter uitkwam. Dat is de hele geloofsbrief van vanavond: ik ga je straks niets vragen wat wij zelf niet allang doen.\n\n[VUL IN: één echt, waargebeurd moment van 20 tot 30 seconden over die keuze. Bijvoorbeeld: wat destijds de doorslag gaf om de eigen software op een Europese cloud te zetten, wat er meeviel of juist tegenviel, of het moment waarop je merkte dat die praktische keuze opeens een strategisch verhaal was geworden. Eén concreet beeld, geen cv. Verzin niets; heb je geen scherp moment, vertel dan gewoon eerlijk hoe die afweging destijds ging.]\n\nDe laatste terminalregel blijft bewust open staan ("en waarom sta je hier dan"), de punchline is het antwoord. Lees hem letterlijk voor: ik kom je niet bekeren, dit is een risicoverhaal, geen kruistocht.\n\nBrug naar de volgende slide: wij hebben die keuze ooit bewust gemaakt, en dat blijkt zeldzamer dan je denkt. Wanneer koos jij eigenlijk je cloudprovider?',
   },
   {
     Component: Slide03,
@@ -66,7 +66,7 @@ export const slides = [
   {
     Component: SlideDivider1,
     notes:
-      'Divider die Deel 1 opent. Op de slide alleen de kicker, het grote statement en de subline. Kernthese meteen neergezet: lock-in zit niet in de container maar in state, identiteit en coercion points. Toon: geen verwijt, wel het ongemakkelijke inzicht dat de keuze nooit bewust is gemaakt.',
+      'Divider die Deel 1 opent. De deel-indicator onderin laat alle drie de delen zien; wijs er kort naar zodat de zaal het patroon kent (die komt op elke divider terug). Kernthese meteen neergezet: lock-in zit niet in de container maar in state, identiteit en coercion points. Toon: geen verwijt, wel het ongemakkelijke inzicht dat de keuze nooit bewust is gemaakt.',
   },
   {
     Component: Slide04,

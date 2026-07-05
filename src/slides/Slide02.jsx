@@ -43,7 +43,7 @@ export default function Slide02() {
           </Terminal>
         </Reveal>
       </div>
-      <Punchline i={5} sub="Geen activist met een vlag. Wel een engineer die de rekening en het afbreukrisico ziet.">
+      <Punchline i={7} sub="Geen activist met een vlag. Wel een engineer die de rekening en het afbreukrisico ziet.">
         Ik kom je niet bekeren. <span className="gold">Dit is een risicoverhaal, geen kruistocht.</span>
       </Punchline>
     </Slide>
