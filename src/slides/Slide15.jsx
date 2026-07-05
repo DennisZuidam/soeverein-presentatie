@@ -16,7 +16,7 @@ export default function Slide15() {
         <div className="card" style={{ marginBottom: 22, borderColor: 'rgba(110,160,255,0.35)' }}>
           <div className="card-tag">EU Tech Sovereignty Package · 3 juni 2026</div>
           <p style={{ fontSize: 17, lineHeight: 1.6, color: 'var(--text)' }}>
-            Voor het eerst staat open source centraal in EU-beleid: een Open Source Strategy,
+            Voor het eerst zit open source in het hart van industriepolitiek, met wetgeving én budget:
             een voorstel voor een <strong>Cloud and AI Development Act</strong> en <strong>€2 miljard</strong> voor
             open source over zeven jaar. Cloudbedrijven die niet aan EU-soevereiniteitscriteria
             voldoen, kunnen worden geweerd uit gevoelige overheidscontracten.

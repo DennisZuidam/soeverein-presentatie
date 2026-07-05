@@ -1,11 +1,17 @@
 # Draaiboek: de demo-opname
 
-De demo van de talk is de migratie van **deze presentatie zelf**: van GitHub
-Pages (Microsoft) naar Scaleway (nl-ams). De demo-slide speelt een opname af —
-bewust geen live demo, dus op het podium kan niets misgaan.
+De demo van de talk is de migratie van een **app plus PostgreSQL** van een
+Amerikaanse provider naar Scaleway (nl-ams) met Kamal. De demo-slide speelt
+een opname af, bewust geen live demo, dus op het podium kan niets misgaan.
+Zolang er geen opname is toont de slide een gescripte replay; het label op de
+slide zegt dat dan ook eerlijk ("gescripte weergave van de echte run").
 
-De repo bevat alles om de migratie echt uit te voeren: `Dockerfile` (nginx,
-twee regels) en `config/deploy.yml` (Kamal).
+De pointe van de demo: de container is in seconden klaar, de data kost
+38 minuten. Dat verschil is de boodschap.
+
+Er is ook een simpele variant (alleen deze stateless presentatie migreren,
+`Dockerfile` en `config/deploy.yml` staan in de repo), maar die mist het
+datacontrast. Gebruik hem alleen als fallback.
 
 ## 1. Voorbereiding (eenmalig)
 
@@ -13,40 +19,49 @@ twee regels) en `config/deploy.yml` (Kamal).
    met je SSH-key.
 2. Maak een Container Registry-namespace aan: `rg.nl-ams.scw.cloud/<naam>`.
 3. Vul in `config/deploy.yml` het instance-IP, je domein en de registry in.
-4. Zet de Scaleway secret key in `.kamal/secrets`:
+4. Zet de registry secret key in `.kamal/secrets`:
    `KAMAL_REGISTRY_PASSWORD=$SCW_SECRET_KEY`
 5. DNS: maak een A-record (`talk.xprtz.cloud → <instance-ip>`) en zet de
    **TTL laag** (300s of minder) ruim vóór de opnamedag.
 6. Eerste keer: `kamal setup` (installeert Docker + kamal-proxy op de server).
    Daarna is elke deploy `kamal deploy`.
+7. Voor het datacontrast: een testdatabase van ~14 GB. Vul een Postgres bij de
+   bronprovider bijvoorbeeld met `pgbench -i -s 1000` en een paar extra
+   tabellen met indexes, zodat de restore echt tijd kost. Doe een geklokte
+   oefenrun, dan weet je het echte getal en kun je 38 minuten waarmaken of
+   bijstellen (slide, terminal-script en notes gebruiken hetzelfde getal).
 
 ## 2. De opname
 
 Neem de terminal op met je normale schermrecorder (QuickTime/OBS), of gebruik
 `asciinema rec` als je een tekstopname wilt. Opnametips:
 
-- Terminal fullscreen, donker thema, lettergrootte 18+ (leesbaar achterin de zaal).
-- De demo migreert een **app plus PostgreSQL** van een US-provider naar Scaleway
-  nl-ams. De hele pointe is het contrast: de container is in seconden klaar, de
-  data duurt tientallen minuten. Dat verschil is de boodschap.
-- Script van de opname (exact wat de slide nu ook als replay toont):
-  1. `kamal deploy` — container healthy in nl-ams, noteer de tijd (bijv. 8,4s).
-  2. `kamal app exec 'rails runner "puts DB.host"'` — bewijs dat de app nog naar
-     `us-east-1` praat. Dáár zit de coercion point, niet in de container.
-  3. `pg_dump` van de bron, dan `pg_restore` naar de Scaleway-database. Laat de
-     omvang (GB) en de tijd (minuten, vooral index-herbouw) zichtbaar staan.
-     Optioneel: benoem logical replication voor near-zero-downtime.
-  4. `kamal env push && kamal app boot` — cutover; `curl /up` toont `db: nl-ams`.
-  5. `git diff config/deploy.yml` — één regel wisselt Scaleway voor Hetzner of
+- Terminal fullscreen, donker thema, lettergrootte 18+ (leesbaar achterin de
+  zaal).
+- Houd secrets buiten beeld: gebruik `$SOURCE_URL` / `$TARGET_URL` uit de env.
+- Script van de opname (exact wat de slide nu als replay toont):
+  1. `kamal deploy`: container healthy in nl-ams, noteer de tijd (bijv. 8,4s).
+  2. `curl -s https://<domein>/up`: bewijs dat de app nog naar de
+     Amerikaanse database praat (host plus recordcount in de output). Dit is
+     de nulmeting voor de symmetrische controle na de cutover.
+  3. `pg_dump --format=directory --jobs=4 "$SOURCE_URL" -f dump/` en daarna
+     `pg_restore --jobs=4 --dbname="$TARGET_URL" dump/`. Parallelle dump kan
+     alleen met het directory-format. Laat de omvang (GB) en de tijd
+     (minuten, vooral index-herbouw) zichtbaar staan. Optioneel: benoem
+     logical replication voor near-zero-downtime.
+  4. Cutover (Kamal 2): zet `DATABASE_URL` in `.kamal/secrets` om naar de
+     nl-ams database en draai `kamal app boot`. Er bestaat geen
+     `kamal env push` meer in Kamal 2.
+  5. Dezelfde `curl -s https://<domein>/up`: nu `db: nl-ams` met dezelfde
+     recordcount. Dat is het bewijs.
+  6. `git diff config/deploy.yml`: één regel wisselt Scaleway voor Hetzner of
      STACKIT. Sterkste slotbeeld: keuzevrijheid is een one-liner, de state was
      het werk.
-- Houd secrets buiten beeld: gebruik `$SOURCE_URL` / `$TARGET_URL` uit de env.
-- Knip het `pg_restore`-wachten strak in, maar laat de timer/omvang staan.
-- Doe eerst een oefenrun (image gecached, en je weet hoe lang de restore duurt).
-- Laat fouten die je tegenkomt in de voorbereiding niet weggooien — dat is
-  materiaal voor een "wat er misging"-moment in de talk.
-- Een simpelere variant blijft mogelijk: migreer alleen deze (stateless)
-  presentatie. Dan is er geen datastap, maar ook geen contrast om te laten zien.
+- Knip het `pg_restore`-wachten strak in, maar laat de timer en omvang staan.
+- Doe eerst een oefenrun (image gecached, en je weet hoe lang de restore
+  duurt).
+- Laat fouten uit de voorbereiding niet weggooien: dat is materiaal voor een
+  "wat er misging"-moment in de talk.
 
 ## 3. De opname in de presentatie zetten
 
@@ -54,11 +69,15 @@ Zet het bestand als `public/demo.webm` (of `public/demo.mp4`) in de repo en
 push. De demo-slide detecteert het bestand en speelt automatisch de video af
 in plaats van de gescripte replay. Geen bestand = replay als vangnet.
 
+**Let op:** pas bij het toevoegen van de echte opname ook de subtitel op de
+demo-slide (`src/slides/Slide20.jsx`) aan van "Gescripte weergave van de
+echte run" naar "Opgenomen run".
+
 Webm met VP9 blijft het kleinst; mp4 (H.264) werkt overal. Houd het bestand
 onder de ~50 MB voor een vlotte eerste load via Pages.
 
 ## 4. Live-variant (optioneel, voor de durfals)
 
-Wil je het tóch live doen: draai vooraf `kamal setup` + één deploy zodat alles
-warm staat, en doe op het podium alleen de laatste `kamal deploy` + `dig`.
-Fallback is altijd de slide met de opname — één toets verder.
+Wil je het tóch live doen: draai vooraf `kamal setup` plus één deploy zodat
+alles warm staat, en doe op het podium alleen de laatste `kamal deploy` plus
+`dig`. Fallback is altijd de slide met de replay, één toets verder.

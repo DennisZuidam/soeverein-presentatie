@@ -1,11 +1,12 @@
 :root {
   --bg: #090c13;
-  --surface: rgba(255, 255, 255, 0.035);
-  --surface-strong: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.09);
+  /* alpha's bewust iets hoger: op een beamer met zaallicht sterven lage waardes */
+  --surface: rgba(255, 255, 255, 0.055);
+  --surface-strong: rgba(255, 255, 255, 0.085);
+  --border: rgba(255, 255, 255, 0.13);
   --text: #e9edf5;
-  --muted: #949db1;
-  --faint: #5d6678;
+  --muted: #9aa4b8;
+  --faint: #6d7689;
   --blue: #6ea0ff;
   --blue-deep: #2b5cd9;
   --gold: #ffcc33;
@@ -282,7 +283,7 @@ body {
 .terminal-body.scroll {
   flex: 1;
   overflow-y: auto;
-  font-size: 15.5px;
+  font-size: 17.5px;
   line-height: 1.65;
   scrollbar-width: none;
 }

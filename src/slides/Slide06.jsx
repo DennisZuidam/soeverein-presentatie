@@ -11,11 +11,6 @@ const cases = [
     title: '"Dit Amerikaanse bedrijf weet te veel over ons."',
     text: 'FTM nam na anderhalf jaar afscheid van Cloudflare. Niet om een concrete dreiging, maar om de leverancier zelf.',
   },
-  {
-    tag: 'Microsoft × Franse Senaat',
-    title: '"Non, je ne peux pas le garantir."',
-    text: 'Senator Uzenat vroeg of Franse data nooit zonder Franse toestemming naar de VS gaat. Anton Carniaux (Microsoft France), onder ede, 10 juni 2025: "Als een Amerikaanse rechter ons dwingt, moeten we de data overdragen."',
-  },
 ]
 
 export default function Slide06() {
@@ -24,7 +19,7 @@ export default function Slide06() {
       <Reveal i={1}>
         <h2 className="title">Dan komt de buitenwereld erbij</h2>
       </Reveal>
-      <div className="cards three">
+      <div className="cards two" style={{ flex: 1, alignItems: 'start' }}>
         {cases.map((c, k) => (
           <Reveal key={c.tag} i={2 + k} className="card">
             <div className="card-tag">{c.tag}</div>

@@ -19,7 +19,7 @@ const steps = [
   {
     n: '04',
     title: 'Oefen je exit',
-    text: 'Deploy in CI óók eens naar een tweede provider. Een exit die je nooit geoefend hebt bestaat niet, net als een backup die je nooit hebt teruggezet.',
+    text: 'Zet je laatste productie-backup terug bij een tweede provider en klok de tijd. Dat getal is je time-to-exit. Geen backup buiten je provider? Dan is dat stap nul.',
   },
 ]
 

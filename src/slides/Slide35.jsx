@@ -1,11 +1,11 @@
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 const rows = [
-  ['Compute / container', 'seconden', 'open', 'OCI-image, draait morgen op elke runtime.'],
+  ['Compute / container', '8,4 s in de demo', 'open', 'OCI-image, draait morgen op elke runtime.'],
   ['Registry', 'minuten', 'open', 'docker push naar een andere registry, klaar.'],
   ['DNS', 'je TTL', 'open', 'Zet ’m vooraf laag en je knipt in vijf minuten om.'],
-  ['Data · Postgres', 'uren tot dagen', 'half', 'pg_dump is makkelijk. Downtime, volumes en extensions zijn het werk.'],
-  ['Identiteit', 'weken', 'risk', 'OIDC/SAML redt je, een dichtgetimmerde Cognito of Entra niet. Hier zitten de coercion points.'],
+  ['Data · Postgres', '38 min bij 14 GB', 'half', 'pg_dump is makkelijk. Downtime, volumes en extensions zijn het werk. Bij terabytes praat je over weken.'],
+  ['Identiteit', 'weken', 'risk', 'OIDC/SAML redt je, een dichtgetimmerde Cognito of Entra niet. En een bevel van buitenaf komt via je account binnen.'],
 ]
 
 const cls = { open: 'open', half: 'risk', risk: 'risk' }

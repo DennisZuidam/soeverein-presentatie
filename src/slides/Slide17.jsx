@@ -27,7 +27,7 @@ export default function Slide17() {
   return (
     <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
-        <h2 className="title">Hoe bouw je voor keuzevrijheid</h2>
+        <h2 className="title">Hoe bouw je voor keuzevrijheid?</h2>
       </Reveal>
       <div className="cards four">
         {principles.map((p, k) => (

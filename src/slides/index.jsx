@@ -9,7 +9,6 @@ import Slide08 from './Slide08.jsx'
 import Slide09 from './Slide09.jsx'
 import Slide10 from './Slide10.jsx'
 import Slide11 from './Slide11.jsx'
-import Slide12 from './Slide12.jsx'
 import SlideContainer from './Slide13.jsx'
 import Slide14 from './Slide14.jsx'
 import Slide15 from './Slide15.jsx'
@@ -22,7 +21,6 @@ import Slide21 from './Slide21.jsx'
 import Slide22 from './Slide22.jsx'
 import Slide23 from './Slide23.jsx'
 import SlidePayoff from './Slide24.jsx'
-import SlidePrime from './Slide25.jsx'
 import SlideTwoMoves from './Slide26.jsx'
 import SlideHow from './Slide27.jsx'
 import SlideAiGate from './Slide28.jsx'
@@ -33,6 +31,8 @@ import SlideLockinLoan from './Slide32.jsx'
 import SlideExamples from './Slide33.jsx'
 import SlideSovereigntyNumber from './Slide34.jsx'
 import SlideScorecard from './Slide35.jsx'
+import SlideScenario from './Slide36.jsx'
+import SlideSenate from './Slide37.jsx'
 
 // Verhaallijn in drie delen, met intro en epiloog:
 //   Intro    — de haak + wie ik ben
@@ -44,12 +44,17 @@ export const slides = [
   {
     Component: Slide01,
     notes:
-      'Welkom. De titel is letterlijk de stelling van vandaag: een regio die "eu" heet, maakt je cloud nog niet Europees. Drie delen: waarom je vastzit, wie zich al bevrijdde, en hoe je het zelf bouwt (met de demo als climax). Daarna een korte epiloog.',
+      'Welkom. De titel is letterlijk de stelling van vandaag: een regio die "eu" heet, maakt je cloud nog niet Europees. Drie delen: waarom je vastzit, wie zich al bevrijdde, en hoe je het zelf bouwt (met de demo als climax). Daarna een korte epiloog. Claim in de eerste minuut ook de rolverdeling van de avond: de sprekers na mij gaan de AI-diepte in; ik geef jullie de meetlat waarmee je hun verhalen kunt beoordelen.',
+  },
+  {
+    Component: SlideScenario,
+    notes:
+      'Koud openen. Geen naam, geen agenda, meteen het scenario. Laat na "Wat is dan je plan B?" tien seconden stilte vallen; niet invullen, niet grappen. Dit is geen doembeeld maar een meetvraag: aan het eind van de avond heb je hier een getal als antwoord (time-to-exit). Nog niet verklappen; door naar wie ik ben.',
   },
   {
     Component: Slide02,
     notes:
-      'Open koud en persoonlijk. Begin NIET met je cv, begin met het scenario op de slide: een account dat zomaar dichtgaat. Laat dat even hangen.\n\n[JOUW ANEKDOTE, vul hier een echt, waargebeurd moment in, ~20 tot 30 seconden]: een keer dat een provider iets veranderde, afsloot of fors duurder maakte en jij het moest oplossen; een migratie die maanden kostte door één managed service; een egress-rekening waar je van schrok; of het moment dat je besloot je eigen stack op Europese cloud te zetten en waarom. Eén concreet beeld, eindigend op: toen wist ik dat ik hier niet zomaar vanaf kon zonder pijn. Verzin niets; heb je geen scherp moment, vertel dan eerlijk waarom je zelf op Europese cloud bent gaan bouwen.\n\nDaarna kort de framing: directeur bij XPRTZ, ik bouw en draai onze eigen software op een Europese cloud, maar ik sta hier niet als activist en kom niemand bekeren. Dit is een risicoverhaal. Teaser: de vraag is niet Amerikaans of Europees, de vraag is of je überhaupt weg kunt. De container is straks het makkelijke deel; waar je vastzit is je data, je identiteit en het aantal partijen dat je provider kan dwingen.',
+      '[JURY-NOTES VOLGEN]',
   },
   {
     Component: Slide03,
@@ -71,7 +76,7 @@ export const slides = [
   {
     Component: Slide05,
     notes:
-      'Lock-in is geen abstract begrip, het zit in concrete keuzes. DynamoDB: gekozen omdat Postgres "te veel werk" leek; nu kost migratie maanden, single-table design is gemodelleerd rond je query-patronen, veranderen die dan moet de hele tabel op de schop. IAM: rollen zo diep verweven dat overstappen bijna onmogelijk is. Egress: AWS rekent $0,09/GB na 100 GB gratis; bij Hetzner zit 20 TB per server inbegrepen. 300 TB/maand is ~$21.000 bij AWS, vrijwel €0 bij Hetzner/Scaleway. Geen toeval, zo werkt het model. En geen AWS-bashing: Azure en Google doen exact hetzelfde. Bronnen: wz-it.com/en/blog/aws-egress-fees-vs-hetzner-traffic-costs · dev.to/gpuperhour',
+      'Lock-in is geen abstract begrip, het zit in concrete keuzes. DynamoDB: gekozen omdat Postgres "te veel werk" leek; nu kost migratie maanden, single-table design is gemodelleerd rond je query-patronen, veranderen die dan moet de hele tabel op de schop. IAM: rollen zo diep verweven dat overstappen bijna onmogelijk is. Egress: let op de precisie hier, want exit-egress (eenmalig, volledig vertrek onder voorwaarden) is sinds 2024 bij alle drie de hyperscalers gratis. Het verdienmodel zit in het doorlopende verkeer: $0,09/GB na 100 GB gratis bij AWS; 300 TB/maand is orde twintigduizend dollar, bij Hetzner zit 20 TB per server inbegrepen. Elke dienst buiten de muren wordt zo vanzelf te duur; alles binnenshuis is "gratis". En geen AWS-bashing: Azure en Google doen exact hetzelfde. Bronnen: wz-it.com/en/blog/aws-egress-fees-vs-hetzner-traffic-costs · dev.to/gpuperhour',
   },
   {
     Component: SlideLockinLoan,
@@ -81,22 +86,27 @@ export const slides = [
   {
     Component: Slide06,
     notes:
-      'Drie gevallen uit één jaar. ICC-aanklager verloor zijn Microsoft-account na een Trump-sanctie; de ICC stapte daarna over op OpenDesk. FTM nam afscheid van Cloudflare, niet om een dreiging maar om de leverancier zelf. En in de Franse Senaat, 10 juni 2025: senator Simon Uzenat vroeg Anton Carniaux (Microsoft France) of hij kon garanderen dat Franse data nooit zonder Franse toestemming aan de VS wordt overgedragen. Antwoord onder ede: "Non, je ne peux pas le garantir", en: "Als een Amerikaanse rechterlijke beslissing ons dwingt, moeten we de data overdragen." Bronnen: senat.fr/compte-rendu-commissions/20250609/ce_commande_publique.html · actuia.com',
+      'Twee gevallen uit één jaar. ICC-aanklager Khan verloor de toegang tot zijn Microsoft-account na een Amerikaanse sanctie; let op de formulering: zijn e-mailaccount werd afgesloten, en Microsoft stelt dat het zijn diensten aan het ICC als organisatie nooit heeft opgeschort (de kwestie draaide om de persoonlijk gesanctioneerde aanklager). Houd die nuance paraat voor de Q&A. De ICC stapte daarna over op OpenDesk. FTM nam afscheid van Cloudflare, niet om een dreiging maar om de leverancier zelf. Brug naar de volgende twee slides: en dit soort risico is geen incident, het is jurisdictie.',
   },
   {
     Component: Slide07,
     notes:
-      'De naam zegt "eu", maar alleen de servers staan in Europa. Het bedrijf zit in Seattle, de wet in Washington (CLOUD Act, FISA 702). Voor jouw data telt juridisch maar één plek, en dat is niet Dublin.',
+      'De naam zegt "eu", maar alleen de servers staan in Europa. Het bedrijf zit in Seattle, de wet in Washington (CLOUD Act, FISA 702). Voor jouw data telt juridisch maar één plek, en dat is niet Dublin. Brug: en dat is niet mijn interpretatie, dat heeft Microsoft zelf onder ede gezegd.',
+  },
+  {
+    Component: SlideSenate,
+    notes:
+      'Het sterkste moment van Deel 1, dus rust nemen. Franse Senaat, hoorzitting van 10 juni 2025. Senator Simon Uzenat vroeg Anton Carniaux (directeur juridische en publieke zaken, Microsoft France) of hij kan garanderen dat Franse data nooit zonder Franse toestemming aan de VS wordt overgedragen. Antwoord, onder ede: "Non, je ne peux pas le garantir." En daarna: "Als een Amerikaanse rechterlijke beslissing ons dwingt, moeten we de data overdragen." Laat de quote even staan voordat je praat. Bronnen: senat.fr/compte-rendu-commissions/20250609/ce_commande_publique.html · actuia.com',
   },
   {
     Component: Slide08,
     notes:
-      'Solvinity is het bedrijf achter DigiD, iedereen in deze zaal gebruikt het. 2025: Amsterdam en J&V kozen er bewust voor, juist om Amerikaanse afhankelijkheid te vermijden. November 2025: Kyndryl (ex-IBM) wil Solvinity overnemen, de soevereine keuze zou opeens Amerikaans worden. EZK blokkeerde de overname. De les: een leverancier kan van eigenaar wisselen. Het enige wat je echt in de hand hebt, is of je kunt vertrekken.',
+      'Solvinity is het bedrijf achter DigiD, iedereen in deze zaal gebruikt het. De tijdlijn: Solvinity is van oorsprong Nederlands maar zit al jaren in Britse handen (het VK is geen EU, dus "gewoon Europees kiezen" wankelde al). November 2025: Kyndryl (ex-IBM) wil Solvinity overnemen. Mei 2026: staatssecretaris Willemijn Aerdts (Digitale Economie en Soevereiniteit) verbiedt de overname "ter bescherming van het publieke belang", op advies van toetsingsorgaan BTI. En het is niet afgelopen: Solvinity is in beroep gegaan; rond 6 juli dient bij de rechtbank Rotterdam een verzoek om een voorlopige voorziening. Dat is dágen na deze presentatie: CHECK DE ACTUELE STAND vlak voor de avond. Dat open einde is precies de les: zelfs een overheidsverbod is geen zekerheid, alleen je eigen exitvermogen. Niet claimen dat Amsterdam of J&V "bewust kozen" voor Solvinity; dat is niet te bevestigen. Bronnen: nos.nl/artikel/2615885 · nos.nl/artikel/2618922 · ictrecht.nl (Solvinity-verbod en de grenzen van het publiek belang)',
   },
   {
     Component: SlideAiGate,
     notes:
-      'De nieuwste rung op dezelfde ladder, en de meest actuele. Eerst zagen we dat je data onder de CLOUD Act valt, toen dat een account zomaar dicht kan (ICC). Nu reikt dezelfde jurisdictie tot de AI-modellen zelf. Executive Order 14409, "Promoting Advanced Artificial Intelligence Innovation and Security", 2 juni 2026: de NSA-directeur bepaalt via een geheime benchmark wanneer een model een "covered frontier model" is, en ontwikkelaars mogen de Amerikaanse overheid tot 30 dagen vóór release toegang geven. Blijf eerlijk: het is nu nog vrijwillig, geen verplichte licensing, zeg dus "de VS bouwt een poort", niet "de VS blokkeert AI". De AI Diffusion Rule (jan 2025) is in mei 2025 ingetrokken; noem die alleen als richting. Brug: het antwoord is hetzelfde principe als bij de S3-API, open in plaats van closed. Open-weight modellen zoals Mistral zijn voor AI wat open standaarden zijn voor infra. Haakje: deze EO is van 2 juni, het EU-pakket van 3 juni, één dag ertussen (komt terug bij "de wind in je rug"). Bronnen: whitehouse.gov/presidential-actions/2026/06 · skadden.com · ropesgray.com',
+      'De nieuwste rung op dezelfde ladder, en de meest actuele. Eerst zagen we dat je data onder de CLOUD Act valt, toen dat een account zomaar dicht kan (ICC). Nu reikt dezelfde jurisdictie tot de AI-modellen zelf. Executive Order 14409, "Promoting Advanced Artificial Intelligence Innovation and Security", 2 juni 2026: de NSA-directeur bepaalt via een geclassificeerde cyberbenchmark (specifiek cybercapaciteiten, niet algemene modelcapaciteit) wanneer een model een "covered frontier model" is, en ontwikkelaars mogen de Amerikaanse overheid tot 30 dagen vóór release toegang geven. Blijf eerlijk: het is vrijwillig, de order sluit een verplicht licentie- of preclearance-regime expliciet uit. Zeg dus "de VS bouwt een poort", niet "de VS blokkeert AI". Brug: het antwoord is hetzelfde principe als bij de S3-API, open in plaats van closed. Open-weight modellen zoals Mistral zijn voor AI wat open standaarden zijn voor infra. Haakje: deze EO is van 2 juni, het EU-pakket van 3 juni (komt terug bij "de wind in je rug"). Bronnen: federalregister.gov/public-inspection/2026-11415 · techpolicy.press',
   },
   {
     Component: Slide09,
@@ -108,7 +118,7 @@ export const slides = [
   {
     Component: SlideDivider2,
     notes:
-      'Overgang naar Deel 2. Deel 1 was het waarom, vanaf hier gaat het over mensen die het al deden. Toon: geen manifest, een deploylog. Namen lopen van 37signals (tachtig man) tot Airbus, DNB en de Rijksoverheid, groot en klein door elkaar. Rode draad: niemand deed het omdat het moest, het waren keuzes.',
+      'Overgang naar Deel 2. Deel 1 was het waarom, vanaf hier gaat het over mensen die het al doen. Toon: geen manifest, een deploylog. "Al onderweg" is bewust: DNB en Airbus zijn intenties en contracten, geen afgeronde migraties. Tempo vasthouden in dit deel; de cases delen één les en de zaal heeft het patroon snel door.',
   },
   {
     Component: SlideTwoMoves,
@@ -118,12 +128,12 @@ export const slides = [
   {
     Component: SlideExamples,
     notes:
-      'Groot en klein, dezelfde les: de compute verhuist makkelijk, de state is het werk. GEICO: tien jaar public cloud (multi-cloud, Azure de grootste, NIET all-in AWS, dat is fout in veel samenvattingen), rekening 2,5x omhoog, terug naar eigen OpenStack/Kubernetes, 50%+ goedkoper per core (Open Compute Project white paper, 2024). Dropbox: ~500 PB grotendeels (~90%) van S3 naar eigen Magic Pocket, $74,6M bespaard op cost of revenue over 2016-2017 (S-1, 2018). 37signals: apps met Kamal, ~10 PB / ~5 mld objecten uit S3 (18 PB is de Pure Storage-capaciteit), de $10M is DHH zijn eigen 5-jaars projectie. Klein: OneUptime, $38k/mnd AWS naar bare metal (MicroK8s+Ceph), na twee jaar $1,2M/jaar bespaard, 99,993% uptime (goed onderbouwd). Datapult, ~90% lagere kosten met ISO 27001 behouden (zelf-gerapporteerd op Medium, breng voorzichtig). hank.parts, compute/storage/auth moeiteloos naar EU maar vast bij Apple, Google Play en Google Ads, precies de coercion points (The Register, feb 2026). Bronnen: thestack.technology (GEICO) · geekwire.com (Dropbox) · oneuptime.com/blog · theregister.com/2026/02/20',
+      'Groot en klein, dezelfde les: de compute verhuist makkelijk, de state is het werk. GEICO: tien jaar public cloud (multi-cloud, Azure de grootste, NIET all-in AWS, dat is fout in veel samenvattingen), rekening 2,5x omhoog, terug naar eigen OpenStack/Kubernetes, 50%+ goedkoper per core (Open Compute Project white paper, 2024). Dropbox: ~500 PB grotendeels (~90%) van S3 naar eigen Magic Pocket, $74,6M bespaard op cost of revenue over 2016-2017 (S-1, 2018). OneUptime: van $38k/mnd AWS naar eigen bare metal (MicroK8s+Ceph), na twee jaar in totaal $1,2M bespaard, 99,993% uptime (eigen blog, goed onderbouwd). hank.parts: compute, storage en auth moeiteloos naar de EU, maar vast bij Apple, Google Play en Google Ads, precies de coercion points buiten de infra-laag (The Register, feb 2026). 37signals bewaar ik even: die case gaat zo de diepte in. Bronnen: thestack.technology (GEICO) · geekwire.com (Dropbox) · oneuptime.com/blog · theregister.com/2026/02/20',
   },
   {
     Component: Slide14,
     notes:
-      'Van een softwarebedrijf van 80 man (37signals) tot Airbus, DNB en de Rijksoverheid: de beweging is breed. De labels laten het onderscheid van de vorige slides zien: de meesten kozen een Europese bestemming, 37signals bouwde keuzevrijheid. De Rijksoverheid deed allebei, Europese bestemming én een contractuele exitclausule bij overname buiten de EER. En niemand deed dit omdat het moest.',
+      'De beweging is breed: van onderzoeksjournalistiek tot Airbus, DNB en de Rijksoverheid. De labels laten het onderscheid van de vorige slide zien: de meesten kozen een Europese bestemming, de Rijksoverheid deed allebei: Europese bestemming én een contractuele exitclausule bij overname buiten de EER (raamovereenkomst STACKIT, 23 april 2026; raamwerk zonder afnameverplichting, dus geen migratie). The Firewall: kort geding om het DigiD-contract te blokkeren, afgewezen omdat opzegging de werking van DigiD in gevaar zou brengen. Airbus is een aanbesteding, een intentie. Venijnige vraag om te zien aankomen: "waarom Duits STACKIT en geen Nederlandse provider?" Antwoord: precies de these, de exitclausule telt, de vlag niet. Bronnen: rijksoverheid.nl (raamovereenkomst 23 april 2026) · techzine.eu · computable.nl (kritiek DCC)',
   },
   {
     Component: SlideHow,
@@ -131,46 +141,36 @@ export const slides = [
       'De concrete techniek, want "ze stapten over" is geen recept. 37signals: apps zaten al in Docker, dus de cloud-exit was vooral orkestratie, ze bouwden Kamal (open source), zetten Percona MySQL 8 op bare metal in plaats van RDS, en tilden later ~10 PB van S3 naar dual-datacenter Pure Storage. ICC: openDesk van ZenDiS met Collabora (documenten), Nextcloud (bestanden), Open-Xchange (mail), OpenProject (projecten). FTM + De Correspondent: site en app al eigen bouw op EU-servers met Matomo; nu vervangen ze stapsgewijs Slack, ActiveCampaign, Shopify en Google Workspace, en publiceren elke afweging. Bronnen: dev.37signals.com · openproject.org/blog · ftm.nl',
   },
   {
-    Component: SlidePrime,
-    notes:
-      'Het Prime Video VQA-team bouwde volgens het boekje: Step Functions, Lambda, S3 als tussenopslag. Het liep vast op 5% van de verwachte load (Step Functions rekent per state-transitie, meerdere per seconde stream) plus hoge S3-kosten. Herbouwd als één ECS-task, frames in-memory: ruim 90% goedkoper. De les is niet "serverless is slecht", maar dat zelfs AWS-teams hun eigen defaults heroverwegen als de architectuur niet past. Bron: Prime Video techblog (maart 2023) · thestack.technology',
-  },
-  {
     Component: Slide10,
     notes:
-      'DHH: ruim tien jaar AWS, toen cloud-exit naar eigen hardware. Cijfers: infra van $3,2M naar minder dan $1M per jaar. De S3-exit: ~10 PB / 5 mld objecten uit S3 naar dual-datacenter Pure Storage (18 PB capaciteit), $1,5M eenmalig, <$200K/jaar beheer. Let op: de "$10M over vijf jaar" is DHH zijn eigen projectie, geen audit; gerealiseerd ~$1-2M/jaar. Zomer 2025 ging het complete AWS-account dicht. Niet naar Europese cloud, naar eigen infra, zijn keuze. En hij bouwde Kamal, het deploy-tool uit de demo. Bronnen: world.hey.com/dhh · theregister.com/2025/05/09',
+      'DHH: ruim tien jaar AWS, toen cloud-exit naar eigen hardware. Cijfers: infra van $3,2M naar minder dan $1M per jaar. De S3-exit: ~10 PB / 5 mld objecten uit S3 naar dual-datacenter Pure Storage (18 PB is de gekochte capaciteit), $1,5M eenmalig, <$200K/jaar beheer. Let op: de "$10M over vijf jaar" is DHH zijn eigen projectie, geen audit; gerealiseerd ~$1-2M/jaar. Zomer 2025 ging het complete AWS-account dicht. Niet naar Europese cloud, naar eigen infra, zijn keuze. En hij bouwde Kamal, het deploy-tool uit de demo. Bronnen: world.hey.com/dhh · theregister.com/2025/05/09',
   },
   {
     Component: Slide11,
     notes:
-      'Kelsey Hightower vat het samen: kunnen bewegen zonder toestemming ís een vorm van soevereiniteit. Niet politiek, maar praktisch.',
-  },
-  {
-    Component: Slide12,
-    notes:
-      'Jeff Geerling over zijn vaatwasser die een cloud-account eist. Grappig voorbeeld, serieus principe: geforceerde cloud-afhankelijkheid voor iets dat prima zelfstandig werkt. Lokaal eerst, cloud als keuze, of het nu je vaatwasser is of je productie-database.',
+      'Kelsey Hightower vat het samen: kunnen bewegen zonder toestemming ís een vorm van soevereiniteit. Niet politiek, maar praktisch. Let op: controleer vóór de avond of deze bewoording letterlijk uit de Civo Navigate London 2025-opname komt; zo niet, kondig hem aan als parafrase ("zoals Hightower het ongeveer zei").',
   },
   {
     Component: Slide15,
     notes:
-      'EU Tech Sovereignty Package (3 juni 2026): open source centraal in EU-beleid, voorstel Cloud and AI Development Act, €2 miljard voor open source. De cijfers laten zien waarom: 80% van de digitale technologie geïmporteerd, 70% van de AI-modellen uit de VS. Callback naar de NSA-poort: die EO is van 2 juni, dit pakket van 3 juni, twee grootmachten die in dezelfde week hun AI-soevereiniteit afbakenen, de één met een poort, de ander met open source. Voor de zaal: porteerbaar kunnen deployen wordt letterlijk een aanbestedingscriterium.',
+      'EU Tech Sovereignty Package (3 juni 2026): voor het eerst zit open source in het hart van een industriepolitiek pakket, met wetgeving en budget (de Commissie had al een Open Source Strategy uit 2020, dus niet zeggen "voor het eerst open source in EU-beleid"). Voorstel Cloud and AI Development Act inclusief open-source-first principe voor overheidsinkoop, €2 miljard gespreid over zeven jaar. De cijfers laten zien waarom: 80% van de digitale technologie geïmporteerd, 70% van de AI-modellen uit de VS. Callback naar de NSA-poort: die EO is van 2 juni, dit pakket van 3 juni. Breng het als veelzeggend toeval, niet als schaakspel; het pakket was meermaals uitgesteld. Voor de zaal: porteerbaar kunnen deployen wordt letterlijk een aanbestedingscriterium. Bronnen: commission.europa.eu (3 juni 2026) · techpolicy.press · interoperable-europe.ec.europa.eu',
   },
   {
     Component: Slide16,
     notes:
-      'Loop de lagen langs. Linkerkolom is waar je nu waarschijnlijk zit, rechterkolom de open standaard. Groen betekent: de standaard bestaat al, je hoeft alleen de provider te kiezen. Observability als illustratie: Coinbase betaalde Datadog $65 miljoen voor één jaar (2021), ontdekt via een earnings call en teruggerekend door een JPMorgan-analist. DNS-rij: DNS4EU draait op Knot Resolver 6, open source van CZ.NIC, dezelfde software die delen van Cloudflare aandrijft, 100% EU-gehost. Bronnen: newsletter.pragmaticengineer.com · whalebone.io/dns4eu',
+      'Loop de lagen langs. Linkerkolom is waar je nu waarschijnlijk zit, rechterkolom de open standaard. Groen betekent: de standaard bestaat al, je hoeft alleen de provider te kiezen. Observability als illustratie: Coinbase betaalde Datadog naar verluidt $65 miljoen voor één jaar (2021); het bedrag komt uit een Datadog earnings call waar de klant niet bij naam werd genoemd, de identificatie is breed gerapporteerd maar afgeleid, vandaar "naar verluidt". DNS-rij: DNS4EU draait op Knot Resolver, open source van CZ.NIC, 100% EU-gehost. Bronnen: newsletter.pragmaticengineer.com · whalebone.io/dns4eu',
   },
   {
     Component: Slide18,
     notes:
-      'Eerlijk zijn: kleinere community, minder managed services, minder StackOverflow-antwoorden, Microsoft-integraties soms stroever. Maar voor een standaard cloud-native stack is het verschil klein en het wordt kleiner. En wie op open standaarden bouwt, kan altijd terug. Deze slide sluit Deel 2 af: de alternatieven zijn echt, met eerlijke kanttekeningen.',
+      'Eerlijk zijn, en deze slide werkt juist omdat hij niet klapt. Kleinere community, minder managed services, en benoem de ops-kanttekening expliciet: managed services zijn een ops-team dat je huurt; zonder hen moet je dat zelf kunnen of inhuren. Dat is het echte bezwaar van elke IT-manager in de zaal, en het maakt de besparingscases juist geloofwaardiger (die bedrijven namen die ops-taak bewust terug). Maar voor een standaard cloud-native stack is het verschil klein en het wordt kleiner. Deze slide sluit Deel 2 af: de alternatieven zijn echt, met eerlijke kanttekeningen.',
   },
 
   // ---- Deel 3 · Hoe je het zelf bouwt ----
   {
     Component: SlideDivider3,
     notes:
-      'Divider Deel 3. Pivot van analyse naar actie, zonder te preken. Plant de kernthese: de container is een avondje werk, de echte lock-in zit in state, identiteit en coercion points. De subline is de agenda voor de rest van het deel. Spreektekst: klaar met waarom en wie; de verleiding is nu "containeriseer alles en je bent vrij", maar de container is het makkelijke deel.',
+      'Divider Deel 3. Pivot van analyse naar actie, zonder te preken. Plant de kernthese: de container is een avondje werk, de echte lock-in zit in state, identiteit en coercion points. KLOK-CHECKPOINT: ben je hier nog niet op tweederde van je slot, gebruik de noodsnit (Payoff-slide overslaan, quotes in Deel 2 inkorten). Spreektekst: klaar met waarom en wie; de verleiding is nu "containeriseer alles en je bent vrij", maar de container is het makkelijke deel.',
   },
   {
     Component: SlideContainer,
@@ -180,39 +180,39 @@ export const slides = [
   {
     Component: Slide17,
     notes:
-      'Vier bouwprincipes: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Voor identity: bouw tegen OIDC/OAuth2 in plaats van Cognito/Entra-SDK\'s, dan is de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). De Data Act werkt nu al: alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten. Vanaf januari 2027 zijn switching fees volledig verboden. Maar bouw alsof die wet niet bestaat, dan heb je hem ook niet nodig. Bronnen: aws.amazon.com/blogs/aws · european-alternatives.eu',
+      'Vier bouwprincipes: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Voor identity: bouw tegen OIDC/OAuth2 in plaats van Cognito/Entra-SDK\'s, dan is de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). De Data Act werkt nu al: alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten, en vanaf januari 2027 zijn switching fees volledig verboden. Maar bouw alsof die wet niet bestaat, dan heb je hem ook niet nodig. Bronnen: aws.amazon.com/blogs/aws · european-alternatives.eu',
   },
   {
     Component: SlideSovereigntyNumber,
     notes:
-      '"Cloud-agnostisch" is een marketingsprookje, niemand is het en niemand hoeft het te zijn. Het bruikbare doel is replaceability: hoe snel en hoe duur kom je los. Maak er twee getallen van, time-to-exit en cost-to-exit, en behandel ze als een SLA die je afdwingt en jaarlijks test (een echte exit-oefening, zoals een chaos-drill). Coercion points is het verrassende punt: een juridisch-geopolitiek getal, geen technisch, en het overrulet al je mooie architectuur. Omkering aan het eind: soevereiniteit is geen doel dat je afvinkt, maar een bijproduct als die exit-getallen laag genoeg zijn.',
+      'Dit is de belangrijkste eigen bijdrage van de talk, dus tijd nemen. "Cloud-agnostisch" is een marketingsprookje, niemand is het en niemand hoeft het te zijn. Het bruikbare doel is replaceability: hoe snel en hoe duur kom je los. Maak er twee getallen van, time-to-exit en cost-to-exit, en zet ze als SLA op papier: binnen zes weken weg, voor veertig mille, elk jaar echt geoefend (een exit-oefening, zoals een chaos-drill). De getallen zijn een voorbeeld, geijkt op een middelgrote stack; laat een architect ze zelf herijken. Voor de IT-managers in de zaal: dit is de zin die naar het contract en het risicoregister kan. Coercion points is het verrassende punt: een juridisch-geopolitiek getal, geen technisch, en het overrulet al je mooie architectuur. Omkering aan het eind: soevereiniteit is geen doel dat je afvinkt, maar een bijproduct als die exit-getallen laag genoeg zijn.',
   },
   {
     Component: SlidePayoff,
     notes:
-      'Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij, als bijproduct.',
+      'SCHRAPKANDIDAAT BIJ TIJDNOOD: de kern kan als gesproken zin bij de scorecard. Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij, als bijproduct.',
   },
   {
     Component: Slide19,
     notes:
-      'De demo is uitgebreid: niet alleen de stateless presentatie, maar een echte app plus PostgreSQL van een Amerikaanse provider naar Scaleway nl-ams. De hele pointe: de container is in 8 seconden klaar, de datamigratie duurt 40 minuten. Dat verschil ís de boodschap: de container was nooit je lock-in, je data wel. En dezelfde deploy.yml wijst met één regel ook naar Hetzner of STACKIT. Zie DEMO.md voor het opname-draaiboek.',
+      'De demo: een echte app plus PostgreSQL van een Amerikaanse provider naar Scaleway nl-ams. De hele pointe: de container is in 8 seconden klaar, de datamigratie kost 38 minuten. Dat verschil ís de boodschap: de container was nooit je lock-in, je data wel. En dezelfde deploy.yml wijst met één regel ook naar Hetzner of STACKIT. Als de vraag komt "jij werkt toch ook met Scaleway?": eerlijk beantwoorden. Klopt, ik ken hun stack goed, en alles wat ik vandaag zeg geldt óók tegen Scaleway; daarom eindigt de demo met een git diff naar Hetzner. Zie DEMO.md voor het opname-draaiboek.',
   },
   {
     Component: Slide20,
     notes:
-      'Opgenomen run, geen live demo. Volgorde: kamal deploy (8,4s, container healthy in nl-ams), dan bewijzen dat de app nog naar us-east-1 praat, dan het echte werk: pg_dump (14 GB) en pg_restore met index-herbouw (38 minuten), cutover naar de nl-ams database, en tot slot git diff die met één regel naar Hetzner wijst. Laat de tijden zien: 8 seconden versus 38 minuten. Zodra public/demo.webm bestaat speelt de slide de echte opname. Zie DEMO.md.',
+      'Gescripte weergave zolang er geen echte opname is; zeg dat ook hardop ("dit is de gescripte weergave van de run, de code staat in de repo"). Volgorde: kamal deploy (8,4s, container healthy in nl-ams), curl /up bewijst dat de app nog naar us-east-1 praat, dan het echte werk: pg_dump in directory-format met 4 jobs (14 GB) en pg_restore met index-herbouw (38m 12s), cutover door DATABASE_URL in .kamal/secrets om te zetten en kamal app boot, en dezelfde curl /up toont nu nl-ams met dezelfde recordcount. Tot slot de git diff die met één regel naar Hetzner wijst. Zodra public/demo.webm bestaat speelt de slide de echte opname; pas dan ook de subtitel aan naar "Opgenomen run". Zie DEMO.md.',
   },
   {
     Component: SlideScorecard,
     notes:
-      'Lees de scorecard van boven naar beneden, bewust oplopend. Compute, registry en DNS reken je af in seconden tot minuten, want die draaien op open standaarden (OCI, DNS). Dat is het deel dat iedereen als "de migratie" ziet, en het is triviaal. De twee onderste rijen doen pijn: bij data is pg_dump niet het probleem maar de operationele realiteit (downtime, volume, extensions, replicatie), en bij identiteit gaat het om het aantal coercion points. Landing: reken je soevereiniteit niet af in "is dit Europees", maar in de langste time-to-exit in je stack. Staat dat getal bij je container, dan heb je niets gemeten.',
+      'Lees de scorecard van boven naar beneden, bewust oplopend. Compute, registry en DNS reken je af in seconden tot minuten, want die draaien op open standaarden (OCI, DNS). Dat is het deel dat iedereen als "de migratie" ziet, en het is triviaal. De twee onderste rijen doen pijn. Zeg de schaalzin hardop: dit was 14 GB zonder downtime-eis; bij terabytes praat je over weken. Bij identiteit gaat het om herbouwen, niet exporteren, en een bevel van buitenaf komt via je account binnen. Landing: reken je soevereiniteit niet af in "is dit Europees", maar in de langste time-to-exit in je stack. Staat dat getal bij je container, dan heb je niets gemeten.',
   },
 
   // ---- Epiloog ----
   {
     Component: Slide21,
     notes:
-      'Vier concrete stappen voor morgen: audit je dependencies (waar zit je vast?), containerize het volgende project (niet alles in één keer), zet je infra in code, en oefen je exit, deploy in CI ook eens naar een tweede provider. Een exit die je nooit geoefend hebt bestaat niet, net als een backup die je nooit hebt teruggezet.',
+      'Vier stappen, maar één echte opdracht: de exit-oefening. Audit je dependencies (waar zit je vast?), containerize het volgende project (niet alles in één keer), zet je infra in code, en de kern: zet je laatste productie-backup terug bij een tweede provider en klok de tijd. Dat getal is je time-to-exit. Geen backup buiten je provider? Dan is dat stap nul; bij een bevroren account begint je exit bij een backup die al buiten de deur ligt. Concreet voorstel aan de zaal: één dag dit jaar, één service, tweede provider.',
   },
   {
     Component: Slide22,
@@ -222,6 +222,6 @@ export const slides = [
   {
     Component: Slide23,
     notes:
-      'Bedankt! Links voor wie verder wil: de demo-repo, Kamal en european-alternatives.eu voor het vinden van Europese alternatieven per categorie.',
+      'Dit scherm staat de hele Q&A aan; de meetlat-vraag blijft staan. Bedank kort, wijs op de links (demo-repo, Kamal, european-alternatives.eu) en geef de vraag mee aan de rest van de avond. Q&A-voorbereiding:\n\n1. "AWS heeft nu een European Sovereign Cloud, is je titel niet achterhaald?" Andere vlag op hetzelfde moederbedrijf; de Carniaux-quote onder ede ging exact hierover. Een sovereign cloud is een bestemming, geen keuzevrijheid.\n2. "Het EU-US Data Privacy Framework regelt dit toch?" Schrems I en II bewijzen dat zo\'n besluit aan één rechtszaak of presidentieel besluit hangt. Juridische paraplu\'s klappen; architectuur niet. Check de actuele DPF-status vlak voor de avond.\n3. "Jij werkt toch met Scaleway?" Klopt, ik ken hun stack goed. Alles wat ik zei geldt ook tegen Scaleway: bewust alleen compute, registry en Postgres, dus de exit dáár is dezelfde 8 seconden plus 38 minuten, en de demo eindigt met een git diff naar Hetzner.\n4. "Je opent met een bevroren account, maar pg_dump vereist een werkend account." Onderscheid vrijwillige en gedwongen exit: bij de tweede begint je exit bij een backup die al buiten je provider ligt. Ligt je enige dump bij dezelfde provider, dan is je time-to-exit oneindig.\n5. "Egress bij exit is sinds 2024 gratis, klopt je verdienmodel-punt nog?" Klopt voor de eenmalige exit onder voorwaarden; de rente zit in doorlopende egress, dual-run tijdens migratie en dagelijks verkeer.\n6. "Waarom koos het Rijk Duits STACKIT en geen Nederlandse provider?" Precies de these: de exitclausule telt, de vlag niet.\n7. "Al je cases zijn successen; wie zijn exit verprutste blogt daar niet over." Toegeven en omdraaien: klopt, en juist daarom is meten belangrijker dan verhuizen. De cases bewijzen dat het kán en wat het kost per laag, niet dat iedereen moet.\n8. "Mistral heeft zelf een Microsoft-deal; hoe soeverein zijn open weights?" Zelfde meetlat: open weights verhuizen naar een andere host in uren; een fine-tune bij een closed provider krijg je nooit mee. Diepte is aan de sprekers hierna.',
   },
 ]

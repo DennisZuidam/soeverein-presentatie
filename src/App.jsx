@@ -91,6 +91,8 @@ export default function App() {
   useEffect(() => {
     const onKey = (e) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return
+      // spatie/pijltjes mogen de demo-video of een knop niet doorschieten
+      if (e.target instanceof Element && e.target.closest('video, button, input, textarea, a')) return
       switch (e.key) {
         case 'ArrowRight':
         case 'PageDown':
