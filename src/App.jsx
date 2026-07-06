@@ -91,8 +91,8 @@ export default function App() {
   useEffect(() => {
     const onKey = (e) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return
-      // spatie/pijltjes mogen de demo-video of een knop niet doorschieten
-      if (e.target instanceof Element && e.target.closest('video, button, input, textarea, a')) return
+      // navigatie moet altijd werken; alleen niet kapen terwijl je in een tekstveld typt
+      if (e.target instanceof Element && e.target.closest('input, textarea, select, [contenteditable="true"]')) return
       switch (e.key) {
         case 'ArrowRight':
         case 'PageDown':
@@ -180,8 +180,8 @@ export default function App() {
           <span className="counter">
             {String(index + 1).padStart(2, '0')} / {slides.length}
           </span>
-          <button onClick={() => go(index - 1)} aria-label="Vorige slide">‹</button>
-          <button onClick={() => go(index + 1)} aria-label="Volgende slide">›</button>
+          <button onClick={(e) => { e.currentTarget.blur(); go(index - 1) }} aria-label="Vorige slide">‹</button>
+          <button onClick={(e) => { e.currentTarget.blur(); go(index + 1) }} aria-label="Volgende slide">›</button>
         </div>
       </div>
     </div>
