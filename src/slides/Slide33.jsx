@@ -6,7 +6,7 @@ const big = [
 ]
 
 const small = [
-  { who: 'OneUptime', text: '$38k per maand op AWS, naar eigen bare metal. Na twee jaar $1,2M bespaard, 99,993% uptime.' },
+  { who: 'OneUptime', text: '$38k per maand op AWS, naar eigen bare metal. Besparing groeide in twee jaar van $230k naar ruim $1,2M per jaar, 99,993% uptime.' },
   { who: 'hank.parts', text: 'Compute en storage moeiteloos naar de EU. Vast bij Apple, Google Play en Ads: de echte coercion points.' },
 ]
 

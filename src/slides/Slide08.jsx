@@ -9,7 +9,7 @@ const moments = [
   {
     when: "nov '25",
     title: 'Amerikaanse overname',
-    text: 'Kyndryl (afgesplitst van IBM) wil Solvinity inlijven. Het bedrijf achter DigiD zou onder Amerikaanse jurisdictie vallen.',
+    text: 'Kyndryl (afgesplitst van IBM) wil Solvinity inlijven. DigiD zou daarmee onder Amerikaanse jurisdictie vallen.',
   },
   {
     when: "mei '26",
@@ -43,7 +43,7 @@ export default function Slide08() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={7} sub="Zelfs een overheidsverbod is geen zekerheid. Alleen je eigen exitvermogen is dat wel.">
+      <Punchline i={7} sub="Zelfs een overheidsverbod is geen zekerheid.">
         Het enige wat je echt in de hand hebt, is <span className="gold">of je kunt vertrekken</span>.
       </Punchline>
     </Slide>

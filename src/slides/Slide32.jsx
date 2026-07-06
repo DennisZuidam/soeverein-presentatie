@@ -7,7 +7,7 @@ const smart = [
 ]
 
 const bill = [
-  'Drie jaar state in een proprietary datamodel. De container verhuis je in een middag, je data gijzelt je jaren.',
+  'Drie jaar state in een proprietary datamodel: exporteren bestaat niet, je herschrijft.',
   'Identiteit verweven met de provider: IAM, SSO, org policies. Niet je servers zitten vast, jij zit vast.',
   'De aflosdatum kiest je leverancier: een prijsverhoging, een licentiewijziging, een coercion point.',
 ]

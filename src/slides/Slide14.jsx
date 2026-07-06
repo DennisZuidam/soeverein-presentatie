@@ -1,7 +1,7 @@
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 const movers = [
-  { who: 'FTM · Correspondent · Firewall', tag: 'Europees gekozen', what: 'Migratie weg van Amerikaanse tools, transparant en in het openbaar. The Firewall probeerde het DigiD-contract zelfs via de rechter te blokkeren; dat werd afgewezen.' },
+  { who: 'FTM · De Correspondent · The Firewall', tag: 'Europees gekozen', what: 'Migratie weg van Amerikaanse tools, transparant en in het openbaar. The Firewall probeerde het DigiD-contract zelfs via de rechter te blokkeren; dat werd afgewezen.' },
   { who: 'Airbus', tag: 'Europees gekozen', what: 'Aanbesteding (jan 2026, €50M+) voor bedrijfskritische apps. Schat zelf 80% kans op een geschikte EU-provider.' },
   { who: 'Gemeente Amsterdam', tag: 'Europees gekozen', what: 'Digitale autonomie als inkoopcriterium (2025). Koos KPN voor soevereine cloud (€74M).' },
   { who: 'Rijksoverheid', tag: 'Europees + exit geregeld', gold: true, what: 'Raamovereenkomst met STACKIT (Schwarz Gruppe), april 2026, inclusief exitclausule bij overname buiten de EER.' },

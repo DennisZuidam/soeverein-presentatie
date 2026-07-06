@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 
 const ease = [0.22, 1, 0.36, 1]
@@ -42,6 +43,36 @@ export function Punchline({ i = 3, children, sub }) {
       {children}
       {sub && <span className="sub">{sub}</span>}
     </Reveal>
+  )
+}
+
+// Terugkerende deel-markering op de drie dividers: een groot gedimd deelnummer
+// als watermerk rechts, plus een rail onderin waarop alle drie de delen staan.
+// Het huidige deel licht goud op, afgelegde delen zijn iets lichter dan wat komt.
+const parts = [
+  { n: '01', label: 'Waarom je vastzit' },
+  { n: '02', label: 'Wie zich al bevrijdde' },
+  { n: '03', label: 'Hoe je het zelf bouwt' },
+]
+
+export function PartMarker({ current }) {
+  return (
+    <>
+      <div className="part-ghost" aria-hidden="true">
+        {parts[current].n}
+      </div>
+      <Reveal i={4} className="part-rail">
+        {parts.map((p, k) => (
+          <Fragment key={p.n}>
+            {k > 0 && <span className={k <= current ? 'sep done' : 'sep'} />}
+            <span className={`part${k === current ? ' current' : k < current ? ' done' : ''}`}>
+              <span className="n">{p.n}</span>
+              <span className="label">{p.label}</span>
+            </span>
+          </Fragment>
+        ))}
+      </Reveal>
+    </>
   )
 }
 

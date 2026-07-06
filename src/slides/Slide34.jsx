@@ -24,7 +24,7 @@ export default function SlideSovereigntyNumber() {
           <thead>
             <tr>
               <th>Laag</th>
-              <th>Time-to-exit</th>
+              <th style={{ whiteSpace: 'nowrap' }}>Time-to-exit</th>
               <th>Waar het zit</th>
             </tr>
           </thead>
@@ -39,7 +39,7 @@ export default function SlideSovereigntyNumber() {
           </tbody>
         </table>
       </Reveal>
-      <Punchline i={5} sub="Getallen als voorbeeld, geijkt op een middelgrote stack. Waar het om gaat: meetbaar, afdwingbaar, en jaarlijks echt geoefend.">
+      <Punchline i={5} sub="Getallen als voorbeeld, geijkt op een middelgrote stack. Waar het om gaat: meetbaar en afdwingbaar.">
         Zet het als SLA op papier: <span className="gold">binnen 6 weken weg, voor €40k, elk jaar getest.</span>
       </Punchline>
     </Slide>

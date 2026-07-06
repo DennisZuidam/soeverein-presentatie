@@ -17,7 +17,7 @@ const locks = [
     icon: 'euro',
     tag: 'je verkeer',
     title: 'Egress',
-    text: 'Alles binnen de muren is gratis, alles naar buiten kost geld. Zo wordt elke dienst ernaast vanzelf te duur. Dat is geen toeval.',
+    text: 'Alles binnen de muren voelt gratis, alles naar buiten kost geld. Zo wordt elke dienst ernaast vanzelf te duur. Dat is geen toeval.',
   },
 ]
 

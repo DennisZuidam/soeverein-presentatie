@@ -17,7 +17,7 @@ const layers = [
     icon: 'scale',
     tag: 'coercion · jurisdictie',
     title: 'Wie kan je dwingen?',
-    text: 'De vraag die niemand stelt: wie kan je provider een bevel geven? Eén moederbedrijf, één jurisdictie, één wet met extraterritoriale reach. Minder partijen aan die knoppen is minder dat buiten jouw wil kan gebeuren.',
+    text: 'De vraag die niemand stelt: wie kan je provider een bevel geven? Eén moederbedrijf, één jurisdictie, één wet met extraterritoriale werking. Hoe minder partijen aan die knoppen, hoe minder er buiten jouw wil om kan gebeuren.',
   },
 ]
 
@@ -29,7 +29,7 @@ export default function SlideContainer() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ fontSize: 19, marginBottom: 28, maxWidth: 1000 }}>
-          Het makkelijke deel zat nooit vast. Portabiliteit woont in drie dingen die je niet kunt{' '}
+          Het makkelijke deel zat nooit vast. Portabiliteit zit in drie dingen die je niet kunt{' '}
           <span className="mono accent">docker run</span>.
         </p>
       </Reveal>
@@ -45,7 +45,7 @@ export default function SlideContainer() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={7} sub="Soevereiniteit kies je niet. Het is een bijproduct van waar je state, je identiteit en je jurisdictie liggen.">
+      <Punchline i={7}>
         Verhuist het met <span className="mono">docker run</span>, dan was het <span className="gold">nooit je lock-in.</span>
       </Punchline>
     </Slide>

@@ -23,8 +23,8 @@ export default function SlideSenate() {
       </Reveal>
       <Reveal i={5}>
         <p className="lede" style={{ marginTop: 40, fontSize: 21, maxWidth: 900 }}>
-          De vraag was of Franse data ooit zonder Franse toestemming aan de VS wordt overgedragen.
-          Dit was het antwoord.
+          De vraag was of hij kon garanderen dat Franse data nooit zonder Franse toestemming
+          aan de VS wordt overgedragen. Dit was het antwoord.
         </p>
       </Reveal>
     </Slide>

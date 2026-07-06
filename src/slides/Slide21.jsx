@@ -8,7 +8,7 @@ const steps = [
   },
   {
     n: '02',
-    title: 'Containerize je volgende project',
+    title: 'Containeriseer je volgende project',
     text: 'Niet alles in één keer. Gewoon het volgende nieuwe project: Docker, environment variables voor config, stateless.',
   },
   {

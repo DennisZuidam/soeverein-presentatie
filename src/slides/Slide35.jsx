@@ -14,7 +14,7 @@ export default function SlideScorecard() {
   return (
     <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
-        <h2 className="title" style={{ marginBottom: 8 }}>Time-to-exit scorecard</h2>
+        <h2 className="title" style={{ marginBottom: 8 }}>Time-to-exit-scorecard</h2>
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ fontSize: 18, marginBottom: 22, maxWidth: 1000 }}>
