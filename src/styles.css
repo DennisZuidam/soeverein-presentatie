@@ -112,14 +112,11 @@ body {
   margin-bottom: 26px;
 }
 .kicker::before {
-  content: '';
-  display: inline-block;
-  width: 26px;
-  height: 1px;
-  background: var(--gold);
-  vertical-align: middle;
+  content: '//';
+  color: var(--gold);
   margin-right: 12px;
-  opacity: 0.7;
+  letter-spacing: 0;
+  opacity: 0.85;
 }
 
 .display {

@@ -45,12 +45,21 @@ function usePortraitPhone() {
 
 export default function App() {
   const [index, setIndex] = useState(fromHash)
+  const [step, setStep] = useState(0)
   const dir = useRef(1)
   const [showNotes, setShowNotes] = useState(false)
   const [hintDismissed, setHintDismissed] = useState(false)
   const scale = useFitScale()
   const portrait = usePortraitPhone()
   const touch = useRef(null)
+
+  const { Component, notes, steps = 0 } = slides[index]
+
+  // refs zodat de key-handler altijd de actuele stap ziet zonder opnieuw te binden
+  const stepRef = useRef(0)
+  const stepsRef = useRef(0)
+  stepRef.current = step
+  stepsRef.current = steps
 
   const go = useCallback((target) => {
     setIndex((prev) => {
@@ -59,6 +68,19 @@ export default function App() {
       return next
     })
   }, [])
+
+  // pijltje vooruit: eerst de fragmenten van deze slide onthullen, dan pas verder
+  const goNext = useCallback(() => {
+    if (stepRef.current < stepsRef.current) setStep((s) => s + 1)
+    else setIndex((p) => { dir.current = 1; return clamp(p + 1) })
+  }, [])
+  const goPrev = useCallback(() => {
+    if (stepRef.current > 0) setStep((s) => s - 1)
+    else setIndex((p) => { dir.current = -1; return clamp(p - 1) })
+  }, [])
+
+  // een nieuwe slide begint altijd bij fragment 0
+  useEffect(() => { setStep(0) }, [index])
 
   const onTouchStart = (e) => {
     const t = e.touches[0]
@@ -71,10 +93,8 @@ export default function App() {
     const dy = t.clientY - touch.current.y
     touch.current = null
     if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-      setIndex((p) => {
-        dir.current = dx < 0 ? 1 : -1
-        return clamp(p + dir.current)
-      })
+      if (dx < 0) goNext()
+      else goPrev()
     }
   }
 
@@ -98,12 +118,12 @@ export default function App() {
         case 'PageDown':
         case ' ':
           e.preventDefault()
-          setIndex((p) => { dir.current = 1; return clamp(p + 1) })
+          goNext()
           break
         case 'ArrowLeft':
         case 'PageUp':
           e.preventDefault()
-          setIndex((p) => { dir.current = -1; return clamp(p - 1) })
+          goPrev()
           break
         case 'Home':
           go(0)
@@ -125,9 +145,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [go])
-
-  const { Component, notes } = slides[index]
+  }, [go, goNext, goPrev])
 
   return (
     <div className="app" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
@@ -145,7 +163,7 @@ export default function App() {
               animate={{ opacity: 1, x: 0, transition: { duration: 0.42, ease } }}
               exit={{ opacity: 0, x: -30 * dir.current, transition: { duration: 0.2, ease: 'easeIn' } }}
             >
-              <Component />
+              <Component step={step} />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -180,8 +198,8 @@ export default function App() {
           <span className="counter">
             {String(index + 1).padStart(2, '0')} / {slides.length}
           </span>
-          <button onClick={(e) => { e.currentTarget.blur(); go(index - 1) }} aria-label="Vorige slide">‹</button>
-          <button onClick={(e) => { e.currentTarget.blur(); go(index + 1) }} aria-label="Volgende slide">›</button>
+          <button onClick={(e) => { e.currentTarget.blur(); goPrev() }} aria-label="Vorige slide">‹</button>
+          <button onClick={(e) => { e.currentTarget.blur(); goNext() }} aria-label="Volgende slide">›</button>
         </div>
       </div>
     </div>

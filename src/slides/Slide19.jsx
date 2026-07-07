@@ -32,7 +32,7 @@ export default function Slide19() {
         </Reveal>
       </div>
       <Punchline i={6} sub="Het coercion point zit niet in je YAML, maar bij de partij die je database vasthoudt.">
-        Verhuizen is een <span className="mono">kamal deploy</span>. De data verhuizen is <span className="gold">het echte werk.</span>
+        De container is een <span className="mono">kamal deploy</span>. De data is <span className="gold">het echte werk.</span>
       </Punchline>
     </Slide>
   )

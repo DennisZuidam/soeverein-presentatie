@@ -4,22 +4,22 @@ const wins = [
   {
     icon: 'scale',
     title: 'Onderhandelingspositie',
-    text: 'Wie kan vertrekken, hoeft nooit te smeken. Een werkende exit verandert elk prijsgesprek.',
+    text: 'Wie kan vertrekken, hoeft nooit te smeken.',
   },
   {
     icon: 'standard',
     title: 'Betere architectuur',
-    text: 'De keuzes die je porteerbaar maken (stateless, twelve-factor, infra als code) maken je systeem ook testbaar en begrijpelijk.',
+    text: 'Porteerbaar bouwen maakt je systeem ook testbaar en begrijpelijk.',
   },
   {
     icon: 'box',
     title: 'Reproduceerbaarheid',
-    text: 'Dev, CI en productie draaien hetzelfde artefact. Onboarding: docker compose up.',
+    text: 'Dev, CI en productie draaien hetzelfde artefact.',
   },
   {
     icon: 'globe',
     title: 'Soevereiniteit',
-    text: 'Krijg je er gratis bij als je architectuur goed is.',
+    text: 'Krijg je er gratis bij.',
   },
 ]
 

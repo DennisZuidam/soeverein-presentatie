@@ -27,12 +27,7 @@ export default function Slide08() {
   return (
     <Slide kicker="Deel 1 · Waarom je vastzit">
       <Reveal i={1}>
-        <h2 className="title">
-          En kies je wél Europees?
-          <span className="muted" style={{ display: 'block', fontSize: 19, fontWeight: 450, marginTop: 10, letterSpacing: 0 }}>
-            Solvinity: het bedrijf achter DigiD. Iedereen hier gebruikt het.
-          </span>
-        </h2>
+        <h2 className="title">En kies je wél Europees?</h2>
       </Reveal>
       <div className="timeline" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
         {moments.map((m, k) => (

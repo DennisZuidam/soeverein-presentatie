@@ -13,9 +13,9 @@ export default function Slide01() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ marginTop: 30, maxWidth: 760 }}>
-          Over keuzevrijheid, porteerbaar bouwen
+          Een verhaal over waarom soevereiniteit
           <br />
-          en waarom soevereiniteit een bijproduct is
+          een bijproduct is
         </p>
       </Reveal>
       <Reveal i={4}>

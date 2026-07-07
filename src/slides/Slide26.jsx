@@ -14,7 +14,7 @@ export default function SlideTwoMoves() {
           <h3 style={{ fontSize: 26 }}>Een bestemming</h3>
           <p style={{ fontSize: 17, lineHeight: 1.6 }}>
             Je verhuist de afhankelijkheid. Andere vlag, zelfde risico zodra je
-            er niet meer weg kunt. Zie Solvinity.
+            er niet meer weg kunt.
           </p>
         </Reveal>
         <Reveal i={3} className="card" style={{ borderColor: 'rgba(255,204,51,0.4)', justifyContent: 'center' }}>

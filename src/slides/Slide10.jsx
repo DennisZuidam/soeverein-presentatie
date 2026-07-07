@@ -20,20 +20,15 @@ export default function Slide10() {
       </Reveal>
       <div className="quote-facts">
         <Reveal i={3} className="fact">
-          <span>Infra-rekening: van <strong>$3,2M naar minder dan $1M per jaar</strong>. De $10M over vijf jaar is zijn eigen projectie</span>
+          <span>Infra van <strong>$3,2M naar minder dan $1M</strong> per jaar</span>
         </Reveal>
         <Reveal i={4} className="fact">
-          <span>S3-exit: <strong>~10 PB</strong> uit S3 naar eigen Pure Storage (18 PB capaciteit). $1,5M eenmalig, &lt;$200k/jaar beheer</span>
+          <span>S3-exit: <strong>~10 PB</strong> naar eigen opslag</span>
         </Reveal>
         <Reveal i={5} className="fact">
-          <span>Zomer 2025: het complete AWS-account verwijderd. Niet naar een Europese cloud, maar eigen infra. <strong>Zijn keuze.</strong></span>
+          <span>Zomer 2025: het complete AWS-account weg. <strong>Zijn keuze.</strong></span>
         </Reveal>
       </div>
-      <Reveal i={6} style={{ marginTop: 'auto' }}>
-        <p className="muted" style={{ fontSize: 16.5 }}>
-          <span className="gold">→</span>&ensp;DHH maakte ook Kamal, de deploy-tool die straks in de demo te zien is. Geen toeval.
-        </p>
-      </Reveal>
     </Slide>
   )
 }

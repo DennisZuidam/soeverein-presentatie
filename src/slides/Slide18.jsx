@@ -1,17 +1,16 @@
 import { Slide, Reveal } from '../components/ui.jsx'
 
 const cons = [
-  'Kleinere community dan AWS of Azure',
-  'Minder managed services om uit te kiezen',
-  'Managed services zijn een ops-team dat je huurt. Valt dat weg, dan moet je het zelf kunnen',
-  'Minder antwoorden op Stack Overflow',
-  'Diepere Microsoft-integraties werken soms minder soepel',
+  'Kleinere community',
+  'Minder managed services',
+  'Managed services zijn een ops-team dat je huurt; anders doe je het zelf',
+  'Microsoft-integraties werken soms stroever',
 ]
 
 const pros = [
-  'Voor een standaard cloud-native stack (compute, opslag, Kubernetes, database) is het verschil klein',
+  'Voor een standaard cloud-native stack is het verschil klein',
   'En het wordt elk jaar kleiner',
-  'Bouw je op open standaarden, dan kun je ook altijd terug',
+  'Op open standaarden kun je altijd terug',
 ]
 
 export default function Slide18() {

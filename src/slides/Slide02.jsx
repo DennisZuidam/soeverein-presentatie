@@ -1,51 +1,64 @@
-import { Slide, Reveal, Punchline, Terminal } from '../components/ui.jsx'
+import { Slide, Reveal } from '../components/ui.jsx'
 
-// Positie 3 · persoonlijke intro: wie is deze man en waarom vertelt hij dit verhaal.
-// Concept "skin in the game": geen cv, maar het bewijs dat hij zelf allang doet
-// waar de talk over gaat. Het terminaltje stelt de vragen, de punchline geeft antwoord.
-export default function Slide02() {
+// Echte kennismaking: naam plus drie categorieen met een ascii-icoon, elk per
+// pijltje-rechts onthuld (het aantal fragmenten staat als `steps` in index.jsx).
+const items = [
+  {
+    label: 'werk',
+    value: 'XPRTZ · Podcasts',
+    art: `   ___
+  /:::\\
+  |:::|
+  \\___/
+   |_|
+  _/ \\_`,
+  },
+  {
+    label: 'gezin',
+    value: 'Verloofde · 2 dochters',
+    art: `,d88b.d88b,
+88888888888
+\`Y8888888Y'
+  \`Y888Y'
+    \`Y'`,
+  },
+  {
+    label: 'hobby',
+    value: 'Koken · bakken · sporten',
+    art: ` _n_n_n_
+(_______)
+ |     |
+ |_____|`,
+  },
+]
+
+export default function Slide02({ step = 0 }) {
   return (
-    <Slide kicker="Even voorstellen">
-      <div
-        style={{
-          flex: 1,
-          display: 'grid',
-          gridTemplateColumns: '1fr 1.08fr',
-          gap: 56,
-          alignItems: 'center',
-        }}
-      >
-        <div>
-          <Reveal i={1}>
-            <h2 className="title" style={{ marginBottom: 24 }}>
-              Dit verhaal draait bij ons <span className="gold">al in productie.</span>
-            </h2>
-          </Reveal>
-          <Reveal i={2}>
-            <p className="lede">
-              Geen plan voor anderen, maar de keuze die wij voor onze eigen software
-              allang gemaakt hebben.
-            </p>
-          </Reveal>
+    <Slide kicker="Even voorstellen" className="center">
+      <Reveal i={1}>
+        <div style={{ fontFamily: 'var(--mono)', fontSize: 16, letterSpacing: '0.06em', color: 'var(--faint)', marginBottom: 10 }}>
+          <span className="gold">$</span> whoami
         </div>
-        <Reveal i={3}>
-          <Terminal title="dennis@xprtz:~">
-            <span className="prompt">$</span> whoami{'\n'}
-            dennis zuidam · directeur bij XPRTZ{'\n'}
-            {'\n'}
-            <span className="prompt">$</span> waar draait jullie eigen software{'\n'}
-            op een <span className="hl">europese cloud</span>{'\n'}
-            {'\n'}
-            <span className="prompt">$</span> waarom{'\n'}
-            omdat het beter uitkwam. niet omdat het moest.{'\n'}
-            {'\n'}
-            <span className="prompt">$</span> en waarom sta je hier dan <span className="cursor">▌</span>
-          </Terminal>
-        </Reveal>
+      </Reveal>
+      <Reveal i={2}>
+        <h2 className="display" style={{ fontSize: 68 }}>
+          Dennis <span className="gold">Zuidam</span>
+        </h2>
+      </Reveal>
+      <div style={{ display: 'flex', gap: 40, marginTop: 48, justifyContent: 'center', alignItems: 'flex-start' }}>
+        {items.map((it, i) => (
+          <div
+            key={it.label}
+            style={{ width: 240, textAlign: 'center', opacity: step >= i + 1 ? 1 : 0, transition: 'opacity 0.35s ease' }}
+          >
+            <div style={{ height: 104, display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
+              <pre style={{ margin: 0, color: 'var(--gold)', fontFamily: 'var(--mono)', fontSize: 14, lineHeight: 1.15, textAlign: 'left' }}>{it.art}</pre>
+            </div>
+            <div className="accent" style={{ fontFamily: 'var(--mono)', fontSize: 13, letterSpacing: '0.16em', textTransform: 'uppercase', marginTop: 22 }}>{it.label}</div>
+            <div style={{ fontSize: 20, marginTop: 6, color: 'var(--text)' }}>{it.value}</div>
+          </div>
+        ))}
       </div>
-      <Punchline i={7} sub="Wel een engineer die de rekening en het afbreukrisico ziet.">
-        Ik kom je niet bekeren. <span className="gold">Dit is een risicoverhaal, geen kruistocht.</span>
-      </Punchline>
     </Slide>
   )
 }

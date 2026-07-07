@@ -11,7 +11,7 @@ export default function SlideScenario() {
       </Reveal>
       <Reveal i={3}>
         <p className="lede" style={{ marginTop: 38, fontSize: 25, maxWidth: 880 }}>
-          Niet gehackt. Gewoon dichtgezet door iemand die je nooit gesproken hebt.
+          Niet gehackt. Gewoon dichtgezet.
         </p>
       </Reveal>
       <Reveal i={5}>
