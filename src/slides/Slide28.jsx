@@ -41,10 +41,7 @@ export default function SlideAiGate() {
           </Reveal>
         ))}
       </div>
-      <Punchline
-        i={6}
-        sub="Vrijwillig, voorlopig. Het antwoord blijft hetzelfde als bij opslag: open weights, zoals Mistral. Wat open is, kan niemand voor je afsluiten."
-      >
+      <Punchline i={6} sub="Vrijwillig, voorlopig.">
         Eerst je data. Toen je toegang. <span className="gold">Nu de modellen.</span>
       </Punchline>
     </Slide>

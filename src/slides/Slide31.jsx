@@ -11,7 +11,7 @@ export default function SlideDivider2() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ marginTop: 34, fontSize: 24 }}>
-          Van een team van tien tot een centrale bank: ze zijn al onderweg.
+          Van een team van tien tot een centrale bank.
         </p>
       </Reveal>
       <PartMarker current={1} />

@@ -15,11 +15,6 @@ export default function Slide09() {
           Keuzevrijheid wel.
         </h2>
       </Reveal>
-      <Reveal i={4}>
-        <p className="lede" style={{ marginTop: 42 }}>
-          Soevereiniteit is wat je krijgt als je architectuur goed is.
-        </p>
-      </Reveal>
     </Slide>
   )
 }
