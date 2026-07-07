@@ -11,13 +11,7 @@ export default function SlideSovereigntyNumber() {
   return (
     <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
-        <h2 className="title" style={{ marginBottom: 8 }}>Soevereiniteit is een getal, geen badge</h2>
-      </Reveal>
-      <Reveal i={2}>
-        <p className="lede" style={{ fontSize: 18, marginBottom: 22, maxWidth: 1020 }}>
-          Niemand is echt cloud-agnostisch. Meet in plaats daarvan hoe vervangbaar je provider is,
-          per laag, in tijd en euro’s.
-        </p>
+        <h2 className="title" style={{ marginBottom: 30 }}>Soevereiniteit is een getal, geen badge</h2>
       </Reveal>
       <Reveal i={3}>
         <table className="stack-table">
@@ -39,7 +33,7 @@ export default function SlideSovereigntyNumber() {
           </tbody>
         </table>
       </Reveal>
-      <Punchline i={5} sub="Getallen als voorbeeld, geijkt op een middelgrote stack. Waar het om gaat: meetbaar en afdwingbaar.">
+      <Punchline i={5}>
         Zet het als SLA op papier: <span className="gold">binnen 6 weken weg, voor €40k, elk jaar getest.</span>
       </Punchline>
     </Slide>

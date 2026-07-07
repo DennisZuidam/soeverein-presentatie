@@ -5,19 +5,19 @@ const layers = [
     icon: 'database',
     tag: 'state · je data',
     title: 'Verhuist niet mee',
-    text: 'Een container is met opzet stateless, daarom til je hem zo over. Je database, object storage, queues en zoekindex blijven staan. Dat is geen docker run, dat is een migratie met downtime en een rollback-plan.',
+    text: 'Een container is stateless, daarom til je hem zo over. Je data, storage, queues en indexen blijven staan. Geen docker run, maar een migratie met downtime.',
   },
   {
     icon: 'lock',
     tag: 'identiteit · IAM',
     title: 'Herschrijven, niet exporteren',
-    text: 'Je hele autorisatiemodel is geschreven in de taal van je provider: rollen, policies, service accounts. Dat exporteer je niet, dat herschrijf je. En zolang dat niet klaar is, ben je er niet weg.',
+    text: 'Je autorisatiemodel spreekt de taal van je provider: rollen, policies, service accounts. Dat exporteer je niet, dat herschrijf je.',
   },
   {
     icon: 'scale',
     tag: 'coercion · jurisdictie',
     title: 'Wie kan je dwingen?',
-    text: 'De vraag die niemand stelt: wie kan je provider een bevel geven? Eén moederbedrijf, één jurisdictie, één wet met extraterritoriale werking. Hoe minder partijen aan die knoppen, hoe minder er buiten jouw wil om kan gebeuren.',
+    text: 'Wie kan je provider een bevel geven? Eén moederbedrijf, één jurisdictie, één wet. Hoe minder partijen aan de knoppen, hoe beter.',
   },
 ]
 
@@ -29,8 +29,8 @@ export default function SlideContainer() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ fontSize: 19, marginBottom: 28, maxWidth: 1000 }}>
-          Het makkelijke deel zat nooit vast. Portabiliteit zit in drie dingen die je niet kunt{' '}
-          <span className="mono accent">docker run</span>.
+          Het makkelijke deel zat nooit vast. De echte binding zit in drie dingen die geen{' '}
+          <span className="mono accent">docker run</span> oplost.
         </p>
       </Reveal>
       <div className="cards three">
