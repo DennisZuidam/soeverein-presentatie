@@ -5,19 +5,19 @@ const locks = [
     icon: 'database',
     tag: 'je data',
     title: 'DynamoDB',
-    text: 'Gekozen omdat Postgres "te veel werk" leek. Nu is migreren maanden werk; het draait nergens anders.',
+    text: 'Ooit gekozen omdat Postgres te veel werk leek. Nu draait het nergens anders.',
   },
   {
     icon: 'lock',
     tag: 'je identiteit',
     title: 'IAM',
-    text: 'Toegangsrollen zo diep verweven in je architectuur dat overstappen bijna onmogelijk wordt.',
+    text: 'Rollen zo diep verweven dat overstappen bijna onmogelijk wordt.',
   },
   {
     icon: 'euro',
     tag: 'je verkeer',
     title: 'Egress',
-    text: 'Alles binnen de muren voelt gratis, alles naar buiten kost geld. Zo wordt elke dienst ernaast vanzelf te duur. Dat is geen toeval.',
+    text: 'Alles naar buiten kost geld. Elke dienst ernaast wordt vanzelf te duur.',
   },
 ]
 

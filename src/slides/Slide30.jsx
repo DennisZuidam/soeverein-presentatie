@@ -14,8 +14,6 @@ export default function SlideDivider1() {
       <Reveal i={2}>
         <p className="lede" style={{ marginTop: 38, maxWidth: 920 }}>
           Iemand deed ooit een <span className="mono">terraform apply</span>, en zeven jaar later zit je vast.
-          Niet aan de container (die til je zo over), maar aan je state, je identiteit en het aantal
-          partijen dat je provider kan dwingen.
         </p>
       </Reveal>
       <PartMarker current={0} />

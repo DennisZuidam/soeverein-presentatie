@@ -30,11 +30,6 @@ export default function Slide04() {
               </div>
             </Reveal>
           ))}
-          <Reveal i={6}>
-            <p className="muted" style={{ fontSize: 16.5, lineHeight: 1.55, paddingLeft: 4, marginTop: 6 }}>
-              Niemand zei nee. Maar niemand zei <em>ja</em>.
-            </p>
-          </Reveal>
         </div>
       </div>
       <Punchline i={7}>
