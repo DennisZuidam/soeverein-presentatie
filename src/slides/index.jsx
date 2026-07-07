@@ -87,22 +87,22 @@ export const slides = [
   {
     Component: Slide06,
     notes:
-      'Twee gevallen uit één jaar. ICC-aanklager Khan verloor de toegang tot zijn Microsoft-account na een Amerikaanse sanctie; let op de formulering: zijn e-mailaccount werd afgesloten, en Microsoft stelt dat het zijn diensten aan het ICC als organisatie nooit heeft opgeschort (de kwestie draaide om de persoonlijk gesanctioneerde aanklager). Houd die nuance paraat voor de Q&A. De ICC stapte daarna over op openDesk. FTM nam afscheid van Cloudflare, niet om een dreiging maar om de leverancier zelf. Brug naar de volgende twee slides: en dit soort risico is geen incident, het is jurisdictie.',
-  },
-  {
-    Component: Slide07,
-    notes:
-      'De naam zegt "eu", maar alleen de servers staan in Europa. Het bedrijf zit in Seattle, de wet in Washington (CLOUD Act, FISA 702). Voor jouw data telt juridisch maar één plek, en dat is niet Dublin. Brug: en dat is niet mijn interpretatie, dat heeft Microsoft zelf onder ede gezegd.',
+      'Vier gevallen, verspreid over vijftien jaar, van dezelfde soort: de buitenwereld reikt tot in je cloud. ICC-aanklager Khan verloor de toegang tot zijn Microsoft-account na een Amerikaanse sanctie; let op de formulering: zijn e-mailaccount werd afgesloten, en Microsoft stelt dat het zijn diensten aan het ICC als organisatie nooit heeft opgeschort. Houd die nuance paraat voor de Q&A. AWS haalde Parler in januari 2021 binnen 24 uur offline, na de bestorming van het Capitool. Amazon zette WikiLeaks in 2010 van zijn servers na politieke druk uit Washington. En na de invasie van Oekraïne schortten AWS, Azure en Google aanmeldingen en diensten in Rusland op. Niet allemaal onterecht, wél telkens buiten de macht van de klant. Brug: en dit is geen speculatie; Microsoft zei dit soort dingen zelf, onder ede. Bronnen: reuters/AP over Parler (jan 2021) · nyt over WikiLeaks/Amazon (dec 2010) · AWS/Azure/Google statements over Rusland (maart 2022) · ICC-berichtgeving (mei 2025, Microsoft betwist de lezing).',
   },
   {
     Component: SlideSenate,
     notes:
-      'Het sterkste moment van Deel 1, dus rust nemen. Franse Senaat, hoorzitting van 10 juni 2025. Senator Simon Uzenat vroeg Anton Carniaux (directeur juridische en publieke zaken, Microsoft France) of hij kan garanderen dat Franse data nooit zonder Franse toestemming aan de VS wordt overgedragen. Antwoord, onder ede: "Non, je ne peux pas le garantir." En daarna: "Als een Amerikaanse rechterlijke beslissing ons dwingt, moeten we de data overdragen." Laat de quote even staan voordat je praat. Bronnen: senat.fr/compte-rendu-commissions/20250609/ce_commande_publique.html · actuia.com',
+      'Het sterkste moment van Deel 1, dus rust nemen. Franse Senaat, hoorzitting van 10 juni 2025. Senator Simon Uzenat vroeg Anton Carniaux (directeur juridische en publieke zaken, Microsoft France) of hij kan garanderen dat Franse data nooit zonder Franse toestemming aan de VS wordt overgedragen. Antwoord, onder ede: "Non, je ne peux pas le garantir." En daarna: "Als een Amerikaanse rechterlijke beslissing ons dwingt, moeten we de data overdragen." Laat de quote even staan voordat je praat. Brug: dit gaat over een Amerikaanse provider. Maar denk je dat Europees kiezen je redt? Kijk naar Solvinity. Bronnen: senat.fr/compte-rendu-commissions/20250609/ce_commande_publique.html · actuia.com',
   },
   {
     Component: Slide08,
     notes:
-      'Solvinity is het bedrijf achter DigiD, iedereen in deze zaal gebruikt het. De tijdlijn: Solvinity is van oorsprong Nederlands maar zit al jaren in Britse handen (het VK is geen EU, dus "gewoon Europees kiezen" wankelde al). November 2025: Kyndryl (ex-IBM) wil Solvinity overnemen. Mei 2026: staatssecretaris Willemijn Aerdts (Digitale Economie en Soevereiniteit) verbiedt de overname "ter bescherming van het publieke belang", op advies van toetsingsorgaan BTI. En het is niet afgelopen: Solvinity is in beroep gegaan; rond 6 juli dient bij de rechtbank Rotterdam een verzoek om een voorlopige voorziening. Dat is dágen na deze presentatie: CHECK DE ACTUELE STAND vlak voor de avond. Dat open einde is precies de les: zelfs een overheidsverbod is geen zekerheid, alleen je eigen exitvermogen. Niet claimen dat Amsterdam of J&V "bewust kozen" voor Solvinity; dat is niet te bevestigen. Bronnen: nos.nl/artikel/2615885 · nos.nl/artikel/2618922 · ictrecht.nl (Solvinity-verbod en de grenzen van het publiek belang)',
+      'Solvinity is het bedrijf achter DigiD, iedereen in deze zaal gebruikt het. De tijdlijn: Solvinity is van oorsprong Nederlands maar zit al jaren in Britse handen (het VK is geen EU, dus "gewoon Europees kiezen" wankelde al). November 2025: Kyndryl (ex-IBM) wil Solvinity overnemen. Mei 2026: staatssecretaris Willemijn Aerdts (Digitale Economie en Soevereiniteit) verbiedt de overname "ter bescherming van het publieke belang", op advies van toetsingsorgaan BTI. En het is niet afgelopen: Solvinity is in beroep gegaan; rond 6 juli dient bij de rechtbank Rotterdam een verzoek om een voorlopige voorziening. Dat is dágen na deze presentatie: CHECK DE ACTUELE STAND vlak voor de avond. Dat open einde is precies de les: zelfs een overheidsverbod is geen zekerheid, alleen je eigen exitvermogen. Niet claimen dat Amsterdam of J&V "bewust kozen" voor Solvinity; dat is niet te bevestigen. Brug: en bij een Amerikaanse provider is dat mechanisme nog directer; kijk maar waar alles juridisch staat. Bronnen: nos.nl/artikel/2615885 · nos.nl/artikel/2618922 · ictrecht.nl (Solvinity-verbod en de grenzen van het publiek belang)',
+  },
+  {
+    Component: Slide07,
+    notes:
+      'De naam zegt "eu", maar alleen de servers staan in Europa. Het bedrijf zit in Seattle, de wet in Washington (CLOUD Act, FISA 702). Voor jouw data telt juridisch maar één plek, en dat is niet Dublin. Dit is het onderliggende mechanisme achter alle voorbeelden hiervoor. Brug: en diezelfde jurisdictie reikt inmiddels tot de AI-modellen zelf.',
   },
   {
     Component: SlideAiGate,
