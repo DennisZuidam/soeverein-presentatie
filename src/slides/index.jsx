@@ -33,6 +33,7 @@ import SlideSovereigntyNumber from './Slide34.jsx'
 import SlideScorecard from './Slide35.jsx'
 import SlideScenario from './Slide36.jsx'
 import SlideSenate from './Slide37.jsx'
+import SlideClosing from './Slide38.jsx'
 
 // Verhaallijn in drie delen, met intro en epiloog:
 //   Intro    — de haak + wie ik ben
@@ -219,6 +220,11 @@ export const slides = [
     Component: Slide22,
     notes:
       'De demo-code staat op GitHub. Dat is Microsoft. Ja, ironisch. Maar dat is precies het punt: ik zit er niet aan vast. Komt er een beter, vrijer alternatief, dan push ik naar Forgejo of waar dan ook. De code is porteerbaar, dus de keuze blijft van mij. Zo werkt het, de hele boodschap in drie woorden.',
+  },
+  {
+    Component: SlideClosing,
+    notes:
+      'Slotwoord, mic-drop. Laat het even hangen: dit is waar alles naartoe werkte. Niet "Europees kiezen", niet soevereiniteit als doel, maar keuzevrijheid. Zeg het rustig, één woord, en klik dan door naar de meetlat-vraag die de hele Q&A blijft staan. Die vraag maakt dit woord meetbaar: keuzevrijheid is geen gevoel maar weken en euro.',
   },
   {
     Component: Slide23,
