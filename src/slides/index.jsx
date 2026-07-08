@@ -34,6 +34,7 @@ import SlideScorecard from './Slide35.jsx'
 import SlideScenario from './Slide36.jsx'
 import SlideSenate from './Slide37.jsx'
 import SlideClosing from './Slide38.jsx'
+import SlideLiveDemo from './SlideLiveDemo.jsx'
 
 // Verhaallijn in drie delen, met intro en epiloog:
 //   Intro    — de haak + wie ik ben
@@ -198,6 +199,11 @@ export const slides = [
     Component: Slide19,
     notes:
       'De demo: deze presentatie zelf, live van Azure (Microsoft) naar Scaleway nl-ams, met Kamal vanuit de terminal. Bewust stateless: je ziet de makkelijke helft, container in seconden en de url verspringt per cloud (sslip.io = het IP). Zeg er eerlijk bij: geen state betekent een time-to-exit van bijna nul; het echte werk zit in data, identiteit en coercion points, en dat meet de scorecard zo. Dezelfde config wijst met één vlag ook naar Hetzner. Als "jij werkt toch ook met Scaleway?" komt: klopt, en alles geldt óók tegen Scaleway, daarom eindigt de demo met -d hetzner. Zie demo/record-demo.sh voor het opname-draaiboek.',
+  },
+  {
+    Component: SlideLiveDemo,
+    notes:
+      'De live-demo, de climax. Twee panelen: links Azure, rechts Scaleway. Draai in je terminal blok voor blok: deploy naar Azure, plak het <ip>.sslip.io-adres in het linkerveld en het frame komt online. Dan deploy naar Scaleway en plak rechts. Zelfde site, twee clouds, alleen het IP verschilt. Breek dan Azure af (az group delete): het linker frame slaat binnen enkele seconden om naar "not found", terwijl Amsterdam doordraait. Dat is het hele verhaal in beeld. Adressen blijven bewaard (localStorage), dus een reload van de deck is veilig. Werkt de live-demo niet, dan is de volgende slide de gescripte replay als vangnet.',
   },
   {
     Component: Slide20,

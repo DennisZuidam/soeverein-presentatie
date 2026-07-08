@@ -734,3 +734,81 @@ body {
   flex: none;
 }
 .checklist.pro .item::before { content: '+'; color: var(--green); }
+
+/* ---------- live twee-cloud demo (SlideLiveDemo) ---------- */
+
+.live-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; height: 100%; }
+.live-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.live-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.live-cloud { font-size: 20px; font-weight: 650; letter-spacing: -0.01em; }
+.live-sub { font-family: var(--mono); font-size: 12px; color: var(--faint); margin-left: 10px; }
+.live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  white-space: nowrap;
+}
+.live-status .live-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--faint); }
+.live-status.on { color: var(--green); }
+.live-status.on .live-dot { background: var(--green); animation: live-pulse 1.6s infinite; }
+.live-status.off { color: var(--red); }
+.live-status.off .live-dot { background: var(--red); }
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+.live-input {
+  margin: 12px 18px 0;
+  padding: 8px 12px;
+  background: #0d111a;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+}
+.live-input:focus { outline: none; border-color: var(--blue); }
+.live-frame {
+  flex: 1;
+  min-height: 0;
+  margin: 12px 18px 18px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0d111a;
+  border: 1px solid var(--border);
+  display: flex;
+}
+.live-frame iframe { flex: 1; width: 100%; height: 100%; border: 0; }
+.live-empty, .live-down {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--faint);
+}
+.live-down .big { font-size: 34px; font-weight: 700; letter-spacing: -0.01em; color: var(--red); }
+.live-down .small { color: var(--muted); }
