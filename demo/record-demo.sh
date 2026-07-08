@@ -31,7 +31,8 @@ az vm create -g "$RG" -n vm-azure \
   --ssh-key-values "${SSH_KEY}.pub" \
   --public-ip-sku Standard
 
-az vm open-port -g "$RG" -n vm-azure --port 443 --priority 900
+az vm open-port -g "$RG" -n vm-azure --port 80  --priority 900   # Let's Encrypt HTTP-01 + redirect
+az vm open-port -g "$RG" -n vm-azure --port 443 --priority 910
 
 export DEPLOY_IP="$(az vm show -g "$RG" -n vm-azure -d --query publicIps -o tsv)"
 export DEPLOY_HOST="$(sslip "$DEPLOY_IP").sslip.io"
