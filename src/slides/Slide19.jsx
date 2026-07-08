@@ -5,21 +5,21 @@ export default function Slide19() {
     <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
         <h2 className="title">
-          De container is klaar in 8 seconden.
+          Deze presentatie, live van Azure naar Scaleway.
           <span className="muted" style={{ display: 'block', fontSize: 21, fontWeight: 450, marginTop: 10, letterSpacing: 0 }}>
-            De data kost 38 minuten. Dáár zit de migratie.
+            Geen database. Dus dit is de makkelijke helft: seconden, en de url verspringt.
           </span>
         </h2>
       </Reveal>
       <div className="demo-flow">
         <Reveal i={2} className="demo-box from">
-          <div className="head">us-east</div>
-          <div className="sub red">app + PostgreSQL · VS-jurisdictie</div>
-          <p className="meta">De container én de database bij een Amerikaanse provider.</p>
+          <div className="head">Azure</div>
+          <div className="sub red">deze site (container) · VS-jurisdictie</div>
+          <p className="meta">Draait bij Microsoft, gedeployed met Kamal vanuit de terminal.</p>
         </Reveal>
         <Reveal i={3} className="demo-arrow">
           <div style={{ textAlign: 'center' }}>
-            <div className="mono gold" style={{ fontSize: 15, marginBottom: 10 }}>kamal + pg_restore</div>
+            <div className="mono gold" style={{ fontSize: 15, marginBottom: 10 }}>kamal setup -d scaleway</div>
             <svg width="64" height="24" viewBox="0 0 64 24" fill="none" stroke="var(--gold)" strokeWidth="2">
               <path d="M2 12h54M48 4l10 8-10 8" />
             </svg>
@@ -27,12 +27,12 @@ export default function Slide19() {
         </Reveal>
         <Reveal i={4} className="demo-box to">
           <div className="head">Scaleway nl-ams</div>
-          <div className="sub green">app + PostgreSQL · EU-jurisdictie</div>
-          <p className="meta">Container in seconden. Data pas na de restore. Dezelfde deploy.yml wijst ook naar Hetzner of STACKIT.</p>
+          <div className="sub green">zelfde image · EU-jurisdictie</div>
+          <p className="meta">In seconden live in nl-ams. De url verspringt mee, dat is je bewijs. Dezelfde config wijst met één vlag ook naar Hetzner.</p>
         </Reveal>
       </div>
-      <Punchline i={6} sub="Het coercion point zit niet in je YAML, maar bij de partij die je database vasthoudt.">
-        De container is een <span className="mono">kamal deploy</span>. De data is <span className="gold">het echte werk.</span>
+      <Punchline i={6} sub="Het echte werk zit niet in je container, maar in data, identiteit en coercion points. Precies wat de scorecard zo meet.">
+        Geen state? Dan is verhuizen <span className="gold">bijna gratis.</span>
       </Punchline>
     </Slide>
   )
