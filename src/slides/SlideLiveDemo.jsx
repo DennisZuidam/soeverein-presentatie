@@ -1,6 +1,8 @@
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Slide, Reveal } from '../components/ui.jsx'
+import { Slide, Reveal, Icon } from '../components/ui.jsx'
 import TerminalPlayer from '../components/TerminalPlayer.jsx'
+import Slide01 from './Slide01.jsx'
 
 // Gescripte weergave van de échte run (juli 2026): deze presentatie van Azure
 // (Microsoft · West Europe) naar Scaleway (nl-ams), en daarna Azure afbreken.
@@ -64,6 +66,41 @@ const BEATS = {
   5: { key: 'kill', title: 'terminal · az group delete', script: killScript },
 }
 
+// Schaalt de 1280×720-stage van slide 1 zodat 'ie volledig in het frame past.
+function useScaleToFit() {
+  const ref = useRef(null)
+  const [scale, setScale] = useState(0.37)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const measure = () => setScale(Math.min(el.clientWidth / 1280, el.clientHeight / 720))
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+  return [ref, scale]
+}
+
+// Mini-browser die slide 1 van deze presentatie toont: het bewijs dat op beide
+// clouds letterlijk dezelfde site draait, alleen het IP in de adresbalk verschilt.
+function SitePreview({ host }) {
+  const [ref, scale] = useScaleToFit()
+  return (
+    <div className="live-site">
+      <div className="live-site-bar">
+        <Icon name="lock" className="live-site-lock" />
+        <span className="live-site-url mono">{host}</span>
+      </div>
+      <div className="live-site-viewport" ref={ref}>
+        <div className="live-site-stage" style={{ transform: `translate(-50%, -50%) scale(${scale})` }}>
+          <Slide01 />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function Panel({ cloud, sub, host, accent, state }) {
   const label = state === 'online' ? 'online' : state === 'down' ? 'niet bereikbaar' : 'wachten'
   return (
@@ -77,9 +114,6 @@ function Panel({ cloud, sub, host, accent, state }) {
           <span className="live-dot" />{label}
         </span>
       </div>
-      <div className={`live-addr mono${state === 'empty' ? ' empty' : ''}`}>
-        {state === 'empty' ? 'wacht op <ip>.sslip.io' : host}
-      </div>
       <div className="live-frame">
         {state === 'empty' ? (
           <div className="live-empty">wachten op deploy…</div>
@@ -89,11 +123,7 @@ function Panel({ cloud, sub, host, accent, state }) {
             <div className="small">{host} reageert niet meer</div>
           </div>
         ) : (
-          <div className="live-online">
-            <div className="live-online-cloud" style={{ color: accent }}>{cloud}</div>
-            <div className="live-online-host mono">{host}</div>
-            <div className="live-online-badge"><span className="live-dot" />online</div>
-          </div>
+          <SitePreview host={host} />
         )}
       </div>
     </div>
@@ -101,9 +131,9 @@ function Panel({ cloud, sub, host, accent, state }) {
 }
 
 // Stap-gestuurde choreografie (pijltje-rechts loopt de beats af):
-//   0 · beide leeg              4 · Scaleway online → beide live
+//   0 · beide leeg              4 · Scaleway toont de site → beide live
 //   1 · terminal: deploy Azure  5 · terminal: Azure afbreken
-//   2 · Azure online            6 · Azure "not found", Amsterdam draait door
+//   2 · Azure toont slide 1     6 · Azure "not found", Amsterdam draait door
 //   3 · terminal: deploy Scaleway
 export default function SlideLiveDemo({ step = 0 }) {
   const azureState = step >= 6 ? 'down' : step >= 2 ? 'online' : 'empty'
