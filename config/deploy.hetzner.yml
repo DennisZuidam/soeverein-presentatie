@@ -1,0 +1,4 @@
+# destination "hetzner" — nog een provider, zelfde image, één vlag.
+# Het slotbeeld: keuzevrijheid is `kamal deploy -d hetzner`.
+ssh:
+  user: root

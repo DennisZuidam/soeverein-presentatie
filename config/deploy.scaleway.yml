@@ -1,0 +1,4 @@
+# destination "scaleway" — de NA-situatie (nl-ams).
+# Scaleway Ubuntu-images loggen in als root.
+ssh:
+  user: root

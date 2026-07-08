@@ -1,0 +1,4 @@
+# destination "azure" — de VOOR-situatie (Microsoft).
+# Azure-VM's loggen in als de admin-user met passwordless sudo.
+ssh:
+  user: azureuser

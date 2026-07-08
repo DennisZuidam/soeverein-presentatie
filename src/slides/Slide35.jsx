@@ -18,7 +18,7 @@ export default function SlideScorecard() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ fontSize: 18, marginBottom: 22, maxWidth: 1000 }}>
-          Dezelfde app, vijf lagen. Per laag: hoe lang tot je weg bent, en of het op een open standaard draait.
+          De demo toonde de bovenste rij. Nu alle vijf: per laag hoe lang tot je weg bent, en of het op een open standaard draait.
         </p>
       </Reveal>
       <Reveal i={3}>

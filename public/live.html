@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>live</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: #090c13; color: #e9edf5;
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    background-image:
+      radial-gradient(600px 400px at 50% -20%, rgba(43,92,217,0.18), transparent 60%),
+      radial-gradient(600px 400px at 50% 120%, rgba(255,204,51,0.08), transparent 60%);
+  }
+  .wrap { padding: 24px; }
+  .cloud {
+    font-size: clamp(30px, 8vw, 70px); font-weight: 700;
+    letter-spacing: -0.02em; color: #ffcc33; margin-bottom: 16px;
+  }
+  .host { font-size: clamp(13px, 3vw, 22px); color: #9aa4b8; word-break: break-all; }
+  .live {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 26px;
+    font-size: clamp(12px, 2.6vw, 17px); color: #4ade80;
+    letter-spacing: .1em; text-transform: uppercase;
+  }
+  .dot { width: 13px; height: 13px; border-radius: 50%; background: #4ade80; animation: p 1.6s infinite; }
+  @keyframes p {
+    0% { box-shadow: 0 0 0 0 rgba(74,222,128,.5); }
+    70% { box-shadow: 0 0 0 18px rgba(74,222,128,0); }
+    100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="cloud" id="cloud"></div>
+    <div class="host" id="host"></div>
+    <div class="live"><span class="dot"></span><span>online</span></div>
+  </div>
+<script>
+  var q = new URLSearchParams(location.search);
+  document.getElementById('cloud').textContent = q.get('c') || 'online';
+  document.getElementById('host').textContent = location.host;
+</script>
+</body>
+</html>
