@@ -31,8 +31,13 @@ az vm create -g "$RG" -n vm-azure \
   --ssh-key-values "${SSH_KEY}.pub" \
   --public-ip-sku Standard
 
-az vm open-port -g "$RG" -n vm-azure --port 80  --priority 900   # Let's Encrypt HTTP-01 + redirect
-az vm open-port -g "$RG" -n vm-azure --port 443 --priority 910
+# Azure blokkeert inbound standaard; open 80 + 443 met één NSG-regel.
+# (az vm open-port bleek onbetrouwbaar.) Poort 80 is nodig voor de
+# Let's Encrypt HTTP-01-challenge en de HTTP->HTTPS-redirect.
+NSG=$(az network nsg list -g "$RG" --query "[0].name" -o tsv)
+az network nsg rule create -g "$RG" --nsg-name "$NSG" -n allow-web \
+  --priority 950 --access Allow --protocol Tcp --direction Inbound \
+  --destination-port-ranges 80 443 --source-address-prefixes '*'
 
 export DEPLOY_IP="$(az vm show -g "$RG" -n vm-azure -d --query publicIps -o tsv)"
 export DEPLOY_HOST="$(sslip "$DEPLOY_IP").sslip.io"
