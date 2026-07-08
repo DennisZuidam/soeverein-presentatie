@@ -16,7 +16,6 @@ import Slide16 from './Slide16.jsx'
 import Slide17 from './Slide17.jsx'
 import Slide18 from './Slide18.jsx'
 import Slide19 from './Slide19.jsx'
-import Slide20 from './Slide20.jsx'
 import Slide21 from './Slide21.jsx'
 import Slide22 from './Slide22.jsx'
 import Slide23 from './Slide23.jsx'
@@ -204,12 +203,7 @@ export const slides = [
     Component: SlideLiveDemo,
     steps: 6,
     notes:
-      'De demo, de climax — nu volledig gescript in de deck, dus niets kan op live infra sneuvelen. Je stuurt het met pijltje-rechts, zes beats:\n\n1 · Terminal verschijnt vóór de panelen en deployt naar Azure (eerste run installeert Docker, ~103s, de stopwatch loopt mee). 2 · Terminal weg: het linkerpaneel staat online op 51-124-164-67.sslip.io (Microsoft, West Europe). 3 · Terminal deployt naar Scaleway — mét de echte hapering: een verse VM waarvan poort 22 nog dicht is (ECONNREFUSED), dan de geslaagde retry in 27,8s. Vertel erbij: "dit is geen video, dit is een machine die net geboekt is; sshd moet nog wakker worden." 4 · Terminal weg: rechterpaneel online op 51-15-113-112.sslip.io. Zelfde site, twee clouds, alleen het IP verschilt. 5 · Terminal: az group delete op Azure. 6 · Het linkerpaneel klapt naar "not found", terwijl Amsterdam gewoon doordraait. Dat is het hele verhaal in beeld.\n\nDe output komt uit de echte run; de hosts zijn de echte IP\'s. De volgende slide (Slide20) is de terminal-only replay als extra vangnet.',
-  },
-  {
-    Component: Slide20,
-    notes:
-      'Gescripte weergave zolang er geen echte opname is; zeg dat ook hardop ("dit is de gescripte weergave, de code staat in de repo"). Volgorde: kamal setup -d azure (container healthy in ~9s op Azure), curl toont HTTP 200 op de Azure-url, dan kamal setup -d scaleway (healthy in ~8s in nl-ams), en dezelfde curl op de nieuwe url bewijst de verhuizing: de url verspringt van <azure-ip>.sslip.io naar <scaleway-ip>.sslip.io, zelfde site. Tot slot kamal deploy -d hetzner: nog een provider is één vlag. Zodra public/demo.webm bestaat speelt de slide de echte opname; pas dan ook de subtitel aan naar "Opgenomen run". Zie demo/record-demo.sh.',
+      'De demo, de climax — nu volledig gescript in de deck, dus niets kan op live infra sneuvelen. Je stuurt het met pijltje-rechts, zes beats:\n\n1 · Terminal verschijnt vóór de panelen en deployt naar Azure (eerste run installeert Docker, ~103s, de stopwatch loopt mee). 2 · Terminal weg: het linkerframe toont slide 1 van déze presentatie, live op 51-124-164-67.sslip.io (Microsoft, West Europe) — wijs op de host in de adresbalk. 3 · Terminal deployt naar Scaleway — mét de echte hapering: een verse VM waarvan poort 22 nog dicht is (ECONNREFUSED), dan de geslaagde retry in 27,8s. Vertel erbij: "dit is geen video, dit is een machine die net geboekt is; sshd moet nog wakker worden." 4 · Terminal weg: het rechterframe toont dezelfde slide 1 op 51-15-113-112.sslip.io. Zelfde site, twee clouds, alleen het IP in de balk verschilt. 5 · Terminal: az group delete op Azure. 6 · Het linkerframe klapt naar "not found", terwijl Amsterdam gewoon doordraait. Dat is het hele verhaal in beeld.\n\nDe output komt uit de echte run; de hosts zijn de echte IP\'s. Volledig gescript, dus geen live infra nodig.',
   },
   {
     Component: SlideScorecard,

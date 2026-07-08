@@ -41,10 +41,12 @@ deploy-artefacten (`Dockerfile`, `config/deploy.yml`); zie `DEMO.md` voor
 het volledige draaiboek, inclusief opnametips en de simpele fallback-variant
 (alleen deze stateless presentatie migreren).
 
-De demo-slide toont een **gescripte terminal-replay** als vangnet, eerlijk
-gelabeld als gescripte weergave. Zet de echte opname als `public/demo.webm`
-of `public/demo.mp4` in de repo en de slide speelt automatisch de video af.
-Het replay-script staat in `src/slides/Slide20.jsx`.
+De demo-slide (`src/slides/SlideLiveDemo.jsx`) speelt de migratie **volledig
+gescript** in de deck af: met pijltje-rechts loop je door de terminal-beats
+(deploy naar Azure, deploy naar Scaleway inclusief de echte SSH-hiccup, en
+`az group delete`), terwijl de twee frames slide 1 van deze presentatie op de
+betreffende cloud tonen — zelfde site, ander IP in de adresbalk. Deterministisch,
+dus op het podium kan er niets sneuvelen.
 
 ## Structuur
 
