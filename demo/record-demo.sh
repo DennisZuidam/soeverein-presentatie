@@ -41,6 +41,7 @@ az network nsg rule create -g "$RG" --nsg-name "$NSG" -n allow-web \
 
 export DEPLOY_IP="$(az vm show -g "$RG" -n vm-azure -d --query publicIps -o tsv)"
 export DEPLOY_HOST="$(sslip "$DEPLOY_IP").sslip.io"
+ssh-keygen -R "$DEPLOY_IP" >/dev/null 2>&1   # stale key weg (gerecyclede cloud-IP)
 ssh-keyscan -H "$DEPLOY_IP" >> ~/.ssh/known_hosts 2>/dev/null   # host-key vertrouwen
 echo "Azure staat klaar op https://$DEPLOY_HOST"
 
@@ -66,6 +67,7 @@ SCW_IP="$(scw instance server list zone=nl-ams-1 name=vm-scaleway -o json \
   | jq -r '.[0].public_ip.address // .[0].public_ips[0].address')"
 export DEPLOY_IP="$SCW_IP"
 export DEPLOY_HOST="$(sslip "$SCW_IP").sslip.io"
+ssh-keygen -R "$DEPLOY_IP" >/dev/null 2>&1   # stale key weg (gerecyclede cloud-IP)
 ssh-keyscan -H "$DEPLOY_IP" >> ~/.ssh/known_hosts 2>/dev/null
 echo "Scaleway staat klaar op https://$DEPLOY_HOST"
 
