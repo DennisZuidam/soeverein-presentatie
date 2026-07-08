@@ -812,3 +812,60 @@ body {
 }
 .live-down .big { font-size: 34px; font-weight: 700; letter-spacing: -0.01em; color: var(--red); }
 .live-down .small { color: var(--muted); }
+
+/* Statisch adresveld (gescripte demo, i.p.v. het bewerkbare input-veld). */
+.live-addr {
+  margin: 12px 18px 0;
+  padding: 8px 12px;
+  background: #0d111a;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.live-addr.empty { color: var(--faint); }
+
+/* "Online"-kaart: dezelfde look als public/live.html, maar self-contained. */
+.live-online {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  background-image:
+    radial-gradient(560px 300px at 50% -10%, rgba(43, 92, 217, 0.16), transparent 60%),
+    radial-gradient(560px 300px at 50% 120%, rgba(255, 204, 51, 0.07), transparent 60%);
+}
+.live-online-cloud { font-size: clamp(30px, 4vw, 48px); font-weight: 700; letter-spacing: -0.02em; }
+.live-online-host { font-size: 15px; color: var(--muted); word-break: break-all; }
+.live-online-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green);
+}
+.live-online-badge .live-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: live-pulse 1.6s infinite;
+}
+
+/* Terminal die vóór de twee panelen verschijnt tijdens een deploy-beat en
+   daarna wegschuift om het resultaat te onthullen. */
+.live-term-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}

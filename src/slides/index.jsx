@@ -202,8 +202,9 @@ export const slides = [
   },
   {
     Component: SlideLiveDemo,
+    steps: 6,
     notes:
-      'De live-demo, de climax. Twee panelen: links Azure, rechts Scaleway. Draai in je terminal blok voor blok: deploy naar Azure, plak het <ip>.sslip.io-adres in het linkerveld en het frame komt online. Dan deploy naar Scaleway en plak rechts. Zelfde site, twee clouds, alleen het IP verschilt. Breek dan Azure af (az group delete): het linker frame slaat binnen enkele seconden om naar "not found", terwijl Amsterdam doordraait. Dat is het hele verhaal in beeld. Adressen blijven bewaard (localStorage), dus een reload van de deck is veilig. Werkt de live-demo niet, dan is de volgende slide de gescripte replay als vangnet.',
+      'De demo, de climax — nu volledig gescript in de deck, dus niets kan op live infra sneuvelen. Je stuurt het met pijltje-rechts, zes beats:\n\n1 · Terminal verschijnt vóór de panelen en deployt naar Azure (eerste run installeert Docker, ~103s, de stopwatch loopt mee). 2 · Terminal weg: het linkerpaneel staat online op 51-124-164-67.sslip.io (Microsoft, West Europe). 3 · Terminal deployt naar Scaleway — mét de echte hapering: een verse VM waarvan poort 22 nog dicht is (ECONNREFUSED), dan de geslaagde retry in 27,8s. Vertel erbij: "dit is geen video, dit is een machine die net geboekt is; sshd moet nog wakker worden." 4 · Terminal weg: rechterpaneel online op 51-15-113-112.sslip.io. Zelfde site, twee clouds, alleen het IP verschilt. 5 · Terminal: az group delete op Azure. 6 · Het linkerpaneel klapt naar "not found", terwijl Amsterdam gewoon doordraait. Dat is het hele verhaal in beeld.\n\nDe output komt uit de echte run; de hosts zijn de echte IP\'s. De volgende slide (Slide20) is de terminal-only replay als extra vangnet.',
   },
   {
     Component: Slide20,
