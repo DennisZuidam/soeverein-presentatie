@@ -47,7 +47,7 @@ export default function SlideAiGate() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={7} sub="Een poort (GPT-5.6) én een noodrem (Fable 5) — allebei deze weken.">
+      <Punchline i={7}>
         Eerst je data. Toen je toegang. <span className="gold">Nu de modellen.</span>
       </Punchline>
     </Slide>
