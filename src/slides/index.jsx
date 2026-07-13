@@ -182,6 +182,7 @@ export const slides = [
   },
   {
     Component: Slide17,
+    steps: 1,
     notes:
       "Vier plekken waar de keuze tussen vast en vrij valt; breng het als herkenning, niet als recept. Voor elke laag ligt het open alternatief allang klaar: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Het besef voor de zaal: elke keer dat iets tegen een provider-SDK wordt gebouwd, is de binding een keuze, want het open equivalent bestaat al. Identiteit maakt dat tastbaar: wie tegen OIDC/OAuth2 werkt in plaats van de Cognito- of Entra-SDK houdt de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). En de wet beweegt mee: de Data Act werkt nu al, alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten, en vanaf januari 2027 zijn switching fees volledig verboden. Veelzeggend: wie porteerbaar bouwt, heeft die wet niet eens nodig. Bronnen: aws.amazon.com/blogs/aws · european-alternatives.eu",
   },

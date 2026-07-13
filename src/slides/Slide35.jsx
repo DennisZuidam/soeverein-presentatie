@@ -1,14 +1,14 @@
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
+// Bewust maar één hard getal (de gemeten 27,8s uit de demo). De onderste twee
+// rijen zijn kwalitatief: die migratie is nooit getest, dus geen schijnprecisie.
 const rows = [
-  ['Compute / container', '27,8 s in de demo', 'open', 'OCI-image, draait morgen op elke runtime.'],
-  ['Registry', 'minuten', 'open', 'docker push naar een andere registry, klaar.'],
-  ['DNS', 'je TTL', 'open', 'Zet ’m vooraf laag en je knipt in vijf minuten om.'],
-  ['Data · Postgres', '38 min bij 14 GB', 'half', 'pg_dump is makkelijk. Downtime, volumes en extensions zijn het werk. Bij terabytes praat je over weken.'],
-  ['Identiteit', 'weken', 'risk', 'OIDC/SAML redt je, een dichtgetimmerde Cognito of Entra niet. En een bevel van buitenaf komt via je account binnen.'],
+  ['Snel · compute, registry, DNS', '27,8 s gemeten', 'open', 'Open standaarden (OCI, DNS). Dit liet de demo zien — het makkelijke deel.'],
+  ['Data', 'minuten → weken', 'risk', 'Kopiëren kan, maar downtime, volumes en proprietary formaten zijn het werk. Klein is minuten, terabytes zijn weken.'],
+  ['Identiteit', 'weken', 'risk', 'Je herbouwt je IAM-model, je exporteert het niet. En een bevel van buitenaf komt via je account binnen.'],
 ]
 
-const cls = { open: 'open', half: 'risk', risk: 'risk' }
+const cls = { open: 'open', risk: 'risk' }
 
 export default function SlideScorecard() {
   return (
@@ -18,7 +18,7 @@ export default function SlideScorecard() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ fontSize: 18, marginBottom: 22, maxWidth: 1000 }}>
-          De demo toonde de bovenste rij. Nu alle vijf: per laag hoe lang tot je weg bent, en of het op een open standaard draait.
+          De demo toonde de bovenste rij. Drie lagen, één vraag per laag: hoe lang tot je echt weg bent?
         </p>
       </Reveal>
       <Reveal i={3}>
@@ -41,7 +41,7 @@ export default function SlideScorecard() {
           </tbody>
         </table>
       </Reveal>
-      <Punchline i={5} sub="Staat dat getal bij je container, dan heb je niets gemeten. Meestal staat het bij data of identiteit.">
+      <Punchline i={5} sub="Meestal staat dat getal niet bij je container, maar bij je data of identiteit.">
         Je soevereiniteit is <span className="gold">de langste rij in deze tabel.</span>
       </Punchline>
     </Slide>
