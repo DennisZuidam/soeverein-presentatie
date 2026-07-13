@@ -97,6 +97,7 @@ export const slides = [
   },
   {
     Component: Slide08,
+    steps: 5,
     notes:
       "Solvinity is het bedrijf achter DigiD, iedereen in deze zaal gebruikt het, dus dit komt dichtbij. Het besef dat je wilt wekken: zelfs 'gewoon Europees kiezen' geeft geen zekerheid. De tijdlijn: Solvinity is van oorsprong Nederlands maar zit al jaren in Britse handen (het VK is geen EU, dus die Europese keuze wankelde al). November 2025: Kyndryl (ex-IBM) wil Solvinity overnemen. Mei 2026: staatssecretaris Willemijn Aerdts (Digitale Economie en Soevereiniteit) verbiedt de overname 'ter bescherming van het publieke belang', op advies van toetsingsorgaan BTI. En het is niet afgelopen: Solvinity is in beroep gegaan; rond 6 juli dient bij de rechtbank Rotterdam een verzoek om een voorlopige voorziening. Dat is dágen na deze presentatie: CHECK DE ACTUELE STAND vlak voor de avond. Dat open einde is precies de les: zelfs een overheidsverbod is geen zekerheid, alleen je eigen exitvermogen. Niet claimen dat Amsterdam of J&V 'bewust kozen' voor Solvinity; dat is niet te bevestigen. Brug: en bij een Amerikaanse provider is dat mechanisme nog directer; kijk maar waar alles juridisch staat. Bronnen: nos.nl/artikel/2615885 · nos.nl/artikel/2618922 · ictrecht.nl (Solvinity-verbod en de grenzen van het publiek belang)",
   },
