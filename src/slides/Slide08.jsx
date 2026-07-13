@@ -1,4 +1,7 @@
-import { Slide, Reveal, Punchline } from '../components/ui.jsx'
+import { motion } from 'framer-motion'
+import { Slide, Reveal } from '../components/ui.jsx'
+
+const ease = [0.22, 1, 0.36, 1]
 
 const moments = [
   {
@@ -23,7 +26,12 @@ const moments = [
   },
 ]
 
-export default function Slide08() {
+// Stap-gestuurd, zodat de spreker het als opbouw kan vertellen: elk tijdlijn-
+// blokje komt op een pijltje-rechts, de punchline verschijnt als slot.
+//   step 0 · alleen de titel
+//   step 1-4 · de vier momenten, één voor één
+//   step 5 · de punchline
+export default function Slide08({ step = 0 }) {
   return (
     <Slide kicker="Deel 1 · Waarom je vastzit">
       <Reveal i={1}>
@@ -31,16 +39,29 @@ export default function Slide08() {
       </Reveal>
       <div className="timeline" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
         {moments.map((m, k) => (
-          <Reveal key={m.when} i={2 + k} className="moment">
+          <motion.div
+            key={m.when}
+            className="moment"
+            initial={{ opacity: 0, y: 26 }}
+            animate={step >= k + 1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }}
+            transition={{ duration: 0.5, ease }}
+          >
             <div className="when">{m.when}</div>
             <h3>{m.title}</h3>
             <p>{m.text}</p>
-          </Reveal>
+          </motion.div>
         ))}
       </div>
-      <Punchline i={7} sub="Zelfs een overheidsverbod is geen zekerheid.">
+      <motion.div
+        className="punchline"
+        initial={{ opacity: 0, y: 26 }}
+        animate={step >= moments.length + 1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }}
+        transition={{ duration: 0.6, ease }}
+      >
+        <span className="bar" />
         Het enige wat je echt in de hand hebt, is <span className="gold">of je kunt vertrekken</span>.
-      </Punchline>
+        <span className="sub">Zelfs een overheidsverbod is geen zekerheid.</span>
+      </motion.div>
     </Slide>
   )
 }
