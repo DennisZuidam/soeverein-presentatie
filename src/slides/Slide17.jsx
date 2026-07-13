@@ -1,4 +1,7 @@
+import { motion } from 'framer-motion'
 import { Slide, Reveal, Icon } from '../components/ui.jsx'
+
+const ease = [0.22, 1, 0.36, 1]
 
 const principles = [
   {
@@ -23,7 +26,9 @@ const principles = [
   },
 ]
 
-export default function Slide17() {
+// De EU Data Act-kaart verschijnt op pijltje-rechts (step 1), zodat de spreker
+// eerst de vier principes vertelt en de wet als "en de wet helpt mee" toevoegt.
+export default function Slide17({ step = 0 }) {
   return (
     <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
@@ -40,7 +45,12 @@ export default function Slide17() {
           </Reveal>
         ))}
       </div>
-      <Reveal i={6} style={{ marginTop: 'auto' }}>
+      <motion.div
+        style={{ marginTop: 'auto' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={step >= 1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.5, ease }}
+      >
         <div className="card" style={{ flexDirection: 'row', alignItems: 'center', gap: 22, padding: '20px 26px', borderColor: 'rgba(255,204,51,0.35)' }}>
           <div className="icon gold-bg" style={{ margin: 0, flex: 'none' }}>
             <Icon name="scale" />
@@ -50,7 +60,7 @@ export default function Slide17() {
             <strong style={{ color: 'var(--gold)' }}> Maar bouw alsof de wet niet bestaat.</strong>
           </p>
         </div>
-      </Reveal>
+      </motion.div>
     </Slide>
   )
 }

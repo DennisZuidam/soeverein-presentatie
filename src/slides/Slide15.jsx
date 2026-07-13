@@ -1,9 +1,10 @@
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
+// Bewust weinig tekst: ankers om over te vertellen, niet om voor te lezen.
 const stats = [
-  { num: '€300 miljard', text: 'geschatte investering in een eigen Europese stack (EuroStack, ~10 jaar)' },
-  { num: '80%', text: "van Europa's digitale technologie wordt nu geïmporteerd" },
-  { num: '70%', text: 'van de wereldwijd gebruikte AI-modellen komt uit de VS' },
+  { num: '3 juni', text: 'EU Tech Sovereignty Package — één dag na de Amerikaanse AI-order' },
+  { num: '€2 mld', text: 'voor open source over 7 jaar; open-source-first in overheidsinkoop (Cloud & AI Act)' },
+  { num: 'criterium', text: 'niet-soevereine providers kunnen uit gevoelige overheidscontracten' },
 ]
 
 export default function Slide15() {
@@ -13,15 +14,9 @@ export default function Slide15() {
         <h2 className="title">De wind staat in je rug</h2>
       </Reveal>
       <Reveal i={2}>
-        <div className="card" style={{ marginBottom: 22, borderColor: 'rgba(110,160,255,0.35)' }}>
-          <div className="card-tag">EU Tech Sovereignty Package · 3 juni 2026</div>
-          <p style={{ fontSize: 17, lineHeight: 1.6, color: 'var(--text)' }}>
-            Voor het eerst zit open source in het hart van industriepolitiek, met wetgeving én budget:
-            een voorstel voor een <strong>Cloud and AI Development Act</strong> en <strong>€2 miljard</strong> voor
-            open source over zeven jaar. Cloudbedrijven die niet aan EU-soevereiniteitscriteria
-            voldoen, kunnen worden geweerd uit gevoelige overheidscontracten.
-          </p>
-        </div>
+        <p className="lede" style={{ fontSize: 18, marginBottom: 26, maxWidth: 900 }}>
+          Voor het eerst zet Europa open source in het hart van industriepolitiek — met wetgeving én budget.
+        </p>
       </Reveal>
       <div className="stats">
         {stats.map((s, k) => (
@@ -31,7 +26,7 @@ export default function Slide15() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={6}>
+      <Punchline i={6} sub="Voor jou concreet: porteerbaar kunnen deployen wordt een aanbestedingscriterium.">
         Dit is geen niche meer. Het is <span className="gold">beleid, budget en richting.</span>
       </Punchline>
     </Slide>
