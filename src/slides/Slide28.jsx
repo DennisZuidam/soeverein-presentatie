@@ -10,11 +10,11 @@ const rungs = [
 const cases = [
   {
     tag: 'Anthropic · Fable 5',
-    text: 'In juni wereldwijd op bevel offline — een NSA-red-team vond autonome inbraak. Pas terug na een safety-fix.',
+    text: 'In juni op bevel offline (met zustermodel Mythos 5), nadat overheidstests autonome inbraak vonden. Terug na een safety-fix.',
   },
   {
     tag: 'OpenAI · GPT-5.6',
-    text: 'Pas op 9 juli publiek, ná ~30 dagen overheidsreview. Het eerste grote model door de poort.',
+    text: 'Pas op 9 juli publiek, ná de overheidsreview. Het eerste grote model door de poort.',
   },
 ]
 
