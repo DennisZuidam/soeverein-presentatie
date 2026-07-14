@@ -10,11 +10,11 @@ const rungs = [
 const cases = [
   {
     tag: 'Anthropic · Fable 5',
-    text: 'In juni wereldwijd op bevel offline — een NSA-red-team vond autonome inbraak. Pas terug na een safety-fix.',
+    text: 'In juni op bevel offline (met zustermodel Mythos 5), nadat overheidstests autonome inbraak vonden. Terug na een safety-fix.',
   },
   {
     tag: 'OpenAI · GPT-5.6',
-    text: 'Pas op 9 juli publiek, ná ~30 dagen overheidsreview. Het eerste grote model door de poort.',
+    text: 'Pas op 9 juli publiek, ná de overheidsreview. Het eerste grote model door de poort.',
   },
 ]
 
@@ -47,7 +47,7 @@ export default function SlideAiGate() {
           </Reveal>
         ))}
       </div>
-      <Punchline i={7} sub="Een poort (GPT-5.6) én een noodrem (Fable 5) — allebei deze weken.">
+      <Punchline i={7}>
         Eerst je data. Toen je toegang. <span className="gold">Nu de modellen.</span>
       </Punchline>
     </Slide>

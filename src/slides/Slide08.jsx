@@ -22,7 +22,7 @@ const moments = [
   {
     when: "juli '26",
     title: 'En het loopt nog',
-    text: 'Solvinity vecht het verbod aan bij de rechtbank Rotterdam. De zitting dient dezer dagen. De uitkomst is open.',
+    text: 'Solvinity vecht het verbod aan bij de rechtbank Rotterdam; een uitspraak volgt later dit jaar. De uitkomst is nog open.',
   },
 ]
 

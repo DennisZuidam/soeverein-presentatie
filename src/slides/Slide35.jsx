@@ -5,7 +5,7 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 const rows = [
   ['Snel · compute, registry, DNS', '27,8 s gemeten', 'open', 'Open standaarden (OCI, DNS). Dit liet de demo zien — het makkelijke deel.'],
   ['Data', 'minuten → weken', 'risk', 'Kopiëren kan, maar downtime, volumes en proprietary formaten zijn het werk. Klein is minuten, terabytes zijn weken.'],
-  ['Identiteit', 'weken', 'risk', 'Je herbouwt je IAM-model, je exporteert het niet. En een bevel van buitenaf komt via je account binnen.'],
+  ['Identiteit', 'weken', 'risk', 'Je herbouwt je IAM-model, je exporteert het niet. En wie je account in handen heeft, kan je toegang afsluiten.'],
 ]
 
 const cls = { open: 'open', risk: 'risk' }

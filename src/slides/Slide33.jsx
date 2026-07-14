@@ -1,13 +1,17 @@
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
-const big = [
+// Links: bedrijven die vertrokken en er beter van werden (groot én klein).
+// Rechts: de coercion-poort die je juist niet kunt verhuizen (Spotify hoofdcase,
+// Epic/Fortnite als klapstuk) — precies buiten de infra-laag.
+const left = [
   { who: 'GEICO', text: '10 jaar public cloud, rekening 2,5× omhoog. Terug naar eigen OpenStack/K8s: 50% goedkoper per core.' },
   { who: 'Dropbox', text: '~500 PB grotendeels van S3 naar eigen Magic Pocket. $74,6M bespaard in twee jaar.' },
+  { who: 'OneUptime', text: '$38k per maand op AWS, naar eigen bare metal. Besparing groeide in twee jaar tot ruim $1,2M per jaar, 99,993% uptime.' },
 ]
 
-const small = [
-  { who: 'OneUptime', text: '$38k per maand op AWS, naar eigen bare metal. Besparing groeide in twee jaar van $230k naar ruim $1,2M per jaar, 99,993% uptime.' },
-  { who: 'hank.parts', text: 'Compute en storage moeiteloos naar de EU. Vast bij Apple, Google Play en Ads: de echte coercion points.' },
+const right = [
+  { who: 'Spotify', text: 'Europees, draait z’n techniek waar het wil. Toch klem: op je iPhone kom je alleen via Apples App Store. EU beboette Apple €1,8 mld (2024).' },
+  { who: 'Epic · Fortnite', text: 'Bouwde een eigen betaalsysteem in en vloog er in 2020 bij Apple én Google uit. Jarenlang van een miljard telefoons af.' },
 ]
 
 function Column({ tag, items, i }) {
@@ -30,14 +34,14 @@ export default function SlideExamples() {
   return (
     <Slide kicker="Deel 2 · Wie zich al bevrijdde">
       <Reveal i={1}>
-        <h2 className="title" style={{ marginBottom: 26 }}>Groot en klein, dezelfde les</h2>
+        <h2 className="title" style={{ marginBottom: 26 }}>Wie al vertrok, en wat vast blijft zitten</h2>
       </Reveal>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 34, flex: 1, alignItems: 'start' }}>
-        <Column tag="Groot" items={big} i={2} />
-        <Column tag="Klein" items={small} i={3} />
+        <Column tag="Vertrekken loont" items={left} i={2} />
+        <Column tag="De poort buiten je infra" items={right} i={3} />
       </div>
       <Punchline i={7}>
-        De compute verhuist in een middag. <span className="gold">De data in jaren.</span>
+        De compute verhuist in een middag. <span className="gold">Sommige poorten verhuizen nooit.</span>
       </Punchline>
     </Slide>
   )
