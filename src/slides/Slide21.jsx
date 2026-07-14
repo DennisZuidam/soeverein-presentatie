@@ -1,4 +1,7 @@
+import { motion } from 'framer-motion'
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
+
+const ease = [0.22, 1, 0.36, 1]
 
 const steps = [
   {
@@ -19,17 +22,33 @@ const steps = [
   {
     n: '04',
     title: 'Oefen je exit',
-    text: 'Zet je laatste productie-backup terug bij een tweede provider en klok de tijd. Dat getal is je time-to-exit. Geen backup buiten je provider? Dan is dat stap nul.',
+    text: 'Zet je laatste productie-backup terug bij een tweede provider en klok de tijd. Dat getal is je time-to-exit.',
   },
 ]
 
-export default function Slide21() {
+// Op pijltje-rechts (step 1) verschijnt "stap 00" vóór de rij en schuiven 1-4
+// door: geen backup buiten je provider = je echte startpunt.
+export default function Slide21({ step = 0 }) {
+  const showZero = step >= 1
   return (
     <Slide kicker="Epiloog">
       <Reveal i={1}>
         <h2 className="title">Hoe begin je morgen?</h2>
       </Reveal>
-      <div className="steps" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+      <div className="steps" style={{ gridTemplateColumns: `repeat(${showZero ? 5 : 4}, 1fr)` }}>
+        {showZero && (
+          <motion.div
+            className="step"
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.45, ease }}
+            style={{ borderColor: 'rgba(255,204,51,0.45)' }}
+          >
+            <span className="n" style={{ color: 'var(--gold)' }}>00</span>
+            <h3>Backup buiten je provider</h3>
+            <p>Heb je die niet, dan is dít stap nul. Bij een bevroren account begint je exit bij een backup die al buiten de deur ligt.</p>
+          </motion.div>
+        )}
         {steps.map((s, k) => (
           <Reveal key={s.n} i={2 + k} className="step">
             <span className="n">{s.n}</span>

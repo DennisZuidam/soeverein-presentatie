@@ -34,6 +34,7 @@ import SlideScenario from './Slide36.jsx'
 import SlideSenate from './Slide37.jsx'
 import SlideClosing from './Slide38.jsx'
 import SlideLiveDemo from './SlideLiveDemo.jsx'
+import SlideThanks from './SlideThanks.jsx'
 
 // Verhaallijn in drie delen, met intro en epiloog:
 //   Intro    — de haak + wie ik ben
@@ -119,14 +120,14 @@ export const slides = [
 
   // ---- Deel 2 · Wie zich al bevrijdde ----
   {
-    Component: SlideDivider2,
-    notes:
-      "Overgang naar Deel 2. Deel 1 was het waarom; vanaf hier laat je zien dat dit geen toekomstmuziek is maar al gebeurt. Het besef dat je wilt wekken: mensen en organisaties zijn hier nu al mee bezig. Geen manifest, gewoon wat er feitelijk gebeurt. Blijf eerlijk over \"al onderweg\": DNB en Airbus zijn intenties en contracten, geen afgeronde migraties. Tempo vasthouden in dit deel; de cases delen één les en de zaal heeft het patroon snel door.",
-  },
-  {
     Component: SlideTwoMoves,
     notes:
       "Belangrijk onderscheid voordat de voorbeelden komen, want deze twee worden constant door elkaar gehaald en juist dat verschil bepaalt of iemand écht vrij is. Europees kiezen is een bestemming: je verhuist je afhankelijkheid naar een andere vlag. Zonder porteerbaarheid sta je daar net zo vast, en Solvinity liet zien dat ook een Europese keuze van eigenaar kan wisselen. Keuzevrijheid is iets anders: die zit in je architectuur, in containers, open standaarden en porteerbare data, en werkt voor elke bestemming, ook een Europese. Het besef dat je wilt planten: pas dat tweede maakt de Europese keuze veilig. De voorbeelden hierna doen soms het één, soms het ander, soms allebei; laat de zaal zelf herkennen wat wat is.",
+  },
+  {
+    Component: SlideDivider2,
+    notes:
+      "Overgang naar Deel 2. Deel 1 was het waarom; vanaf hier laat je zien dat dit geen toekomstmuziek is maar al gebeurt. Het besef dat je wilt wekken: mensen en organisaties zijn hier nu al mee bezig. Geen manifest, gewoon wat er feitelijk gebeurt. Blijf eerlijk over \"al onderweg\": DNB en Airbus zijn intenties en contracten, geen afgeronde migraties. Tempo vasthouden in dit deel; de cases delen één les en de zaal heeft het patroon snel door.",
   },
   {
     Component: SlideExamples,
@@ -216,6 +217,7 @@ export const slides = [
   // ---- Epiloog ----
   {
     Component: Slide21,
+    steps: 1,
     notes:
       "Vier stappen, maar het gaat om één besef: je weet pas hoe vast je zit als je het een keer probeert. De eerste drie brengen het in beeld (waar zit je vast, wat draait al in een container, staat je infra in code), maar de vierde maakt het meetbaar: zet je laatste productie-backup terug bij een tweede provider en klok de tijd. Dat getal is je time-to-exit, en de meesten kennen het niet. Heb je geen backup buiten je provider? Dan is dat het eerste wat je je realiseert: bij een bevroren account begint je exit bij een backup die al buiten de deur ligt. Concreet om mee te geven aan de zaal: één dag dit jaar, één service, een tweede provider. Niet om te verhuizen, maar om te wéten waar je staat.",
   },
@@ -233,5 +235,10 @@ export const slides = [
     Component: Slide23,
     notes:
       "Dit scherm staat de hele Q&A aan; de meetlat-vraag blijft staan. Bedank kort, wijs op de links (demo-repo, Kamal, european-alternatives.eu) en geef de vraag mee aan de rest van de avond. Q&A-voorbereiding:\n\n1. \"AWS heeft nu een European Sovereign Cloud, is je titel niet achterhaald?\" Andere vlag op hetzelfde moederbedrijf; de Carniaux-quote onder ede ging exact hierover. Een sovereign cloud is een bestemming, geen keuzevrijheid.\n2. \"Het EU-US Data Privacy Framework regelt dit toch?\" Schrems I en II bewijzen dat zo'n besluit aan één rechtszaak of presidentieel besluit hangt. Juridische paraplu's klappen; architectuur niet. Check de actuele DPF-status vlak voor de avond.\n3. \"Jij werkt toch met Scaleway?\" Klopt. En juist daarom is de eerlijke lijn: alles wat ik zei geldt óók tegen Scaleway; daarom eindigt de demo met -d hetzner. De presentatie zelf is stateless, dus de exit is er seconden; bij een app met echte state meet je het net zo (data, identiteit).\n4. \"Je opent met een bevroren account, maar pg_dump vereist een werkend account.\" Onderscheid vrijwillige en gedwongen exit: bij de tweede begint je exit bij een backup die al buiten je provider ligt. Ligt je enige dump bij dezelfde provider, dan is je time-to-exit oneindig.\n5. \"Egress bij exit is sinds 2024 gratis, klopt je verdienmodel-punt nog?\" Klopt voor de eenmalige exit onder voorwaarden; de rente zit in doorlopende egress, dual-run tijdens migratie en dagelijks verkeer.\n6. \"Waarom koos het Rijk Duits STACKIT en geen Nederlandse provider?\" Precies de these: de exitclausule telt, de vlag niet.\n7. \"Al je cases zijn successen; wie zijn exit verprutste blogt daar niet over.\" Toegeven en omdraaien: klopt, en juist daarom is meten belangrijker dan verhuizen. De cases bewijzen dat het kán en wat het kost per laag, niet dat iedereen moet.\n8. \"Mistral heeft zelf een Microsoft-deal; hoe soeverein zijn open weights?\" Zelfde meetlat: open weights verhuizen naar een andere host in uren; een fine-tune bij een closed provider krijg je nooit mee. Diepte is aan de sprekers hierna.",
+  },
+  {
+    Component: SlideThanks,
+    notes:
+      'Afsluiter, helemaal aan het eind. Bedank de zaal en breng de kernboodschap nog een keer: keuzevrijheid is geen vlag maar een eigenschap van je architectuur. Kort en warm.',
   },
 ]
