@@ -7,7 +7,7 @@ const principles = [
   {
     icon: 'standard',
     title: 'Gebruik open standaarden',
-    text: 'S3 API, PostgreSQL, Kubernetes. Niet DynamoDB, CosmosDB of Bedrock als je het kunt vermijden.',
+    text: 'S3, PostgreSQL, Kubernetes, OIDC. Niet DynamoDB, Bedrock of Cognito.',
   },
   {
     icon: 'globe',
