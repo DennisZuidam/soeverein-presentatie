@@ -35,10 +35,10 @@ export default function SlideExamples() {
       </Reveal>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 34, flex: 1, alignItems: 'start' }}>
         <Column tag="Vertrekken loont" items={left} i={2} />
-        <Column tag="De poort buiten je infra" items={right} i={3} />
+        <Column tag="De poortwachter blijft" items={right} i={3} />
       </div>
       <Punchline i={7}>
-        De compute verhuist in een middag. <span className="gold">Sommige poorten verhuizen nooit.</span>
+        De compute verhuist in een middag. <span className="gold">De poortwachter verhuis je nooit.</span>
       </Punchline>
     </Slide>
   )
