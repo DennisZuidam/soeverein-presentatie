@@ -16,6 +16,7 @@ import Slide15 from './Slide15.jsx'
 import Slide16 from './Slide16.jsx'
 import Slide17 from './Slide17.jsx'
 import Slide18 from './Slide18.jsx'
+import SlideGartner from './SlideGartner.jsx'
 import Slide19 from './Slide19.jsx'
 import Slide21 from './Slide21.jsx'
 import Slide22 from './Slide22.jsx'
@@ -173,7 +174,12 @@ export const slides = [
   {
     Component: Slide18,
     notes:
-      "Eerlijk zijn, en deze slide werkt juist omdat hij niet klapt; die eerlijkheid is zelf het bewustwordingspunt. Kleinere community, minder managed services, en benoem de ops-kanttekening expliciet: managed services zijn een ops-team dat je huurt; zonder hen moet je dat zelf kunnen of inhuren. Dat is het echte bezwaar van elke IT-manager in de zaal, en het maakt de besparingscases juist geloofwaardiger (die bedrijven namen die ops-taak bewust terug). Maar voor een standaard cloud-native stack is het verschil klein en het wordt kleiner. Deze slide sluit Deel 2 af: de alternatieven zijn echt, met eerlijke kanttekeningen.",
+      "Eerlijk zijn, en deze slide werkt juist omdat hij niet klapt; die eerlijkheid is zelf het bewustwordingspunt. Kleinere community, minder managed services, en benoem de ops-kanttekening expliciet: managed services zijn een ops-team dat je huurt; zonder hen moet je dat zelf kunnen of inhuren. Dat is het echte bezwaar van elke IT-manager in de zaal, en het maakt de besparingscases juist geloofwaardiger (die bedrijven namen die ops-taak bewust terug). Maar voor een standaard cloud-native stack is het verschil klein en het wordt kleiner. Brug naar de afsluiter: de alternatieven zijn echt, met eerlijke kanttekeningen, en het is allang geen niche meer.",
+  },
+  {
+    Component: SlideGartner,
+    notes:
+      "De afsluiter van Deel 2, en bewust datagedreven: geen anekdotes maar een Gartner-cijfer, zodat de zaal ziet dat dit de mainstream-richting is. Eén groot getal: 61% van de West-Europese CIO's zet méér in op lokale/regionale cloud door geopolitiek (Gartner-enquête mei-juli 2025, 241 CIO's in West-Europa). De drie kleine cijfers erbij: 55% noemt open source cruciaal in hun cloudstrategie, 53% gaat globale providers beperken, en Gartner voorspelt dat in 2030 meer dan 75% van de bedrijven buiten de VS een soevereiniteitsstrategie heeft. De punchline is Gartners eigen woord: dit is geen repatriation maar 'geopatriation', migreren om geopolitieke in plaats van kostenredenen. Breng de cijfers, lees ze niet op; laat het grote getal even hangen. Brug naar Deel 3: genoeg over wie het al doet, nu hoe je het zelf doet. Bronnen: gartner.com (persbericht 12 nov 2025) · theregister.com/2025/11/13 · channelweb.co.uk (geopatriation).",
   },
 
   // ---- Deel 3 · Hoe je het zelf bouwt ----
