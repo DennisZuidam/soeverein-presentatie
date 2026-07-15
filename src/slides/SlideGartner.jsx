@@ -15,9 +15,9 @@ export default function SlideGartner() {
         <h2 className="title" style={{ marginBottom: 16 }}>En het is geen niche</h2>
       </Reveal>
       <Reveal i={2}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 24, marginBottom: 26 }}>
-          <span className="gold" style={{ fontSize: 104, fontWeight: 800, lineHeight: 0.9, letterSpacing: -3 }}>61%</span>
-          <span className="lede" style={{ fontSize: 21, maxWidth: 560 }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: 24, marginBottom: 26 }}>
+          <span className="gold" style={{ fontSize: 104, fontWeight: 800, lineHeight: 0.82, letterSpacing: -3 }}>61%</span>
+          <span className="lede" style={{ fontSize: 21, maxWidth: 560, paddingBottom: 4 }}>
             van West-Europese CIO's zet méér in op lokale cloud, door geopolitiek
           </span>
         </div>

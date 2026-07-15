@@ -15,7 +15,7 @@ export default function SlideEncryption() {
   return (
     <Slide kicker="Deel 1 · Waarom je vastzit">
       <Reveal i={1}>
-        <h2 className="title" style={{ marginBottom: 26 }}>Geen technische truc ontsnapt</h2>
+        <h2 className="title" style={{ marginBottom: 26 }}>Geen technische truc houdt de wet tegen</h2>
       </Reveal>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         {rows.map((r, k) => (
