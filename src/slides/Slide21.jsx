@@ -4,26 +4,10 @@ import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 const ease = [0.22, 1, 0.36, 1]
 
 const steps = [
-  {
-    n: '01',
-    title: 'Audit je dependencies',
-    text: 'Loop je stack langs. Per service: draait dit op een open standaard of op iets vendor-specifieks? Noteer waar je vastzit.',
-  },
-  {
-    n: '02',
-    title: 'Containeriseer je volgende project',
-    text: 'Niet alles in één keer. Gewoon het volgende nieuwe project: Docker, environment variables voor config, stateless.',
-  },
-  {
-    n: '03',
-    title: 'Schrijf je infra als code',
-    text: 'Terraform of Pulumi. Staat je infra in code, dan is een provider-wissel een pull request, geen migratie.',
-  },
-  {
-    n: '04',
-    title: 'Oefen je exit',
-    text: 'Zet je laatste productie-backup terug bij een tweede provider en klok de tijd. Dat getal is je time-to-exit.',
-  },
+  { n: '01', title: 'Audit je dependencies', text: 'Waar zit je vast?' },
+  { n: '02', title: 'Containeriseer je volgende project', text: 'Niet alles, gewoon het volgende' },
+  { n: '03', title: 'Schrijf je infra als code', text: 'Wissel = pull request' },
+  { n: '04', title: 'Oefen je exit', text: 'Klok de tijd = time-to-exit' },
 ]
 
 // Op pijltje-rechts (step 1) verschijnt "stap 00" vóór de rij en schuiven 1-4
@@ -46,7 +30,7 @@ export default function Slide21({ step = 0 }) {
           >
             <span className="n" style={{ color: 'var(--gold)' }}>00</span>
             <h3>Backup buiten je provider</h3>
-            <p>Heb je die niet, dan is dít stap nul. Bij een bevroren account begint je exit bij een backup die al buiten de deur ligt.</p>
+            <p>Geen backup buiten de deur? Dan is dít stap nul.</p>
           </motion.div>
         )}
         {steps.map((s, k) => (

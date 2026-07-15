@@ -1,6 +1,5 @@
 import Slide01 from './Slide01.jsx'
 import Slide02 from './Slide02.jsx'
-import Slide03 from './Slide03.jsx'
 import Slide04 from './Slide04.jsx'
 import Slide05 from './Slide05.jsx'
 import Slide06 from './Slide06.jsx'
@@ -23,7 +22,6 @@ import Slide22 from './Slide22.jsx'
 import Slide23 from './Slide23.jsx'
 import SlidePayoff from './Slide24.jsx'
 import SlideTwoMoves from './Slide26.jsx'
-import SlideHow from './Slide27.jsx'
 import SlideAiGate from './Slide28.jsx'
 import SlideDivider3 from './Slide29.jsx'
 import SlideDivider1 from './Slide30.jsx'
@@ -60,11 +58,6 @@ export const slides = [
     steps: 3,
     notes:
       "Een echte, warme kennismaking na de schrik-opener. Houd het licht. Je landt op \"whoami\" en je naam; elke druk op pijltje-rechts onthult een categorie (werk, gezin, hobby). Vertel er bij elk kort iets persoonlijks bij: XPRTZ en de podcasts, je gezin, en waar je energie van krijgt (koken, bakken, sporten). Geen cv-opsomming, gewoon even mens zijn voor de zaal.\n\nPlant je geloofwaardigheid niet als expert maar als iemand die dit volgt en duidt: dit onderwerp houdt me bezig, ik lees het nieuws, de hoorzittingen en de wetgeving die straks langskomen op de voet, en daarom sta ik hier. Wat volgt is geen les, maar wat ik zie gebeuren in de wereld.\n\nBrug naar de volgende slide: en toch, hoe bewust kies je zoiets eigenlijk? Wanneer koos jij voor het laatst bewust je cloudprovider?",
-  },
-  {
-    Component: Slide03,
-    notes:
-      'Even stil laten vallen. Handen hoeven niet omhoog, het punt is dat bijna niemand dit ooit bewust besloten heeft. De default heeft gekozen, niet jij.',
   },
 
   // ---- Deel 1 · Waarom je vastzit ----
@@ -147,14 +140,9 @@ export const slides = [
       "Laat zien hoe breed de beweging al is: van onderzoeksjournalistiek tot Airbus, DNB en de Rijksoverheid. De labels laten het onderscheid van de vorige slide zien: de meesten kozen een Europese bestemming, de Rijksoverheid deed allebei: Europese bestemming én een contractuele exitclausule bij overname buiten de EER (raamovereenkomst STACKIT, 23 april 2026; raamwerk zonder afnameverplichting, dus geen migratie). The Firewall: kort geding om het DigiD-contract te blokkeren, afgewezen omdat opzegging de werking van DigiD in gevaar zou brengen. Airbus is een aanbesteding, een intentie. Venijnige vraag om te zien aankomen: \"waarom Duits STACKIT en geen Nederlandse provider?\" Antwoord: precies de these, de exitclausule telt, de vlag niet. Bronnen: rijksoverheid.nl (raamovereenkomst 23 april 2026) · techzine.eu · computable.nl (kritiek DCC)",
   },
   {
-    Component: SlideHow,
-    notes:
-      "Maak concreet hóé ze het deden, niet als kookrecept maar zodat de zaal ziet dat dit bestaande, echte bouwstenen zijn en geen luchtkastelen. 37signals: apps zaten al in Docker, dus de cloud-exit was vooral orkestratie; ze bouwden Kamal (open source), zetten Percona MySQL 8 op bare metal in plaats van RDS, en tilden later ~10 PB van S3 naar dual-datacenter Pure Storage. ICC: openDesk van ZenDiS met Collabora (documenten), Nextcloud (bestanden), Open-Xchange (mail), OpenProject (projecten). FTM + De Correspondent: site en app al eigen bouw op EU-servers met Matomo; nu vervangen ze stapsgewijs Slack, ActiveCampaign, Shopify en Google Workspace, en publiceren elke afweging, zodat je live kunt meekijken. Bronnen: dev.37signals.com · openproject.org/blog · ftm.nl",
-  },
-  {
     Component: Slide10,
     notes:
-      "Een verhaal dat blijft hangen: DHH, ruim tien jaar AWS, toen cloud-exit naar eigen hardware. De quote op de slide komt letterlijk uit \"Why we're leaving the cloud\" (world.hey.com/dhh, okt 2022); laat die even landen. Cijfers: infra van $3,2M naar minder dan $1M per jaar. De S3-exit: ~10 PB / 5 mld objecten uit S3 naar dual-datacenter Pure Storage (18 PB is de gekochte capaciteit), $1,5M eenmalig, <$200K/jaar beheer. Let op: de \"$10M over vijf jaar\" is DHH zijn eigen projectie, geen audit; gerealiseerd ~$1-2M/jaar. Zomer 2025 ging het complete AWS-account dicht. Niet naar Europese cloud, naar eigen infra, zijn keuze. En hij bouwde Kamal, het deploy-tool uit de demo. Bronnen: world.hey.com/dhh · theregister.com/2025/05/09",
+      "Een verhaal dat blijft hangen: DHH, ruim tien jaar AWS, toen cloud-exit naar eigen hardware. De quote op de slide komt letterlijk uit \"Why we're leaving the cloud\" (world.hey.com/dhh, okt 2022); laat die even landen. Cijfers: infra van $3,2M naar minder dan $1M per jaar. De S3-exit: ~10 PB / 5 mld objecten uit S3 naar dual-datacenter Pure Storage (18 PB is de gekochte capaciteit), $1,5M eenmalig, <$200K/jaar beheer. Let op: de \"$10M over vijf jaar\" is DHH zijn eigen projectie, geen audit; gerealiseerd ~$1-2M/jaar. Zomer 2025 ging het complete AWS-account dicht. Niet naar Europese cloud, naar eigen infra, zijn keuze. En hij bouwde Kamal, het deploy-tool uit de demo. Belangrijk om erbij te zeggen (dit kwam van de geschrapte 'hoe dan'-slide): niemand deed dit in één grote sprong, ze pakten het component voor component, geen big bang. Dat maakt het behapbaar. Bronnen: world.hey.com/dhh · theregister.com/2025/05/09",
   },
   {
     Component: Slide11,
@@ -167,37 +155,21 @@ export const slides = [
       "Laat zien dat ook het beleid meebeweegt. EU Tech Sovereignty Package (3 juni 2026): voor het eerst zit open source in het hart van een industriepolitiek pakket, met wetgeving en budget (de Commissie had al een Open Source Strategy uit 2020, dus niet zeggen \"voor het eerst open source in EU-beleid\"). Voorstel Cloud and AI Development Act inclusief open-source-first principe voor overheidsinkoop, €2 miljard gespreid over zeven jaar. De cijfers laten zien waarom het besef groeit: 80% van de digitale technologie geïmporteerd, 70% van de AI-modellen uit de VS. Callback naar de NSA-poort: die EO is van 2 juni, dit pakket van 3 juni. Breng het als veelzeggend toeval, niet als schaakspel; het pakket was meermaals uitgesteld. Voor de zaal: porteerbaar kunnen deployen wordt letterlijk een aanbestedingscriterium. Bronnen: commission.europa.eu (3 juni 2026) · techpolicy.press · interoperable-europe.ec.europa.eu",
   },
   {
-    Component: Slide16,
-    notes:
-      "Loop de lagen langs, niet als checklist maar om te laten zien wat er al klaarligt. Linkerkolom is waar je nu waarschijnlijk zit, rechterkolom de open standaard; groen betekent dat die standaard al bestaat en je alleen nog de provider hoeft te kiezen. Observability als illustratie van wat afhankelijkheid kan kosten: Coinbase betaalde Datadog naar verluidt $65 miljoen voor één jaar (2021); het bedrag komt uit een Datadog earnings call waar de klant niet bij naam werd genoemd, de identificatie is breed gerapporteerd maar afgeleid, vandaar \"naar verluidt\". DNS-rij: DNS4EU draait op Knot Resolver, open source van CZ.NIC, 100% EU-gehost. Bronnen: newsletter.pragmaticengineer.com · whalebone.io/dns4eu",
-  },
-  {
-    Component: Slide18,
-    notes:
-      "Eerlijk zijn, en deze slide werkt juist omdat hij niet klapt; die eerlijkheid is zelf het bewustwordingspunt. Kleinere community, minder managed services, en benoem de ops-kanttekening expliciet: managed services zijn een ops-team dat je huurt; zonder hen moet je dat zelf kunnen of inhuren. Dat is het echte bezwaar van elke IT-manager in de zaal, en het maakt de besparingscases juist geloofwaardiger (die bedrijven namen die ops-taak bewust terug). Maar voor een standaard cloud-native stack is het verschil klein en het wordt kleiner. Brug naar de afsluiter: de alternatieven zijn echt, met eerlijke kanttekeningen, en het is allang geen niche meer.",
-  },
-  {
     Component: SlideGartner,
     notes:
       "De afsluiter van Deel 2, en bewust datagedreven: geen anekdotes maar een Gartner-cijfer, zodat de zaal ziet dat dit de mainstream-richting is. Eén groot getal: 61% van de West-Europese CIO's zet méér in op lokale/regionale cloud door geopolitiek (Gartner-enquête mei-juli 2025, 241 CIO's in West-Europa). De drie kleine cijfers erbij: 55% noemt open source cruciaal in hun cloudstrategie, 53% gaat globale providers beperken, en Gartner voorspelt dat in 2030 meer dan 75% van de bedrijven buiten de VS een soevereiniteitsstrategie heeft. De punchline is Gartners eigen woord: dit is geen repatriation maar 'geopatriation', migreren om geopolitieke in plaats van kostenredenen. Breng de cijfers, lees ze niet op; laat het grote getal even hangen. Brug naar Deel 3: genoeg over wie het al doet, nu hoe je het zelf doet. Bronnen: gartner.com (persbericht 12 nov 2025) · theregister.com/2025/11/13 · channelweb.co.uk (geopatriation).",
   },
 
-  // ---- Deel 3 · Hoe je het zelf bouwt ----
+  // ---- Deel 3 · Hoe je het zelf bouwt (incl. demo) ----
   {
     Component: SlideDivider3,
     notes:
-      "Divider Deel 3. Overgang van analyse naar wat dit voor jou betekent, zonder te preken. Plant de kernthese als besef: de container is een avondje werk, de echte lock-in zit in state, identiteit en coercion points. KLOK-CHECKPOINT: ben je hier nog niet op tweederde van je slot, gebruik de noodsnit die nog vóór je ligt (Payoff-slide overslaan en bij de scorecard alleen de onderste twee rijen uitlichten). Spreektekst: klaar met waarom en wie; de verleiding is nu 'containeriseer alles en je bent vrij', en juist dat misverstand wil je laten zien; de container is het makkelijke deel.",
+      "Divider Deel 3. Kader het bewust: geen technisch college, ik laat het je zo zien met een demo. De techniek zit in de demo, niet in de slides. Plant de kernthese als besef: de container is een avondje werk, de echte lock-in zit in state, identiteit en coercion points. KLOK-CHECKPOINT: ben je hier nog niet op tweederde van je slot, gebruik de noodsnit die nog vóór je ligt (Payoff-slide overslaan en bij de scorecard alleen de onderste twee rijen uitlichten). Spreektekst: klaar met waarom en wie; de verleiding is nu 'containeriseer alles en je bent vrij', en juist dat misverstand wil je laten zien; de container is het makkelijke deel.",
   },
   {
     Component: SlideContainer,
     notes:
       "De slide leest bijna als 'de container is je exitstrategie', en dat is precies te makkelijk; laat de zaal dat zelf ontdekken. De container is juist het enige stuk dat altijd al porteerbaar was (OCI, elke runtime draait hem). Dat is het lokaas. De echte binding zit op drie plekken zonder commando: state (je data verhuist niet vanzelf), identiteit (je IAM-model is provider-specifiek, je herschrijft het), en coercion points (hoeveel partijen kunnen je provider dwingen). Dat laatste is wat 'Europees kiezen' pretendeert op te lossen, maar het gaat eigenlijk over architectuur. Kernthese: keuzevrijheid telt, niet het label. Wie zo bouwt dat wisselen een keuze blijft, krijgt soevereiniteit gratis. Brug: waar zitten die drie lagen en hoe blijven ze porteerbaar (volgende slide).",
-  },
-  {
-    Component: Slide17,
-    steps: 1,
-    notes:
-      "Vier plekken waar de keuze tussen vast en vrij valt; breng het als herkenning, niet als recept. Voor elke laag ligt het open alternatief allang klaar: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Het besef voor de zaal: elke keer dat iets tegen een provider-SDK wordt gebouwd, is de binding een keuze, want het open equivalent bestaat al. Identiteit maakt dat tastbaar: wie tegen OIDC/OAuth2 werkt in plaats van de Cognito- of Entra-SDK houdt de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). En de wet beweegt mee: de Data Act werkt nu al, alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten, en vanaf januari 2027 zijn switching fees volledig verboden. Veelzeggend: wie porteerbaar bouwt, heeft die wet niet eens nodig. Bronnen: aws.amazon.com/blogs/aws · european-alternatives.eu",
   },
   {
     Component: SlideSovereigntyNumber,
@@ -252,5 +224,23 @@ export const slides = [
     Component: SlideThanks,
     notes:
       'Afsluiter, helemaal aan het eind. Bedank de zaal en breng de kernboodschap nog een keer: keuzevrijheid is geen vlag maar een eigenschap van je architectuur. Kort en warm.',
+  },
+
+  // ---- Bijlage · reserveslides voor de Q&A ----
+  {
+    Component: Slide16,
+    notes:
+      "Loop de lagen langs, niet als checklist maar om te laten zien wat er al klaarligt. Linkerkolom is waar je nu waarschijnlijk zit, rechterkolom de open standaard; groen betekent dat die standaard al bestaat en je alleen nog de provider hoeft te kiezen. Observability als illustratie van wat afhankelijkheid kan kosten: Coinbase betaalde Datadog naar verluidt $65 miljoen voor één jaar (2021); het bedrag komt uit een Datadog earnings call waar de klant niet bij naam werd genoemd, de identificatie is breed gerapporteerd maar afgeleid, vandaar \"naar verluidt\". DNS-rij: DNS4EU draait op Knot Resolver, open source van CZ.NIC, 100% EU-gehost. Bronnen: newsletter.pragmaticengineer.com · whalebone.io/dns4eu",
+  },
+  {
+    Component: Slide18,
+    notes:
+      "Eerlijk zijn, en deze slide werkt juist omdat hij niet klapt; die eerlijkheid is zelf het bewustwordingspunt. Kleinere community, minder managed services, en benoem de ops-kanttekening expliciet: managed services zijn een ops-team dat je huurt; zonder hen moet je dat zelf kunnen of inhuren. Dat is het echte bezwaar van elke IT-manager in de zaal, en het maakt de besparingscases juist geloofwaardiger (die bedrijven namen die ops-taak bewust terug). Maar voor een standaard cloud-native stack is het verschil klein en het wordt kleiner. Brug naar de afsluiter: de alternatieven zijn echt, met eerlijke kanttekeningen, en het is allang geen niche meer.",
+  },
+  {
+    Component: Slide17,
+    steps: 1,
+    notes:
+      "Vier plekken waar de keuze tussen vast en vrij valt; breng het als herkenning, niet als recept. Voor elke laag ligt het open alternatief allang klaar: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Het besef voor de zaal: elke keer dat iets tegen een provider-SDK wordt gebouwd, is de binding een keuze, want het open equivalent bestaat al. Identiteit maakt dat tastbaar: wie tegen OIDC/OAuth2 werkt in plaats van de Cognito- of Entra-SDK houdt de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). En de wet beweegt mee: de Data Act werkt nu al, alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten, en vanaf januari 2027 zijn switching fees volledig verboden. Veelzeggend: wie porteerbaar bouwt, heeft die wet niet eens nodig. Bronnen: aws.amazon.com/blogs/aws · european-alternatives.eu",
   },
 ]
