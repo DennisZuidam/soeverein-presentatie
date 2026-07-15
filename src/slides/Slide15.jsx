@@ -11,7 +11,7 @@ export default function Slide15() {
   return (
     <Slide kicker="Deel 2 · Wie zich al bevrijdde">
       <Reveal i={1}>
-        <h2 className="title">De wind staat in je rug</h2>
+        <h2 className="title">Je hebt de wind mee</h2>
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ fontSize: 18, marginBottom: 26, maxWidth: 900 }}>
@@ -27,7 +27,7 @@ export default function Slide15() {
         ))}
       </div>
       <Punchline i={6} sub="Voor jou concreet: porteerbaar kunnen deployen wordt een aanbestedingscriterium.">
-        Dit is geen niche meer. Het is <span className="gold">beleid, budget en richting.</span>
+        Dit is geen sentiment. Het is <span className="gold">beleid, budget en richting.</span>
       </Punchline>
     </Slide>
   )
