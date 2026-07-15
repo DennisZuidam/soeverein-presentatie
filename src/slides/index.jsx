@@ -5,6 +5,7 @@ import Slide04 from './Slide04.jsx'
 import Slide05 from './Slide05.jsx'
 import Slide06 from './Slide06.jsx'
 import Slide07 from './Slide07.jsx'
+import SlideEncryption from './SlideEncryption.jsx'
 import Slide08 from './Slide08.jsx'
 import Slide09 from './Slide09.jsx'
 import Slide10 from './Slide10.jsx'
@@ -105,7 +106,12 @@ export const slides = [
   {
     Component: Slide07,
     notes:
-      "De naam zegt 'eu', maar alleen de servers staan in Europa. Laat de zaal dat gat zien: het bedrijf zit in Seattle, de wet in Washington (CLOUD Act, FISA 702). Voor jouw data telt juridisch maar één plek, en dat is niet Dublin. Dit is het onderliggende mechanisme achter alle voorbeelden hiervoor; als dat besef valt, klikt de rest op zijn plek. Brug: en diezelfde jurisdictie reikt inmiddels tot de AI-modellen zelf.",
+      "De naam zegt 'eu', maar alleen de servers staan in Europa. Laat de zaal dat gat zien: het bedrijf zit in Seattle, de wet in Washington (CLOUD Act, FISA 702). Voor jouw data telt juridisch maar één plek, en dat is niet Dublin. Dit is het onderliggende mechanisme achter alle voorbeelden hiervoor; als dat besef valt, klikt de rest op zijn plek. Brug: 'ja maar dan versleutel ik het toch, of ik kies een sovereign cloud?' — precies dat pak ik nu.",
+  },
+  {
+    Component: SlideEncryption,
+    notes:
+      "Het #1 tegenargument, vooraf onderuit. De CLOUD Act pakt niet de locatie maar de 'control': kan de provider bij je sleutel, dan valt dat onder 'possession, custody, or control' en moet hij ontsleutelen als een rechter dat beveelt (bevestigd, o.a. eliatra.com, julsimon.medium.com). BYOK verschuift het alleen: voor de dienst wil de provider je sleutel in escrow, en dan is het toegangspad terug. Alleen HYOK (sleutel die de provider nooit heeft) valt echt buiten bereik. En de sovereign clouds? AWS European Sovereign Cloud (EU-moederbedrijf, EU-personeel), Microsoft EU Data Boundary/Bleu, Google S3NS met Thales: elk een structurele poging, maar de ultieme eigenaar/jurisdictie blijft. Sterkste bewijs: Microsoft-jurist Carniaux gaf onder ede toe dat hij geen garantie kan geven (terugverwijzing naar de Senaatsquote van een paar slides terug). Blijf eerlijk: 'sovereign cloud' verkleint de risico's, maar neemt de coercion points niet weg. Brug: en diezelfde jurisdictie reikt inmiddels tot de AI-modellen zelf. Bronnen: eliatra.com (The Sovereignty Illusion) · julsimon.medium.com (The Sovereignty Mirage) · infoq.com (AWS European Sovereign Cloud).",
   },
   {
     Component: SlideAiGate,
