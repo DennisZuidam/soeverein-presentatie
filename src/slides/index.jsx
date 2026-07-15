@@ -35,6 +35,7 @@ import SlideSenate from './Slide37.jsx'
 import SlideClosing from './Slide38.jsx'
 import SlideLiveDemo from './SlideLiveDemo.jsx'
 import SlideThanks from './SlideThanks.jsx'
+import SlideBronnen from './SlideBronnen.jsx'
 
 // Verhaallijn in drie delen, met intro en epiloog:
 //   Intro    — de haak + wie ik ben
@@ -178,8 +179,9 @@ export const slides = [
   },
   {
     Component: SlidePayoff,
+    steps: 5,
     notes:
-      'SCHRAPKANDIDAAT BIJ TIJDNOOD: de kern kan als gesproken zin bij de scorecard. Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij, als bijproduct.',
+      'De vier blokjes komen één voor één op pijltje-rechts, de punchline als vijfde. SCHRAPKANDIDAAT BIJ TIJDNOOD: de kern kan als gesproken zin bij de scorecard. Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij, als bijproduct.',
   },
   {
     Component: Slide19,
@@ -242,5 +244,10 @@ export const slides = [
     steps: 1,
     notes:
       "Vier plekken waar de keuze tussen vast en vrij valt; breng het als herkenning, niet als recept. Voor elke laag ligt het open alternatief allang klaar: open standaarden (S3 API, PostgreSQL, K8s), config via environment variables (twelve-factor), infrastructure as code (Terraform/Pulumi), stateless applicaties. Het besef voor de zaal: elke keer dat iets tegen een provider-SDK wordt gebouwd, is de binding een keuze, want het open equivalent bestaat al. Identiteit maakt dat tastbaar: wie tegen OIDC/OAuth2 werkt in plaats van de Cognito- of Entra-SDK houdt de provider inwisselbaar (Keycloak van Red Hat/CNCF, of het Zwitserse Zitadel). En de wet beweegt mee: de Data Act werkt nu al, alle drie de hyperscalers schrapten begin 2024 hun exit-egress-kosten, en vanaf januari 2027 zijn switching fees volledig verboden. Veelzeggend: wie porteerbaar bouwt, heeft die wet niet eens nodig. Bronnen: aws.amazon.com/blogs/aws · european-alternatives.eu",
+  },
+  {
+    Component: SlideBronnen,
+    notes:
+      "Bronvermelding, puur naslag. Alleen tonen als iemand in de Q&A om bronnen vraagt; niet vertellen. Drie kolommen: jurisdictie en wet, cases en cijfers, en beleid/normen/onderzoek. De volledige bronnenlijst met exacte links staat in de spreektekst.",
   },
 ]
