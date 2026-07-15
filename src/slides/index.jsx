@@ -178,8 +178,9 @@ export const slides = [
   },
   {
     Component: SlidePayoff,
+    steps: 5,
     notes:
-      'SCHRAPKANDIDAAT BIJ TIJDNOOD: de kern kan als gesproken zin bij de scorecard. Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij, als bijproduct.',
+      'De vier blokjes komen één voor één op pijltje-rechts, de punchline als vijfde. SCHRAPKANDIDAAT BIJ TIJDNOOD: de kern kan als gesproken zin bij de scorecard. Dit is waarom je het doet, los van soevereiniteit. Onderhandelingspositie: wie kan vertrekken hoeft nooit te smeken. Betere architectuur: porteerbaar bouwen dwingt dezelfde discipline af als testbaar bouwen. Reproduceerbaarheid: één artefact van laptop tot productie. En soevereiniteit krijg je er gratis bij, als bijproduct.',
   },
   {
     Component: Slide19,

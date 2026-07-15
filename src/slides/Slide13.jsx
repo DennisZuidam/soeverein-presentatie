@@ -11,11 +11,11 @@ export default function SlideContainer() {
   return (
     <Slide kicker="Deel 3 · Hoe je het zelf bouwt">
       <Reveal i={1}>
-        <h2 className="title" style={{ marginBottom: 14 }}>De container is het lokaas</h2>
+        <h2 className="title" style={{ marginBottom: 14 }}>De container is het makkelijke deel</h2>
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ fontSize: 20, marginBottom: 30, maxWidth: 900 }}>
-          Het makkelijke deel laten ze je graag zien. Het echte werk zit ergens anders.
+          Die onthoudt niks, dus je gooit 'm weg en start 'm overal opnieuw. Wat wél onthoudt, verhuis je niet zomaar.
         </p>
       </Reveal>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
