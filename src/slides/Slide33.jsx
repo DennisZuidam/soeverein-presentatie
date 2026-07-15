@@ -1,17 +1,14 @@
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
-// Links: bedrijven die vertrokken en er beter van werden (groot én klein).
-// Rechts: de coercion-poort die je juist niet kunt verhuizen (Spotify hoofdcase,
-// Epic/Fortnite als klapstuk) — precies buiten de infra-laag.
+// Weinig tekst: naam groot, één cijfer/hook klein. De spreker vertelt de rest.
 const left = [
-  { who: 'GEICO', text: '10 jaar public cloud, rekening 2,5× omhoog. Terug naar eigen OpenStack/K8s: 50% goedkoper per core.' },
-  { who: 'Dropbox', text: '~500 PB grotendeels van S3 naar eigen Magic Pocket. $74,6M bespaard in twee jaar.' },
-  { who: 'OneUptime', text: '$38k per maand op AWS, naar eigen bare metal. Besparing groeide in twee jaar tot ruim $1,2M per jaar, 99,993% uptime.' },
+  { who: 'GEICO', hook: '50% goedkoper per core' },
+  { who: 'Dropbox', hook: '$74,6M bespaard' },
+  { who: 'OneUptime', hook: 'terug naar eigen bare metal' },
 ]
-
 const right = [
-  { who: 'Spotify', text: 'Europees, draait z’n techniek waar het wil. Toch klem: op je iPhone kom je alleen via Apples App Store. EU beboette Apple €1,8 mld (2024).' },
-  { who: 'Epic · Fortnite', text: 'Bouwde een eigen betaalsysteem in en vloog er in 2020 bij Apple én Google uit. Jarenlang van een miljard telefoons af.' },
+  { who: 'Spotify', hook: '€1,8 mld EU-boete voor Apple' },
+  { who: 'Epic · Fortnite', hook: 'uit App Store én Play gegooid' },
 ]
 
 function Column({ tag, items, i }) {
@@ -21,9 +18,9 @@ function Column({ tag, items, i }) {
         <div className="card-tag" style={{ fontSize: 13 }}>{tag}</div>
       </Reveal>
       {items.map((m, k) => (
-        <Reveal key={m.who} i={i + 0.5 + k * 0.5} className="card" style={{ padding: '20px 24px' }}>
-          <h3 style={{ fontSize: 19, marginBottom: 6 }}>{m.who}</h3>
-          <p style={{ fontSize: 15.5, lineHeight: 1.55 }}>{m.text}</p>
+        <Reveal key={m.who} i={i + 0.5 + k * 0.5} className="card" style={{ padding: '20px 26px' }}>
+          <h3 style={{ fontSize: 27, margin: 0, letterSpacing: -0.5 }}>{m.who}</h3>
+          <p className="gold" style={{ fontSize: 15, margin: '7px 0 0', fontWeight: 600 }}>{m.hook}</p>
         </Reveal>
       ))}
     </div>
