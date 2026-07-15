@@ -29,14 +29,14 @@ const azureScript = [
   out('✔ Finished all in 103.6 seconds', 'add', 300),
 ]
 
-// Beat 2 · deploy naar Scaleway — mét de echte hapering: een verse VM waarvan
+// Beat 2 · deploy naar Scaleway, mét de echte hapering: een verse VM waarvan
 // poort 22 nog dicht is (sshd start na de boot), dan de geslaagde retry.
 const scalewayScript = [
   { type: 'cmd', text: 'kamal setup -d scaleway', after: 500 },
   out('Running mkdir -p .kamal on 51.15.113.112…', 'dim', 600),
-  out('ERROR (Errno::ECONNREFUSED): Connection refused — connect(2) for 51.15.113.112:22', 'del', 800),
+  out('ERROR (Errno::ECONNREFUSED): Connection refused - connect(2) for 51.15.113.112:22', 'del', 800),
   { type: 'gap', delay: 500 },
-  out('# verse VM — poort 22 nog dicht, sshd start na de boot. even wachten…', 'dim', 1000),
+  out('# verse VM, poort 22 nog dicht, sshd start na de boot. even wachten…', 'dim', 1000),
   { type: 'gap', delay: 400 },
   { type: 'cmd', text: 'kamal setup -d scaleway', after: 500 },
   { type: 'timer-start' },
@@ -50,7 +50,7 @@ const scalewayScript = [
   out('✔ Finished all in 27.8 seconds', 'add', 300),
 ]
 
-// Beat 3 · Azure afbreken — het linkerframe klapt zo naar "not found".
+// Beat 3 · Azure afbreken, het linkerframe klapt zo naar "not found".
 const killScript = [
   out('# De presentatie draait nu in Amsterdam. Microsoft heb ik niet meer nodig.', 'dim', 800),
   { type: 'cmd', text: 'az group delete -n rg-euwest1 --yes', after: 700 },

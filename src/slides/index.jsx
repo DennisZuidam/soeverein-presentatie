@@ -38,11 +38,11 @@ import SlideThanks from './SlideThanks.jsx'
 import SlideBronnen from './SlideBronnen.jsx'
 
 // Verhaallijn in drie delen, met intro en epiloog:
-//   Intro    — de haak + wie ik ben
+//   Intro    · de haak + wie ik ben
 //   Deel 1 · Waarom je vastzit
 //   Deel 2 · Wie zich al bevrijdde
 //   Deel 3 · Hoe je het zelf bouwt (incl. demo)
-//   Epiloog  — begin morgen
+//   Epiloog  · begin morgen
 export const slides = [
   {
     Component: Slide01,
@@ -101,7 +101,7 @@ export const slides = [
   {
     Component: Slide07,
     notes:
-      "De naam zegt 'eu', maar alleen de servers staan in Europa. Laat de zaal dat gat zien: het bedrijf zit in Seattle, de wet in Washington (CLOUD Act, FISA 702). Voor jouw data telt juridisch maar één plek, en dat is niet Dublin. Dit is het onderliggende mechanisme achter alle voorbeelden hiervoor; als dat besef valt, klikt de rest op zijn plek. Brug: 'ja maar dan versleutel ik het toch, of ik kies een sovereign cloud?' — precies dat pak ik nu.",
+      "De naam zegt 'eu', maar alleen de servers staan in Europa. Laat de zaal dat gat zien: het bedrijf zit in Seattle, de wet in Washington (CLOUD Act, FISA 702). Voor jouw data telt juridisch maar één plek, en dat is niet Dublin. Dit is het onderliggende mechanisme achter alle voorbeelden hiervoor; als dat besef valt, klikt de rest op zijn plek. Brug: 'ja maar dan versleutel ik het toch, of ik kies een sovereign cloud?' Precies dat pak ik nu.",
   },
   {
     Component: SlideEncryption,
@@ -192,7 +192,7 @@ export const slides = [
     Component: SlideLiveDemo,
     steps: 6,
     notes:
-      "De demo, de climax — nu volledig gescript in de deck, dus niets kan op live infra sneuvelen, maar elk getal en elke host komt uit een echte run. Je stuurt het met pijltje-rechts, zes beats:\n\n1 · Terminal verschijnt vóór de panelen en deployt naar Azure (eerste run installeert Docker, ~103s, de stopwatch loopt mee). 2 · Terminal weg: het linkerframe toont slide 1 van déze presentatie, live op 51-124-164-67.sslip.io (Microsoft, West Europe) — wijs op de host in de adresbalk. 3 · Terminal deployt naar Scaleway — mét de echte hapering: een verse VM waarvan poort 22 nog dicht is (ECONNREFUSED), dan de geslaagde retry in 27,8s. Dit is het bewustzijnsmoment; zeg het hardop: 'dit is geen gepolijste video, dit is een machine die net geboekt is; sshd moet nog wakker worden, zo gedraagt echte infra zich.' 4 · Terminal weg: het rechterframe toont dezelfde slide 1 op 51-15-113-112.sslip.io. Zelfde site, twee clouds, alleen het IP in de balk verschilt. 5 · Terminal: az group delete op Azure. 6 · Het linkerframe klapt naar \"not found\", terwijl Amsterdam gewoon doordraait. Dat is het hele verhaal in beeld.\n\nDe output komt uit de echte run; de hosts zijn de echte IP's. Volledig gescript, dus geen live infra nodig.",
+      "De demo, de climax, nu volledig gescript in de deck, dus niets kan op live infra sneuvelen, maar elk getal en elke host komt uit een echte run. Je stuurt het met pijltje-rechts, zes beats:\n\n1 · Terminal verschijnt vóór de panelen en deployt naar Azure (eerste run installeert Docker, ~103s, de stopwatch loopt mee). 2 · Terminal weg: het linkerframe toont slide 1 van déze presentatie, live op 51-124-164-67.sslip.io (Microsoft, West Europe), wijs op de host in de adresbalk. 3 · Terminal deployt naar Scaleway, mét de echte hapering: een verse VM waarvan poort 22 nog dicht is (ECONNREFUSED), dan de geslaagde retry in 27,8s. Dit is het bewustzijnsmoment; zeg het hardop: 'dit is geen gepolijste video, dit is een machine die net geboekt is; sshd moet nog wakker worden, zo gedraagt echte infra zich.' 4 · Terminal weg: het rechterframe toont dezelfde slide 1 op 51-15-113-112.sslip.io. Zelfde site, twee clouds, alleen het IP in de balk verschilt. 5 · Terminal: az group delete op Azure. 6 · Het linkerframe klapt naar \"not found\", terwijl Amsterdam gewoon doordraait. Dat is het hele verhaal in beeld.\n\nDe output komt uit de echte run; de hosts zijn de echte IP's. Volledig gescript, dus geen live infra nodig.",
   },
   {
     Component: SlideScorecard,

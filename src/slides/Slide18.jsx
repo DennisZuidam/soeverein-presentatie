@@ -1,7 +1,7 @@
 import { Slide, Reveal, Punchline } from '../components/ui.jsx'
 
 const cons = [
-  'Een kleinere community — minder Stack Overflow-antwoorden en kant-en-klare voorbeelden',
+  'Een kleinere community: minder Stack Overflow-antwoorden en kant-en-klare voorbeelden',
   'Minder managed services: sommige dingen draai je voortaan zelf',
   'Diepe Microsoft- of AWS-integraties werken soms stroever',
 ]
@@ -9,7 +9,7 @@ const cons = [
 const pros = [
   'Voor een standaard cloud-native stack (compute, opslag, Kubernetes, database) is het verschil klein',
   'En het wordt elk jaar kleiner',
-  'Bouw je op open standaarden, dan kun je altijd terug — het is geen enkele reis',
+  'Bouw je op open standaarden, dan kun je altijd terug, het is geen enkele reis',
 ]
 
 export default function Slide18() {
@@ -43,7 +43,7 @@ export default function Slide18() {
         </Reveal>
       </div>
       <Punchline i={6}>
-        Het gat is kleiner dan je denkt — en <span className="gold">wordt elk jaar kleiner.</span>
+        Het gat is kleiner dan je denkt, en <span className="gold">wordt elk jaar kleiner.</span>
       </Punchline>
     </Slide>
   )
