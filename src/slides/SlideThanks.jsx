@@ -10,7 +10,7 @@ export default function SlideThanks() {
       </Reveal>
       <Reveal i={2}>
         <p className="lede" style={{ marginTop: 28, maxWidth: 720 }}>
-          Keuzevrijheid is geen vlag, maar een eigenschap van je architectuur.
+          Soevereiniteit is geen vlag maar een eigenschap van je architectuur.
         </p>
       </Reveal>
       <Reveal i={4}>
