@@ -9,8 +9,13 @@ export default function SlideThanks() {
         <h1 className="display" style={{ fontSize: 96 }}>Bedankt.</h1>
       </Reveal>
       <Reveal i={2}>
-        <p className="lede" style={{ marginTop: 28, maxWidth: 720 }}>
-          Keuzevrijheid is geen vlag, maar een eigenschap van je architectuur.
+        <p className="lede" style={{ marginTop: 28, maxWidth: 760 }}>
+          Keuzevrijheid is geen vlag maar een eigenschap van je architectuur.
+        </p>
+      </Reveal>
+      <Reveal i={3}>
+        <p style={{ marginTop: 14, fontSize: 20, color: 'var(--muted)' }}>
+          Soevereiniteit komt er dan gratis bij.
         </p>
       </Reveal>
       <Reveal i={4}>

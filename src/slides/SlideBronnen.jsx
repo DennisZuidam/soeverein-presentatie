@@ -9,7 +9,7 @@ const groups = [
       ['CLOUD Act (2018) · FISA 702', 'congress.gov'],
       ['Encryptie verslaat jurisdictie niet', 'eliatra.com'],
       ['Executive Order 14409 (2 jun 2026)', 'federalregister.gov'],
-      ['Fable 5 / GPT-5.6 (jun–jul 2026)', 'anthropic.com · axios.com'],
+      ['Fable 5 / GPT-5.6 (jun/jul 2026)', 'anthropic.com · axios.com'],
       ['Solvinity-verbod (WOZT, mei 2026)', 'nos.nl · ictrecht.nl'],
     ],
   },
