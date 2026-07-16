@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { slides } from './slides/index.jsx'
+import SpeakerView from './components/SpeakerView.jsx'
 
 const ease = [0.22, 1, 0.36, 1]
 const clamp = (n) => Math.max(0, Math.min(slides.length - 1, n))
@@ -8,6 +9,12 @@ const clamp = (n) => Math.max(0, Math.min(slides.length - 1, n))
 function fromHash() {
   const n = parseInt(window.location.hash.replace(/\D/g, ''), 10)
   return Number.isFinite(n) ? clamp(n - 1) : 0
+}
+
+// ?view=speaker opent het spreker-venster; zonder param blijft dit het normale,
+// standalone slides-venster.
+function isSpeakerView() {
+  return new URLSearchParams(window.location.search).get('view') === 'speaker'
 }
 
 function useFitScale() {
@@ -44,6 +51,7 @@ function usePortraitPhone() {
 }
 
 export default function App() {
+  const speaker = isSpeakerView()
   const [index, setIndex] = useState(fromHash)
   const [step, setStep] = useState(0)
   const dir = useRef(1)
@@ -55,32 +63,89 @@ export default function App() {
 
   const { Component, notes, steps = 0 } = slides[index]
 
-  // refs zodat de key-handler altijd de actuele stap ziet zonder opnieuw te binden
+  // refs zodat de key-handler en de sync altijd de actuele waardes zien zonder
+  // opnieuw te binden
+  const indexRef = useRef(0)
   const stepRef = useRef(0)
   const stepsRef = useRef(0)
+  indexRef.current = index
   stepRef.current = step
   stepsRef.current = steps
 
-  const go = useCallback((target) => {
-    setIndex((prev) => {
-      const next = clamp(target)
-      dir.current = next >= prev ? 1 : -1
-      return next
-    })
+  // ---- synchronisatie tussen slides-venster en spreker-venster ----
+  const channelRef = useRef(null)
+
+  // stuur de nieuwe stand naar het andere venster
+  const broadcast = useCallback((i, s) => {
+    channelRef.current?.postMessage({ type: 'sync', index: i, step: s })
   }, [])
+
+  // pas een binnengekomen stand toe; NIET terugsturen, anders krijg je een
+  // echo-lus (BroadcastChannel levert niet aan de eigen instantie, dus door hier
+  // enkel te zetten settelt het na één rondje)
+  const applyRemote = useCallback((ri, rs) => {
+    if (ri !== indexRef.current) {
+      dir.current = ri >= indexRef.current ? 1 : -1
+      setIndex(clamp(ri))
+    }
+    setStep(rs)
+  }, [])
+
+  useEffect(() => {
+    const ch = new BroadcastChannel('euwest1-deck')
+    channelRef.current = ch
+    ch.onmessage = (e) => {
+      const msg = e.data
+      if (!msg) return
+      if (msg.type === 'sync') applyRemote(msg.index, msg.step)
+      // een net geopend venster vraagt de huidige stand op; antwoord met sync
+      else if (msg.type === 'hello') ch.postMessage({ type: 'sync', index: indexRef.current, step: stepRef.current })
+    }
+    // bij mount: vraag de huidige stand op zodat een later geopend venster
+    // meteen goed staat
+    ch.postMessage({ type: 'hello' })
+    return () => { channelRef.current = null; ch.close() }
+  }, [applyRemote])
+
+  // sprong (hash, Home/End): naar de slide en terug naar fragment 0
+  const go = useCallback((target) => {
+    const next = clamp(target)
+    dir.current = next >= indexRef.current ? 1 : -1
+    setIndex(next)
+    setStep(0)
+    broadcast(next, 0)
+  }, [broadcast])
 
   // pijltje vooruit: eerst de fragmenten van deze slide onthullen, dan pas verder
   const goNext = useCallback(() => {
-    if (stepRef.current < stepsRef.current) setStep((s) => s + 1)
-    else setIndex((p) => { dir.current = 1; return clamp(p + 1) })
-  }, [])
-  const goPrev = useCallback(() => {
-    if (stepRef.current > 0) setStep((s) => s - 1)
-    else setIndex((p) => { dir.current = -1; return clamp(p - 1) })
-  }, [])
+    if (stepRef.current < stepsRef.current) {
+      const s = stepRef.current + 1
+      setStep(s)
+      broadcast(indexRef.current, s)
+      return
+    }
+    const next = clamp(indexRef.current + 1)
+    if (next === indexRef.current) return
+    dir.current = 1
+    setIndex(next)
+    setStep(0)
+    broadcast(next, 0)
+  }, [broadcast])
 
-  // een nieuwe slide begint altijd bij fragment 0
-  useEffect(() => { setStep(0) }, [index])
+  const goPrev = useCallback(() => {
+    if (stepRef.current > 0) {
+      const s = stepRef.current - 1
+      setStep(s)
+      broadcast(indexRef.current, s)
+      return
+    }
+    const prev = clamp(indexRef.current - 1)
+    if (prev === indexRef.current) return
+    dir.current = -1
+    setIndex(prev)
+    setStep(0)
+    broadcast(prev, 0)
+  }, [broadcast])
 
   const onTouchStart = (e) => {
     const t = e.touches[0]
@@ -140,12 +205,29 @@ export default function App() {
           if (document.fullscreenElement) document.exitFullscreen()
           else document.documentElement.requestFullscreen?.()
           break
+        case 'p':
+        case 'P':
+          // open het spreker-venster; alleen zinvol vanuit het slides-venster
+          if (!speaker) {
+            window.open(
+              location.pathname + '?view=speaker' + location.hash,
+              'euwest1-speaker',
+              'width=1200,height=820',
+            )
+          }
+          break
         default:
       }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [go, goNext, goPrev])
+  }, [go, goNext, goPrev, speaker])
+
+  // het spreker-venster: notities + previews op de laptop, synchroon via de
+  // dezelfde state, sync en key-handler hierboven
+  if (speaker) {
+    return <SpeakerView index={index} step={step} goPrev={goPrev} goNext={goNext} />
+  }
 
   return (
     <div className="app" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
@@ -194,7 +276,7 @@ export default function App() {
       <div className="chrome">
         <span className="deck-title">eu-west-1 is nog geen Europa · Dennis Zuidam · XPRTZ</span>
         <div className="right">
-          <span className="keys-hint" style={{ opacity: 0.7 }}>←/→ navigeren · N notities · F fullscreen</span>
+          <span className="keys-hint" style={{ opacity: 0.7 }}>←/→ navigeren · N notities · P spreker · F fullscreen</span>
           <span className="counter">
             {String(index + 1).padStart(2, '0')} / {slides.length}
           </span>
