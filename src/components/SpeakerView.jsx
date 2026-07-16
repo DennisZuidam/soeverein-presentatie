@@ -24,7 +24,7 @@ const two = (n) => String(n).padStart(2, '0')
 // Het spreker-venster: draait op de laptop, loopt via BroadcastChannel synchroon
 // met het slides-venster op het externe scherm. Toont de huidige slide (preview),
 // de volgende slide, de spreeknotities, een meelopende timer en de kloktijd.
-export default function SpeakerView({ index, step, goPrev, goNext }) {
+export default function SpeakerView({ index, step, goPrev, goNext, detail, onToggleDetail }) {
   // Meelopende timer en kloktijd, elke seconde bijgewerkt.
   const [start, setStart] = useState(() => Date.now())
   const [now, setNow] = useState(() => Date.now())
@@ -38,8 +38,13 @@ export default function SpeakerView({ index, step, goPrev, goNext }) {
 
   const current = slides[index]
   const steps = current?.steps ?? 0
+  const cues = current?.cues
   const notes = current?.notes || 'Geen notities voor deze slide.'
   const hasNext = index + 1 < slides.length
+
+  // standaard tonen we de korte steekwoord-bullets; met de detail-toets (N) of de
+  // knop komt de volledige notitie tevoorschijn (handig voor de Q&A-cijfers)
+  const showProse = detail || !cues?.length
 
   return (
     <div className="sv">
@@ -84,8 +89,23 @@ export default function SpeakerView({ index, step, goPrev, goNext }) {
       </div>
 
       <div className="sv-notes">
-        <span className="sv-label">sprekersnotities</span>
-        <pre className="sv-notes-body">{notes}</pre>
+        <div className="sv-notes-head">
+          <span className="sv-label">{showProse ? 'sprekersnotities' : 'steekwoorden'}</span>
+          {cues?.length > 0 && (
+            <button className="sv-detail-toggle" onClick={(e) => { e.currentTarget.blur(); onToggleDetail?.() }}>
+              {detail ? 'bullets' : 'detail'}
+            </button>
+          )}
+        </div>
+        <div className="sv-notes-body">
+          {showProse ? (
+            <pre className="sv-notes-prose">{notes}</pre>
+          ) : (
+            <ul className="sv-cues">
+              {cues.map((c, i) => <li key={i}>{c}</li>)}
+            </ul>
+          )}
+        </div>
       </div>
 
       <footer className="sv-bottom">
@@ -93,7 +113,7 @@ export default function SpeakerView({ index, step, goPrev, goNext }) {
           <button onClick={(e) => { e.currentTarget.blur(); goPrev() }} aria-label="Vorige slide">‹ vorige</button>
           <button onClick={(e) => { e.currentTarget.blur(); goNext() }} aria-label="Volgende slide">volgende ›</button>
         </div>
-        <span className="sv-hint">Pijltjes navigeren. Dit venster op je laptop, de slides op het externe scherm.</span>
+        <span className="sv-hint">Pijltjes navigeren · N voor de volledige notitie · slides op het externe scherm.</span>
       </footer>
     </div>
   )

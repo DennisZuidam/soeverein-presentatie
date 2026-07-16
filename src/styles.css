@@ -941,14 +941,53 @@ body {
   background: var(--surface);
   padding: 16px 20px;
 }
-.sv-notes-body {
-  flex: 1;
-  overflow-y: auto;
-  font-family: var(--font);
-  font-size: 18px;
-  line-height: 1.6;
+.sv-notes-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.sv-notes-head .sv-label { margin-bottom: 0; }
+.sv-detail-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sv-detail-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.sv-notes-body { flex: 1; overflow-y: auto; }
+
+/* korte steekwoord-bullets: de standaardweergave, groot en scanbaar */
+.sv-cues { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.sv-cues li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 20px;
+  line-height: 1.4;
   color: var(--text);
-  /* notities bevatten regeleinden: die willen we behouden */
+}
+.sv-cues li::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--gold);
+}
+
+/* de volledige notitie achter de detail-toets; regeleinden behouden */
+.sv-notes-prose {
+  font-family: var(--font);
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--muted);
   white-space: pre-wrap;
 }
 
