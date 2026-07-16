@@ -226,7 +226,16 @@ export default function App() {
   // het spreker-venster: notities + previews op de laptop, synchroon via de
   // dezelfde state, sync en key-handler hierboven
   if (speaker) {
-    return <SpeakerView index={index} step={step} goPrev={goPrev} goNext={goNext} />
+    return (
+      <SpeakerView
+        index={index}
+        step={step}
+        goPrev={goPrev}
+        goNext={goNext}
+        detail={showNotes}
+        onToggleDetail={() => setShowNotes((v) => !v)}
+      />
+    )
   }
 
   return (
