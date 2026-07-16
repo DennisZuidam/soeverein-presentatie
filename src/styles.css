@@ -844,3 +844,131 @@ body {
   inset: 0;
   z-index: 3;
 }
+
+/* ---------- spreker-venster (presenter mode) ---------- */
+
+/* Draait op de laptop naast het slides-venster: huidige preview, volgende
+   preview, spreeknotities, meelopende timer en de kloktijd. */
+.sv {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px 26px 20px;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+.sv-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 7px;
+}
+
+.sv-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.sv-clock, .sv-timer, .sv-count { display: flex; flex-direction: column; }
+.sv-count { align-items: flex-end; text-align: right; }
+.sv-timer { align-items: center; }
+.sv-clock-val { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.sv-timer-row { display: flex; align-items: center; gap: 12px; }
+.sv-timer-val {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.sv-count-val { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sv-step { color: var(--muted); }
+.sv-reset {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sv-reset:hover { border-color: var(--gold); color: var(--gold); }
+
+.sv-stage { display: flex; gap: 26px; align-items: flex-start; }
+.sv-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
+  /* de preview is enkel om naar te kijken; klikken mag niet naar de slide lekken */
+  pointer-events: none;
+}
+.sv-frame-inner {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  transform-origin: top left;
+}
+.sv-frame-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--faint);
+}
+
+.sv-notes {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  padding: 16px 20px;
+}
+.sv-notes-body {
+  flex: 1;
+  overflow-y: auto;
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  /* notities bevatten regeleinden: die willen we behouden */
+  white-space: pre-wrap;
+}
+
+.sv-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sv-nav { display: flex; gap: 12px; }
+.sv-nav button {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 9px 18px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sv-nav button:hover { border-color: var(--blue); }
+.sv-hint { font-family: var(--mono); font-size: 12px; color: var(--faint); }
